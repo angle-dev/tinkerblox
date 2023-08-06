@@ -140,6 +140,6 @@ let open = 'false';
 	{/if}
 </div>
 
-<main class=" m-auto mt-14 w-full max-w-screen-2xl px-2 md:px-3">
+<main class="mt-14">
 	<slot />
 </main>
