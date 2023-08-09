@@ -7,7 +7,7 @@ let open = 'false';
 </script>
 
 <nav
-	class="fixed top-0 flex h-14 w-full items-center justify-between bg-base-100/30 px-3 py-2.5 backdrop-blur-md">
+	class="fixed top-0 flex h-16 w-full items-center justify-between bg-base-100/70 px-3 py-2.5 backdrop-blur-md">
 	<a class=" h-full" href="/"><img class=" h-full" src="{Logo}" alt="tinkerblox logo" /></a>
 
 	<div class="hidden md:block">
@@ -45,7 +45,9 @@ let open = 'false';
 				</button>
 			</li>
 			<li>
-				<button class="btn-link btn-active btn font-medium text-neutral decoration-transparent">
+				<button
+					on:click="{() => (open = false)}"
+					class="btn-link btn-active btn font-medium text-neutral decoration-transparent">
 					<a href="/connect">CONNECT</a>
 				</button>
 			</li>
@@ -58,29 +60,29 @@ let open = 'false';
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			on:mouseleave="{() => (open = false)}"
-			class="t-14 absolute z-10 flex w-full justify-center gap-3 bg-base-100/20 p-3 backdrop-blur-sm">
-			<a href="/">
+			class="t-16 fixed z-10 flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
+			<a href="/" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#89C365] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Spaces</h3>
 					<p>Digital + Sustainable Ecosystems. Communities. Buildings. Farms.</p>
 				</div>
 			</a>
-			<a href="/">
+			<a href="/" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#C66A66] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Devices</h3>
 					<p>From Devices to Device-based Experience as a Service.</p>
 				</div>
 			</a>
-			<a href="/">
+			<a href="/" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#CED17A] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Utilities</h3>
 					<p>Net Zero & Beyond... O&G. Energy. Industry. Commercial.</p>
 				</div>
 			</a>
-			<a href="/">
+			<a href="/" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#5C5C5C] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Industry</h3>
@@ -93,22 +95,21 @@ let open = 'false';
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			on:mouseleave="{() => (open = false)}"
-			class="t-14 absolute z-10 flex w-full justify-center gap-3 bg-base-100/20 p-3 backdrop-blur-sm">
-			<a href="/buildingblox/sandblox">
+			class="t-16 fixed z-10 flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
+			<a href="/buildingblox/sandblox" on:click="{() => (open = false)}">
 				<div class="prose h-full rounded-md bg-[#AB71AD] p-3 text-base-100 hover:brightness-105">
 					<h3 class="text-xl font-medium text-base-100">SandBlox</h3>
 					<p>Reimagining Digital. Realizing Outcomes</p>
 				</div>
 			</a>
-			<a href="/buildingblox/edgeblox">
+			<a href="/buildingblox/edgeblox" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#DF875D] p-3 text-base-100 hover:brightness-105">
 					<h3 class="text-xl font-medium text-base-100">EdgeBlox</h3>
 					<p>Meet the Lego Blocks of your AloT Transformation.</p>
 				</div>
 			</a>
-
-			<a href="/buildingblox/servblox">
+			<a href="/buildingblox/servblox" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#6EB7E6] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">ServBlox</h3>
@@ -121,15 +122,15 @@ let open = 'false';
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			on:mouseleave="{() => (open = false)}"
-			class="t-14 absolute z-10 flex w-full justify-center gap-3 bg-base-100/20 p-3 backdrop-blur-sm">
-			<a href="/">
+			class="t-16 fixed z-10 flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
+			<a href="/" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#DA7874] p-3 text-base-100 hover:brightness-105">
 					<h3 class="  text-xl font-medium text-base-100">Our Company</h3>
 					<p>Meet the Vision. Meet the People. Meet the Passion.</p>
 				</div>
 			</a>
-			<a href="/">
+			<a href="/" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#71BAB6] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Your Future Team</h3>
@@ -140,6 +141,6 @@ let open = 'false';
 	{/if}
 </div>
 
-<main class="mt-14">
+<main class="mt-16">
 	<slot />
 </main>
