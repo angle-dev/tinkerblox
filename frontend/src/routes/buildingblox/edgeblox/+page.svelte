@@ -43,9 +43,9 @@ import TempEdgeBlox from '$lib/components/TempEdgeBlox.svelte';
 	</div>
 </section>
 
-<section>
+<!-- <section>
 	<TempEdgeBlox />
-</section>
+</section> -->
 
 <section
 	style="background-image: url(/defaultbg.png);"

@@ -4,8 +4,95 @@ import Logo from '$lib/logo.png';
 import Arrowdown from '$lib/arrowdown.svg';
 import Line from '$lib/line.svg';
 import Location from '$lib/location.svg';
+import BurgerMenu from '$lib/burgermenu.svg';
+import BurgerMenuClose from '$lib/burgermenuclose.svg';
+let BurgerMenuOpen = false;
+import { browser } from '$app/environment';
+let openMobileMenu = 'false';
 let open = 'false';
+
+function toggleMenu() {
+	BurgerMenuOpen = !BurgerMenuOpen;
+	closeMenu();
+	if (BurgerMenuOpen) {
+		document.body.style.overflow = 'hidden';
+	} else {
+		document.body.style.overflow = 'auto';
+	}
+}
+
+function closeMenu() {
+	openMobileMenu = 'false';
+}
+
+if (browser) {
+	window.addEventListener('resize', handelResize);
+}
+
+function handelResize() {
+	if (window.innerWidth > 768) {
+		BurgerMenuOpen = false;
+		closeMenu();
+
+		document.body.style.overflow = 'auto';
+	} else {
+		open = 'false';
+	}
+}
 </script>
+
+{#if BurgerMenuOpen}
+	<div
+		class="absolute left-0 top-16 z-10 flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-7 bg-neutral/70 text-2xl font-bold text-info backdrop-blur-lg">
+		<div><a href="/">HOME</a></div>
+		<div class="flex flex-col items-center justify-center gap-3">
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<span
+				on:click="{() => (openMobileMenu = openMobileMenu === 'superblox' ? false : 'superblox')}"
+				>SUPERBLOX</span>
+			{#if openMobileMenu === 'superblox'}
+				<div class="flex flex-col items-center justify-center gap-3">
+					<a href="/">Smart Spaces</a>
+					<a href="/">Smart Devices</a>
+					<a href="/">Smart Services</a>
+					<a href="/">Smart Experiences</a>
+				</div>
+			{/if}
+		</div>
+		<div class="flex flex-col items-center justify-center gap-3">
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<span
+				on:click="{() =>
+					(openMobileMenu = openMobileMenu === 'buildingblox' ? false : 'buildingblox')}"
+				>BUILDINGBLOX</span>
+			{#if openMobileMenu === 'buildingblox'}
+				<div class="flex flex-col gap-3">
+					<a href="/">Smart Spaces</a>
+					<a href="/">Smart Devices</a>
+					<a href="/">Smart Services</a>
+					<a href="/">Smart Experiences</a>
+				</div>
+			{/if}
+		</div>
+		<div class="flex flex-col items-center justify-center gap-3">
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<span on:click="{() => (openMobileMenu = openMobileMenu === 'meet' ? false : 'meet')}"
+				>MEET</span>
+			{#if openMobileMenu === 'meet'}
+				<div class="flex flex-col gap-3">
+					<a href="/">Smart Spaces</a>
+					<a href="/">Smart Devices</a>
+					<a href="/">Smart Services</a>
+					<a href="/">Smart Experiences</a>
+				</div>
+			{/if}
+		</div>
+		<div><a href="/connect">CONNECT</a></div>
+	</div>
+{/if}
 
 <nav
 	class="fixed top-0 flex h-16 w-full items-center justify-between bg-base-100/70 px-3 py-2.5 backdrop-blur-md">
@@ -54,7 +141,16 @@ let open = 'false';
 			</li>
 		</ul>
 	</div>
-	<div class="block md:hidden">=</div>
+	<div class="block md:hidden">
+		<div class="h-full w-7">
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+			<img
+				src="{BurgerMenuOpen ? BurgerMenuClose : BurgerMenu}"
+				on:click="{toggleMenu}"
+				alt="burgermenu " />
+		</div>
+	</div>
 </nav>
 <div>
 	{#if open === 'superblox'}
