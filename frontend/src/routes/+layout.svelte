@@ -3,6 +3,7 @@ import '../app.css';
 import Logo from '$lib/logo.png';
 import Arrowdown from '$lib/arrowdown.svg';
 import Line from '$lib/line.svg';
+import Location from '$lib/location.svg';
 let open = 'false';
 </script>
 
@@ -144,3 +145,56 @@ let open = 'false';
 <main class="mt-16">
 	<slot />
 </main>
+
+<footer
+	style="background-image: url(/defaultbg.png);"
+	class=" bg-gray-200 bg-cover bg-top bg-no-repeat">
+	<div class="m-auto flex max-w-5xl gap-6 p-3">
+		<div class="h-14 w-1/4">
+			<a class=" h-full" href="/"
+				><img class="  h-full object-contain" src="{Logo}" alt="tinkerblox logo" /></a>
+		</div>
+		<div class="grid w-3/4 grid-cols-2 gap-3 md:grid-cols-4">
+			<div class="prose">
+				<h4 class="text-lg">Offerings</h4>
+				<div>
+					<p>SandBloX</p>
+					<p>EdgeBloX</p>
+					<p>ServBloX</p>
+				</div>
+			</div>
+			<div class="prose">
+				<h4 class="text-lg">Resource Links</h4>
+				<div>
+					<p>Meet Our Company</p>
+					<p>Read Blogs</p>
+					<p>Meet Your Future Team</p>
+				</div>
+			</div>
+			<div class="prose">
+				<h4 class="text-lg">Good To Know</h4>
+				<div>
+					<p>Privacy Policy</p>
+					<p>Term of Use</p>
+					<p>FAQ</p>
+				</div>
+			</div>
+			<div class="prose">
+				<h4 class="text-lg">Address</h4>
+				<div>
+					<p class=" flex gap-2">
+						<img class=" w-8" src="{Location}" alt="location" />
+						13500 Watertown Plank Rd, Elm Grove, WI 53122
+					</p>
+					<p class=" flex gap-2">
+						<img class="w-8" src="{Location}" alt="location" />S-16, 15th Main Road, Guindy
+						Industrial Estate, Chennai, Tamil Nadu 600032”
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex w-full justify-center pb-6">
+		<p class=" text-lg">© 2023 Tinkerblox, All rights reserved.</p>
+	</div>
+</footer>

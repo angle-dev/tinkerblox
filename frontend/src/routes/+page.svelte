@@ -1,9 +1,11 @@
 <script>
 import CarouselBG from '$lib/carouselbg.png';
+import Temp3 from '../lib/components/Temp3.svelte';
 </script>
 
 <section
-	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 p-4 md:p-12">
+	style="background-image: url(/hero.jpg);"
+	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 bg-cover bg-center bg-no-repeat p-4 md:p-12">
 	<h1 class="mb-14 text-center text-4xl text-base-100">
 		Use our <span class="font-bold"> ‘Configure-and-Use AIoT’ </span> software blocks to build and
 		deploy you <span class="font-bold">Edge-centric ecosystem</span> @ scale
@@ -40,6 +42,14 @@ import CarouselBG from '$lib/carouselbg.png';
 </section>
 
 <section
+	class=" zw-full bg-center-left min-h-12 h-fit bg-primary bg-center bg-no-repeat px-3 py-12 md:px-10 md:py-32">
+	<div class=" m-auto md:max-w-7xl">
+		<Temp3 />
+	</div>
+</section>
+
+<section
 	style="background-image : url('{CarouselBG}')"
-	class=" zw-full bg-center-left h-fit min-h-[calc(100vh-4rem)] bg-center bg-no-repeat">
+	class=" zw-full bg-center-left flex h-fit min-h-[calc(100vh-4rem)] flex-col items-center bg-center bg-no-repeat">
+	<h2 class=" mt-12 text-4xl font-bold text-primary">Stories we bring to Life</h2>
 </section>
