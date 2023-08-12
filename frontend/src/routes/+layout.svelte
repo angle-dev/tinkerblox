@@ -44,19 +44,20 @@ function handelResize() {
 {#if BurgerMenuOpen}
 	<div
 		class="absolute left-0 top-16 z-10 flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-7 bg-neutral/70 text-2xl font-bold text-info backdrop-blur-lg">
-		<div><a href="/">HOME</a></div>
+		<div><a on:click="{toggleMenu}" href="/">HOME</a></div>
 		<div class="flex flex-col items-center justify-center gap-3">
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<span
+				class="cursor-pointer"
 				on:click="{() => (openMobileMenu = openMobileMenu === 'superblox' ? false : 'superblox')}"
 				>SUPERBLOX</span>
 			{#if openMobileMenu === 'superblox'}
 				<div class="flex flex-col items-center justify-center gap-3">
-					<a href="/">Smart Spaces</a>
-					<a href="/">Smart Devices</a>
-					<a href="/">Smart Services</a>
-					<a href="/">Smart Experiences</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Spaces</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Devices</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Utilities</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Industry</a>
 				</div>
 			{/if}
 		</div>
@@ -64,33 +65,35 @@ function handelResize() {
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<span
+				class="cursor-pointer"
 				on:click="{() =>
 					(openMobileMenu = openMobileMenu === 'buildingblox' ? false : 'buildingblox')}"
 				>BUILDINGBLOX</span>
 			{#if openMobileMenu === 'buildingblox'}
-				<div class="flex flex-col gap-3">
-					<a href="/">Smart Spaces</a>
-					<a href="/">Smart Devices</a>
-					<a href="/">Smart Services</a>
-					<a href="/">Smart Experiences</a>
+				<div class="flex flex-col items-center justify-center gap-3">
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/edgeblox"
+						>EdgeBloX</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/sandblox"
+						>ServBloX</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/servblox"
+						>SandBloX</a>
 				</div>
 			{/if}
 		</div>
 		<div class="flex flex-col items-center justify-center gap-3">
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<span on:click="{() => (openMobileMenu = openMobileMenu === 'meet' ? false : 'meet')}"
-				>MEET</span>
+			<span
+				class="cursor-pointer"
+				on:click="{() => (openMobileMenu = openMobileMenu === 'meet' ? false : 'meet')}">MEET</span>
 			{#if openMobileMenu === 'meet'}
-				<div class="flex flex-col gap-3">
-					<a href="/">Smart Spaces</a>
-					<a href="/">Smart Devices</a>
-					<a href="/">Smart Services</a>
-					<a href="/">Smart Experiences</a>
+				<div class="flex flex-col items-center justify-center gap-3">
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Our Company</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Your Future Team</a>
 				</div>
 			{/if}
 		</div>
-		<div><a href="/connect">CONNECT</a></div>
+		<div><a on:click="{toggleMenu}" href="/connect">CONNECT</a></div>
 	</div>
 {/if}
 
