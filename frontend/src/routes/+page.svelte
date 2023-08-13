@@ -2,7 +2,7 @@
 import CarouselBG from '$lib/carouselbg.png';
 import homegradient from '$lib/homegradient.png';
 import Productsection from '$lib/components/Productsection.svelte';
-
+import Carouselhome from '../lib/components/Carouselhome.svelte';
 import Homelottie from '$lib/homelottie.json';
 
 import { onMount } from 'svelte';
@@ -77,3 +77,5 @@ onMount(async () => {
 	class=" zw-full bg-center-left flex h-fit min-h-[calc(100vh-4rem)] flex-col items-center bg-cover bg-center bg-no-repeat">
 	<h2 class=" mt-12 text-4xl font-bold text-primary">Stories we bring to Life</h2>
 </section>
+
+<Carouselhome />

@@ -98,7 +98,7 @@ function handelResize() {
 {/if}
 
 <nav
-	class="fixed top-0 flex h-16 w-full items-center justify-between bg-base-100/70 px-4 py-2.5 backdrop-blur-md lg:px-16">
+	class="fixed top-0 z-50 flex h-16 w-full items-center justify-between bg-base-100/70 px-4 py-2.5 backdrop-blur-md lg:px-16">
 	<a class=" h-full" href="/"><img class=" h-full" src="{Logo}" alt="tinkerblox logo" /></a>
 
 	<div class="hidden md:block">
