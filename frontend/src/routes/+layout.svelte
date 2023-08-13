@@ -88,8 +88,8 @@ function handelResize() {
 				on:click="{() => (openMobileMenu = openMobileMenu === 'meet' ? false : 'meet')}">MEET</span>
 			{#if openMobileMenu === 'meet'}
 				<div class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100">
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Our Company</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Your Future Team</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/ourcompany">Our Company</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/jobs">Your Future Team</a>
 				</div>
 			{/if}
 		</div>
@@ -98,7 +98,7 @@ function handelResize() {
 {/if}
 
 <nav
-	class="fixed top-0 flex h-16 w-full items-center justify-between bg-base-100/70 px-3 py-2.5 backdrop-blur-md">
+	class="fixed top-0 flex h-16 w-full items-center justify-between bg-base-100/70 px-4 py-2.5 backdrop-blur-md lg:px-16">
 	<a class=" h-full" href="/"><img class=" h-full" src="{Logo}" alt="tinkerblox logo" /></a>
 
 	<div class="hidden md:block">
@@ -223,14 +223,14 @@ function handelResize() {
 		<div
 			on:mouseleave="{() => (open = false)}"
 			class="t-16 fixed z-10 flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
-			<a href="/" on:click="{() => (open = false)}">
+			<a href="/ourcompany" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#DA7874] p-3 text-base-100 hover:brightness-105">
 					<h3 class="  text-xl font-medium text-base-100">Our Company</h3>
 					<p>Meet the Vision. Meet the People. Meet the Passion.</p>
 				</div>
 			</a>
-			<a href="/" on:click="{() => (open = false)}">
+			<a href="/jobs" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#71BAB6] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Your Future Team</h3>

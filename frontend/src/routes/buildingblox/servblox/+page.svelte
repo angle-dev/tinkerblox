@@ -3,6 +3,16 @@ import servbloxhero from '$lib/servbloxhero.png';
 import servbloxengage from '$lib/servbloxengage.png';
 import gradientbackground from '$lib/gradient_background.png';
 import servbloxleverage from '$lib/servbloxleverage.png';
+import GradientButton from '$lib/components/GradientButton.svelte';
+import Servelottie from '$lib/Servelottie.json';
+import { onMount } from 'svelte';
+
+let LottiePlayer;
+
+onMount(async () => {
+	const module = await import('@lottiefiles/svelte-lottie-player');
+	LottiePlayer = module.LottiePlayer;
+});
 </script>
 
 <section
@@ -23,8 +33,17 @@ import servbloxleverage from '$lib/servbloxleverage.png';
 <section
 	style="background-image: url(/defaultbg.png);"
 	class=" w-full bg-cover bg-center bg-no-repeat py-16">
-	<div class="m-auto flex max-w-6xl gap-2">
-		<div class="min-h-6 w-1/3"></div>
+	<div class="m-auto flex max-w-6xl items-center gap-2">
+		<div class="min-h-6 w-1/3">
+			{#if LottiePlayer}
+				<LottiePlayer
+					autoplay
+					loop
+					background="transparent"
+					controls="{false}"
+					src="{Servelottie}" />
+			{/if}
+		</div>
 		<div class=" min-h-6 w-2/3">
 			<h4 class="text-3xl font-semibold text-secondary">
 				The <span class="text-info">beating heart</span> of our<br /> AIoT orchestration
@@ -53,12 +72,37 @@ import servbloxleverage from '$lib/servbloxleverage.png';
 </section>
 <section
 	style=" background-image: url({gradientbackground}) "
-	class=" min-h-16 w-full bg-primary bg-cover bg-center bg-no-repeat py-16">
-	<h2 class=" ml-80 mt-8 text-6xl text-base-100">Leverage<br /> ServBloX</h2>
-	<div class="min-h-16 mt-5 w-full">
-		<img
-			src="{servbloxleverage}"
-			alt="servbloxleverage"
-			class=" h-auto w-full object-contain object-center" />
+	class=" min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
+	<div class="m-auto max-w-7xl">
+		<h4 class=" mb-16 w-full text-center text-5xl text-base-100">Leverage ServBloX</h4>
+		<div class="min-h-16 mt-5 w-full">
+			<img
+				src="{servbloxleverage}"
+				alt="servbloxleverage"
+				class=" h-auto w-full object-contain object-center" />
+		</div>
+	</div>
+</section>
+
+<section
+	style="background-image: url(/defaultbg.png);"
+	class=" w-full bg-cover bg-center bg-no-repeat py-16 text-center">
+	<div class="m-auto flex max-w-6xl flex-col items-center">
+		<h4 class="text-3xl font-semibold text-info">
+			<span class="text-secondary">Having a good heart </span>means lots of friends…
+		</h4>
+		<br />
+		<p class="mt-5 text-neutral/60">
+			ServBloX comes with our AIoT partners from all backgrounds → Chip manufacturers, MNPs, Cloud
+			providers, IoT platform players, AI specialists, Cybersecurity Experts, App Builders, etc.
+		</p>
+		<br />
+		<p
+			class=" bg-gradient-to-l from-secondary to-info bg-clip-text text-lg font-medium text-transparent">
+			Join the fun & learn about the exciting AIoT gossip from our partners from around the world…
+		</p>
+		<br />
+		<br />
+		<GradientButton>Join our ALLIANCE</GradientButton>
 	</div>
 </section>

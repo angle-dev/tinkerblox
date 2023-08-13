@@ -1,6 +1,18 @@
 <script>
 import EdgeBloxHero from '$lib/edgebloxhero.png';
+import edgebloxinfo from '$lib/edgebloxinfo.png';
+import GradientButton from '$lib/components/GradientButton.svelte';
+import gradientbackground from '$lib/gradient_background.png';
 
+import Edge from '$lib/Edge.json';
+import { onMount } from 'svelte';
+
+let LottiePlayer;
+
+onMount(async () => {
+	const module = await import('@lottiefiles/svelte-lottie-player');
+	LottiePlayer = module.LottiePlayer;
+});
 </script>
 
 <section
@@ -27,25 +39,47 @@ import EdgeBloxHero from '$lib/edgebloxhero.png';
 <section
 	style="background-image: url(/defaultbg.png);"
 	class=" bg-base-100 bg-cover bg-top bg-no-repeat">
-	<div
-		class="m-auto flex w-full max-w-5xl flex-col items-start gap-3 px-3 py-20 text-secondary md:px-2 md:py-32">
-		<h3 class="text-4xl md:text-6xl">
-			Let’s <span class="font-medium text-info"> build your IoT World </span> one block at a time !
-		</h3>
-		<p class=" mt-3 text-lg text-neutral md:text-base">
-			EdgeBloX is the most flexible Edge-native AIoT suite in the world, with each layer of the AIoT
-			stack configurable to suit your enterprise environment. With the freedom to choose from
-			<span class=" font-medium text-info">
-				our array of pre-built components, you can build an AIoT environment as easy as your kids
-				building Lego sets.
-			</span>
-		</p>
+	<div class="m-auto flex max-w-6xl items-center gap-2">
+		<div class="min-h-6 w-1/3">
+			{#if LottiePlayer}
+				<LottiePlayer autoplay loop background="transparent" controls="{false}" src="{Edge}" />
+			{/if}
+		</div>
+		<div class=" min-h-6 w-2/3">
+			<h4 class="text-4xl md:text-6xl">
+				Let’s <span class="font-medium text-info"> build your IoT World </span> one block at a time !
+			</h4>
+			<p class=" mt-3 text-lg text-neutral md:text-base">
+				EdgeBloX is the most flexible Edge-native AIoT suite in the world, with each layer of the
+				AIoT stack configurable to suit your enterprise environment. With the freedom to choose from
+				<span class=" font-medium text-info">
+					our array of pre-built components, you can build an AIoT environment as easy as your kids
+					building Lego sets.
+				</span>
+			</p>
+		</div>
 	</div>
 </section>
 
-<!-- <section>
-	<TempEdgeBlox />
-</section> -->
+<section
+	style=" background-image: url({gradientbackground}) "
+	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
+	<h4 class="mb-16 w-full text-center text-5xl font-bold text-base-100">Experience Edgeblox</h4>
+	<img
+		class="m-auto h-auto w-full max-w-6xl object-contain object-center"
+		src="{edgebloxinfo}"
+		alt="edgebloxinfo" />
+	<div class="m-auto mt-10 flex h-auto max-w-6xl items-center justify-center gap-10 px-2">
+		<GradientButton>Learn More</GradientButton>
+		<div class="text-base-100">
+			<h4 class=" text-3xl font-semibold">
+				And also <br /> <span class="text-info">ABacus | Collections | Dock | Edge | Flocks </span>
+			</h4>
+
+			<p class=" text-secondary">and may more...</p>
+		</div>
+	</div>
+</section>
 
 <section
 	style="background-image: url(/defaultbg.png);"

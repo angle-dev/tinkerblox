@@ -31,5 +31,8 @@
 		"tailwindcss": "^3.3.2",
 		"vite": "^4.3.6"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@lottiefiles/svelte-lottie-player": "^0.3.0"
+	}
 }
