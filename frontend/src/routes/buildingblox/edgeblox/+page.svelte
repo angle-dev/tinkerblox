@@ -1,6 +1,6 @@
 <script>
 import EdgeBloxHero from '$lib/edgebloxhero.png';
-import TempEdgeBlox from '$lib/components/TempEdgeBlox.svelte';
+
 </script>
 
 <section
