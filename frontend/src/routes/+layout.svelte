@@ -43,7 +43,7 @@ function handelResize() {
 
 {#if BurgerMenuOpen}
 	<div
-		class="absolute left-0 top-16 z-10 flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-7 bg-neutral/70 text-2xl font-bold text-info backdrop-blur-lg">
+		class="fixed left-0 top-16 z-10 flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-7 bg-black/90 text-2xl font-bold text-info backdrop-blur-lg">
 		<div><a on:click="{toggleMenu}" href="/">HOME</a></div>
 		<div class="flex flex-col items-center justify-center gap-3">
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -53,7 +53,7 @@ function handelResize() {
 				on:click="{() => (openMobileMenu = openMobileMenu === 'superblox' ? false : 'superblox')}"
 				>SUPERBLOX</span>
 			{#if openMobileMenu === 'superblox'}
-				<div class="flex flex-col items-center justify-center gap-3">
+				<div class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100">
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Spaces</a>
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Devices</a>
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Utilities</a>
@@ -70,7 +70,7 @@ function handelResize() {
 					(openMobileMenu = openMobileMenu === 'buildingblox' ? false : 'buildingblox')}"
 				>BUILDINGBLOX</span>
 			{#if openMobileMenu === 'buildingblox'}
-				<div class="flex flex-col items-center justify-center gap-3">
+				<div class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100">
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/edgeblox"
 						>EdgeBloX</a>
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/sandblox"
@@ -87,7 +87,7 @@ function handelResize() {
 				class="cursor-pointer"
 				on:click="{() => (openMobileMenu = openMobileMenu === 'meet' ? false : 'meet')}">MEET</span>
 			{#if openMobileMenu === 'meet'}
-				<div class="flex flex-col items-center justify-center gap-3">
+				<div class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100">
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Our Company</a>
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Your Future Team</a>
 				</div>
