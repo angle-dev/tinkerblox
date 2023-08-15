@@ -18,10 +18,11 @@ onMount(async () => {
 <section
 	style="background-image: url(/hero.jpg);"
 	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 bg-cover bg-center bg-no-repeat p-4 md:p-12">
-	<h1 class="mb-14 text-center text-4xl text-base-100">
+	<h1 class=" mb-28 text-center text-7xl font-bold text-base-100">EDGE IS TOMORROW</h1>
+	<h2 class="mb-14 text-center text-4xl text-base-100">
 		Use our <span class="font-bold"> ‘Configure-and-Use AIoT’ </span> software blocks to build and
 		deploy you <span class="font-bold">Edge-centric ecosystem</span> @ scale
-	</h1>
+	</h2>
 	<div
 		class=" mt-5 flex w-full items-center justify-center gap-1 text-center text-sm font-light text-base-100 md:w-3/5 md:gap-3 md:text-lg">
 		<span class=" w-52 md:w-60">Blueprint Digital Journey from Innovation to Scale</span>
@@ -36,7 +37,7 @@ onMount(async () => {
 	style="background-image: url(/defaultbg.png);"
 	class=" bg-base-100 bg-cover bg-top bg-no-repeat">
 	<div
-		class="m-auto flex w-full max-w-5xl items-center justify-center gap-3 px-3 py-20 md:gap-14 md:px-2 md:py-44">
+		class="m-auto flex w-full max-w-5xl flex-row-reverse items-center justify-center gap-3 px-3 py-20 md:gap-14 md:px-2 md:py-44">
 		<div class=" w-1/3 bg-blend-difference">
 			{#if LottiePlayer}
 				<LottiePlayer
@@ -56,7 +57,8 @@ onMount(async () => {
 		</div>
 	</div>
 	<div>
-		<p class=" m-auto w-2/3 pb-16 text-center text-sm text-info md:text-base">
+		<p
+			class=" m-auto w-2/3 w-fit bg-gradient-to-l from-secondary to-info bg-clip-text pb-16 text-center text-sm font-medium text-info text-transparent md:text-base">
 			TinkerBloX curates pre -built assets & accelerators to your context… and helps you realize
 			your digital transformation vision @ scale
 		</p>
@@ -72,10 +74,9 @@ onMount(async () => {
 	</div>
 </section>
 
-<!-- <section
+<section
 	style="background-image : url('{CarouselBG}')"
-	class=" zw-full bg-center-left flex h-fit min-h-[calc(100vh-4rem)] flex-col items-center bg-cover bg-center bg-no-repeat">
+	class=" zw-full bg-center-left flex h-fit flex-col items-center bg-cover bg-center bg-no-repeat py-16">
 	<h2 class=" mt-12 text-4xl font-bold text-primary">Stories we bring to Life</h2>
+	<Carouselhome />
 </section>
-
-<Carouselhome /> -->

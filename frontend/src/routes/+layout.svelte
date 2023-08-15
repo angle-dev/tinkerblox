@@ -247,7 +247,7 @@ function handelResize() {
 
 <footer
 	style="background-image: url(/defaultbg.png);"
-	class=" bg-gray-200 bg-cover bg-top bg-no-repeat">
+	class=" bg-gray-200 bg-cover bg-top bg-no-repeat pt-14">
 	<div class="m-auto flex max-w-5xl gap-6 p-3">
 		<div class="h-14 w-1/4">
 			<a class=" h-full" href="/"

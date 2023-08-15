@@ -6,6 +6,10 @@
 }
 </style>
 
-<button class="gradient-button btn border-none px-12 font-bold text-base-100">
-	<slot />
-</button>
+<a
+	href="
+/connect">
+	<button class="gradient-button btn border-none px-12 font-bold text-base-100">
+		<slot />
+	</button>
+</a>
