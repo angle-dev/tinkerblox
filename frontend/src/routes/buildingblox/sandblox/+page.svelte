@@ -39,13 +39,13 @@ onMount(async () => {
 			{/if}
 		</div>
 		<div class="min-h-6 w-2/3">
-			<h6 class="text-md mb-1.5 font-light text-secondary">
+			<h6 class=" mb-1.5 font-normal text-secondary">
 				Revenue Maximization | Efficiency | Sustainability
 			</h6>
 			<h4 class=" text-3xl font-bold">
 				Pick your SandBloX,<span class="text-info">for Outcomes…</span>
 			</h4>
-			<p class=" mt-7 text-neutral/60">
+			<p class=" mt-7 text-neutral/40">
 				AIoT vision -> solution | Failsafe AIoT product journey | Faster Time-to-Market | X-aaS
 				orchestration | Industry X.0 | Net-Zero Enterprise | Sustainable Economy
 			</p>

@@ -55,7 +55,7 @@ onMount(async () => {
 				the body of assets
 				<span class="text-secondary">(#edgeblox)</span>, like every tinman, what you now need is a
 				heart that can make your AIoT dream a reality.<br /> <br />
-				<span class="font-semibold text-info">ServBloX</span>
+				<span class=" font-bold text-info">ServBloX</span>
 				<span class="text-secondary">is the beating heart</span> of our AIoT orchestration with experts
 				bringing together the passion & the intellect across the board
 			</p>
@@ -96,7 +96,7 @@ onMount(async () => {
 		</p>
 		<br />
 		<p
-			class=" bg-gradient-to-l from-secondary to-info bg-clip-text text-lg font-medium text-transparent">
+			class=" bg-gradient-to-l from-secondary to-info bg-clip-text text-lg font-normal text-transparent">
 			Join the fun & learn about the exciting AIoT gossip from our partners from around the world…
 		</p>
 		<br />

@@ -23,12 +23,16 @@ onMount(async () => {
 		<h2 class="mb-14 text-4xl font-bold text-base-100">
 			86% of corporate decision makers worry about 3 things during their IoT journey…
 		</h2>
-		<p class="text-base-100">
-			Why do I have to start from scratch; Is there a jump-start I can get? I have an existing
-			legacy set of systems that are very heterogeneous. Can I get a solution that’s flexible enough
-			to balance my current variety with my future ambitions? I get the big picture, but I want
-			small wins that turn into bigger ones. Will this approach ensure I get realistic outcomes at
-			multiple milestones as I crawl-walk-run-fly ?
+		<p class="mt-6 text-lg text-base-100">
+			•Why do I have to start from scratch; Is there a jump-start I can get?
+		</p>
+		<p class="mt-3 text-lg text-base-100">
+			•I have an existing legacy set of systems that are very heterogeneous. Can I get a solution
+			that’s flexible enough to balance my current variety with my future ambitions?
+		</p>
+		<p class="mt-3 text-lg font-normal text-base-100">
+			•I get the big picture, but I want small wins that turn into bigger ones. Will this approach
+			ensure I get realistic outcomes at multiple milestones as I crawl-walk-run-fly ?
 		</p>
 		<div class="mt-16">
 			<h3 class="text-4xl font-semibold text-base-100">With EdgeBloX, Yes, Yes & Yes !!</h3>
@@ -49,7 +53,7 @@ onMount(async () => {
 			<h4 class="text-4xl text-secondary md:text-5xl">
 				Let’s <span class="font-medium text-info"> build your IoT World </span> one block at a time !
 			</h4>
-			<p class=" mt-3 text-lg text-black/60 text-neutral md:text-base">
+			<p class=" mt-3 text-lg text-neutral/40 md:text-base">
 				EdgeBloX is the most flexible Edge-native AIoT suite in the world, with each layer of the
 				AIoT stack configurable to suit your enterprise environment. With the freedom to choose from
 				<span class="  text-info">
@@ -64,7 +68,7 @@ onMount(async () => {
 <section
 	style=" background-image: url({gradientbackground}) "
 	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
-	<h4 class="mb-16 w-full text-center text-5xl font-bold text-base-100">Experience Edgeblox</h4>
+	<h4 class="mb-16 w-full text-center text-5xl text-base-100">Experience Edgeblox</h4>
 	<img
 		class="m-auto h-auto w-full max-w-6xl object-contain object-center"
 		src="{edgebloxinfo}"
@@ -72,11 +76,16 @@ onMount(async () => {
 	<div class="m-auto mt-10 flex h-auto max-w-6xl items-center justify-center gap-10 px-2">
 		<GradientButton>Learn More</GradientButton>
 		<div class="text-base-100">
-			<h4 class=" text-3xl font-semibold">
-				And also <br /> <span class="text-info">ABacus | Collections | Dock | Edge | Flocks </span>
+			<h4 class=" text-4xl">
+				<span style=" font-medium">And also </span><br />
+				<span class="font-normal text-info"
+					><span style=" font-medium">AB</span>acus <span style=" font-medium">| C</span>ollections
+					<span style=" font-medium">| D</span>ock <span style=" font-medium">| E</span>dge
+					<span style=" font-medium">| F</span>locks
+				</span>
 			</h4>
 
-			<p class=" text-secondary">and may more...</p>
+			<p class=" font-medium text-secondary">and many more...</p>
 		</div>
 	</div>
 </section>
@@ -86,9 +95,9 @@ onMount(async () => {
 	class=" bg-base-100 bg-cover bg-top bg-no-repeat">
 	<div
 		class="m-auto flex w-full max-w-5xl flex-col items-start gap-3 px-3 py-20 text-secondary md:px-2 md:py-32">
-		<p class=" mt-3 text-lg text-black/60 text-neutral md:text-base">
+		<p class=" mt-3 text-lg text-neutral text-neutral/40 md:text-base">
 			During the design phase of EdgeBloX, we spoke to all our AIoT partners <span
-				class="font-medium text-info">
+				class="font-bold text-info">
 				Chip manufacturers, MNPs, Cloud providers, IoT platforms players, AI specialists,
 				cybersecurity experts, app builders, etc.
 			</span>

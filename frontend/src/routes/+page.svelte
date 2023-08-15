@@ -18,13 +18,13 @@ onMount(async () => {
 <section
 	style="background-image: url(/hero.jpg);"
 	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 bg-cover bg-center bg-no-repeat p-4 md:p-12">
-	<h1 class=" mb-28 text-center text-7xl font-bold text-base-100">EDGE IS TOMORROW</h1>
-	<h2 class="mb-14 text-center text-4xl text-base-100">
-		Use our <span class="font-bold"> ‘Configure-and-Use AIoT’ </span> software blocks to build and
-		deploy you <span class="font-bold">Edge-centric ecosystem</span> @ scale
+	<h1 class=" mb-28 text-center text-4xl font-bold text-base-100 md:text-7xl">EDGE IS TOMORROW</h1>
+	<h2 class="mb-14 text-center text-3xl text-base-100 md:text-4xl">
+		Use our <span class="font-bold"> ‘Configure-and-Use AIoT’ software blocks </span>to build and
+		deploy your <span class="font-bold">Edge-centric ecosystem</span> @ scale
 	</h2>
 	<div
-		class=" mt-5 flex w-full items-center justify-center gap-1 text-center text-sm font-light text-base-100 md:w-3/5 md:gap-3 md:text-lg">
+		class=" mt-5 flex w-full items-center justify-center gap-1 text-center text-[20px] font-normal text-base-100 md:w-3/5 md:gap-3 md:text-lg">
 		<span class=" w-52 md:w-60">Blueprint Digital Journey from Innovation to Scale</span>
 		<span>|</span>
 		<span class=" w-52 md:w-60">Design & Configure AIoT at Edge</span>
@@ -49,7 +49,7 @@ onMount(async () => {
 			{/if}
 		</div>
 		<div class=" w-2/3">
-			<h3 class="text-3xl font-medium text-secondary md:text-4xl">
+			<h3 class="text-3xl font-normal text-secondary md:text-4xl">
 				Everyone believes their IoT problem is unique...
 			</h3>
 			<br />
@@ -58,7 +58,7 @@ onMount(async () => {
 	</div>
 	<div>
 		<p
-			class=" m-auto w-2/3 w-fit bg-gradient-to-l from-secondary to-info bg-clip-text pb-16 text-center text-sm font-medium text-info text-transparent md:text-base">
+			class=" m-auto w-fit bg-gradient-to-l from-secondary to-info bg-clip-text pb-16 text-center text-sm font-medium text-info text-transparent md:w-2/3 md:text-base">
 			TinkerBloX curates pre -built assets & accelerators to your context… and helps you realize
 			your digital transformation vision @ scale
 		</p>
@@ -76,7 +76,7 @@ onMount(async () => {
 
 <section
 	style="background-image : url('{CarouselBG}')"
-	class=" zw-full bg-center-left flex h-fit flex-col items-center bg-cover bg-center bg-no-repeat py-16">
-	<h2 class=" mt-12 text-4xl font-bold text-primary">Stories we bring to Life</h2>
+	class=" zw-full bg-center-left flex h-fit flex-col items-center overflow-hidden bg-cover bg-center bg-no-repeat py-16">
+	<h2 class=" mt-12 text-6xl font-normal text-primary">Stories we bring to Life</h2>
 	<Carouselhome />
 </section>

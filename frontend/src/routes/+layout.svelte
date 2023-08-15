@@ -44,7 +44,7 @@ function handelResize() {
 {#if BurgerMenuOpen}
 	<div
 		class="fixed left-0 top-16 z-[999999] flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-7 bg-black/90 text-2xl font-bold text-info backdrop-blur-lg">
-		<div><a on:click="{toggleMenu}" href="/">HOME</a></div>
+		<div><a on:click="{toggleMenu}" href="https://www.tinkerblox.io/">HOME</a></div>
 		<div class="flex flex-col items-center justify-center gap-3">
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -105,7 +105,7 @@ function handelResize() {
 		<ul class="flex">
 			<li>
 				<button class="btn-link btn-active btn font-medium text-neutral decoration-transparent">
-					<a href="/">HOME</a>
+					<a href="https://www.tinkerblox.io/">HOME</a>
 				</button>
 			</li>
 			<li>
@@ -257,7 +257,7 @@ function handelResize() {
 			<div class="prose">
 				<h4 class="text-lg">Offerings</h4>
 				<div>
-					<p>SandBloX</p>
+					<a href="/buildingblox/sandblox"><p>SandBloX</p> </a>
 					<p>EdgeBloX</p>
 					<p>ServBloX</p>
 				</div>
