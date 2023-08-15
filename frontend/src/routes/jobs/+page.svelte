@@ -153,7 +153,7 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 			So if you find yourself compelled to be part of adventure -
 		</p>
 		<div class="mt-10 w-fit">
-			<GradientButton>sadfsdaf</GradientButton>
+			<GradientButton>Apply Now</GradientButton>
 		</div>
 	</div>
 </section>

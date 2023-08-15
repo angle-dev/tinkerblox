@@ -43,7 +43,7 @@ function handelResize() {
 
 {#if BurgerMenuOpen}
 	<div
-		class="fixed left-0 top-16 z-10 flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-7 bg-black/90 text-2xl font-bold text-info backdrop-blur-lg">
+		class="fixed left-0 top-16 z-[999999] flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-7 bg-black/90 text-2xl font-bold text-info backdrop-blur-lg">
 		<div><a on:click="{toggleMenu}" href="/">HOME</a></div>
 		<div class="flex flex-col items-center justify-center gap-3">
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -98,7 +98,7 @@ function handelResize() {
 {/if}
 
 <nav
-	class="fixed top-0 z-50 flex h-16 w-full items-center justify-between bg-base-100/70 px-4 py-2.5 backdrop-blur-md lg:px-16">
+	class="fixed top-0 z-[999999] flex h-16 w-full items-center justify-between bg-base-100/70 px-4 py-2.5 backdrop-blur-md lg:px-16">
 	<a class=" h-full" href="/"><img class=" h-full" src="{Logo}" alt="tinkerblox logo" /></a>
 
 	<div class="hidden md:block">
@@ -160,7 +160,7 @@ function handelResize() {
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			on:mouseleave="{() => (open = false)}"
-			class="t-16 fixed z-10 flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
+			class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
 			<a href="/" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#89C365] p-3 text-base-100 hover:brightness-105">
@@ -195,7 +195,7 @@ function handelResize() {
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			on:mouseleave="{() => (open = false)}"
-			class="t-16 fixed z-10 flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
+			class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
 			<a href="/buildingblox/sandblox" on:click="{() => (open = false)}">
 				<div class="prose h-full rounded-md bg-[#AB71AD] p-3 text-base-100 hover:brightness-105">
 					<h3 class="text-xl font-medium text-base-100">SandBlox</h3>
@@ -222,7 +222,7 @@ function handelResize() {
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			on:mouseleave="{() => (open = false)}"
-			class="t-16 fixed z-10 flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
+			class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
 			<a href="/ourcompany" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#DA7874] p-3 text-base-100 hover:brightness-105">
@@ -247,7 +247,7 @@ function handelResize() {
 
 <footer
 	style="background-image: url(/defaultbg.png);"
-	class=" bg-gray-200 bg-cover bg-top bg-no-repeat pt-14">
+	class=" relative z-[99999999] bg-gray-200 bg-cover bg-top bg-no-repeat pt-14">
 	<div class="m-auto flex max-w-5xl gap-6 p-3">
 		<div class="h-14 w-1/4">
 			<a class=" h-full" href="/"

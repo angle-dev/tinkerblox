@@ -6,6 +6,7 @@ import servbloxleverage from '$lib/servbloxleverage.png';
 import GradientButton from '$lib/components/GradientButton.svelte';
 import Servelottie from '$lib/Servelottie.json';
 import { onMount } from 'svelte';
+import TooltipWork from '$lib/components/TooltipWork.svelte';
 
 let LottiePlayer;
 
@@ -76,10 +77,7 @@ onMount(async () => {
 	<div class="m-auto max-w-7xl">
 		<h4 class=" mb-16 w-full text-center text-5xl text-base-100">Leverage ServBloX</h4>
 		<div class="min-h-16 mt-5 w-full">
-			<img
-				src="{servbloxleverage}"
-				alt="servbloxleverage"
-				class=" h-auto w-full object-contain object-center" />
+			<TooltipWork />
 		</div>
 	</div>
 </section>

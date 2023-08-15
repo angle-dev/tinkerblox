@@ -9,9 +9,11 @@ import gradientbackground from '$lib/gradient_background.png';
 import valuesWe from '$lib/Values We Live By.png';
 </script>
 
+<div style="background-image: url('/defaultbg.png');" class="fixed top-0 h-full w-full"></div>
+
 <section
-	style=" background-image: url('{aboutHero}'); "
-	class="flex h-[777px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-3 md:p-12">
+	style="  background-image: url('{aboutHero}'); "
+	class="relative z-30 flex h-fit min-h-[777px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-3 py-5 md:p-12">
 	<div class=" flex flex-col items-center p-3 text-center align-bottom">
 		<h3 class=" content-center text-6xl text-base-100">
 			Building Tomorrow<br /><span class="font-bold">@ the Edge</span>
@@ -34,7 +36,7 @@ import valuesWe from '$lib/Values We Live By.png';
 	</div>
 </section>
 
-<section class=" w-full py-16">
+<section class=" relative z-10 w-full py-16">
 	<div class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center">
 		<div class="m-auto w-2/3 md:w-1/3">
 			<img src="{karthik}" alt="" />
@@ -57,7 +59,7 @@ import valuesWe from '$lib/Values We Live By.png';
 	</div>
 </section>
 
-<section class=" w-full py-16">
+<section class=" Z-10 relative w-full bg-black/5 py-16">
 	<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
 		<h4 class="mb-6 text-4xl text-secondary md:mb-14">
 			Sequencing <span class="font-semibold text-info"> Our DNA…</span>
@@ -84,7 +86,7 @@ import valuesWe from '$lib/Values We Live By.png';
 	</div>
 </section>
 
-<section class=" w-full py-16">
+<section class=" relative z-10 w-full py-16">
 	<div
 		class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center">
 		<div class="m-auto w-2/3 md:w-1/3">
@@ -108,7 +110,7 @@ import valuesWe from '$lib/Values We Live By.png';
 	</div>
 </section>
 
-<section class=" w-full py-16">
+<section class=" Z-10 relative w-full bg-black/5 py-16">
 	<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
 		<h4 class="mb-6 text-4xl text-secondary md:mb-14">
 			Believe in the <span class="font-semibold text-info"> edge…</span>
@@ -134,7 +136,7 @@ import valuesWe from '$lib/Values We Live By.png';
 	</div>
 </section>
 
-<section class=" w-full py-16">
+<section class=" relative z-10 w-full py-16">
 	<div class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center">
 		<div class="m-auto w-2/3 md:w-1/3">
 			<img src="{karthikIR}" alt="" />
@@ -157,7 +159,7 @@ import valuesWe from '$lib/Values We Live By.png';
 	</div>
 </section>
 
-<section class=" w-full py-16">
+<section class=" Z-10 relative w-full bg-black/5 py-16">
 	<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
 		<h4 class="mb-6 text-4xl text-secondary md:mb-14">
 			We’ve got “just” what you <span class="font-semibold text-info"> need... </span>
@@ -187,7 +189,7 @@ import valuesWe from '$lib/Values We Live By.png';
 	</div>
 </section>
 
-<section class=" w-full py-16">
+<section class=" relative z-10 w-full py-16">
 	<div
 		class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center">
 		<div class="m-auto w-2/3 md:w-1/3">
@@ -211,7 +213,7 @@ import valuesWe from '$lib/Values We Live By.png';
 	</div>
 </section>
 
-<section class=" w-full py-16">
+<section class=" Z-10 relative w-full bg-black/5 py-16">
 	<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
 		<h4 class="mb-6 text-4xl font-semibold text-secondary md:mb-14">
 			Democratizing <span class=" text-info"> Tech…</span>
@@ -238,8 +240,8 @@ import valuesWe from '$lib/Values We Live By.png';
 </section>
 
 <section
-	style=" background-image: url({gradientbackground}) "
-	class=" min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
+	style="  background-image: url({gradientbackground}) "
+	class=" min-h-16 relative z-30 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
 	<div class="m-auto max-w-7xl">
 		<h4 class=" mb-16 w-full text-center text-5xl text-base-100">Values we live by…</h4>
 		<p class="mt-16 max-w-3xl text-center text-xl text-base-100">
