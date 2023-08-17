@@ -19,14 +19,16 @@ onMount(async () => {
 <section
 	style="background-image: url({servbloxhero});"
 	class="flex h-[calc(100vh-4rem)] min-h-fit w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat p-3 md:p-12">
-	<h1 class="text-6xl font-bold text-base-100">
+	<h1 class="text-4xl font-bold text-base-100 md:text-6xl">
 		<span class=" text-accent">Serv</span>
 		Blox
 	</h1>
 
-	<h3 class=" mt-16 text-3xl font-semibold text-base-100">Embrace the power of AIoT...</h3>
+	<h3 class=" mt-16 p-5 text-center text-2xl font-semibold text-base-100 md:p-0 md:text-3xl">
+		Embrace the power of AIoT...
+	</h3>
 
-	<p class="mt-2 max-w-3xl text-center text-xl text-base-100">
+	<p class="mt-2 max-w-3xl p-5 text-center text-xl text-base-100 md:p-0">
 		…with our comprehensive set of development & deployment services across the full AIoT stack …for
 		your journey from pilot -> full scale deployment
 	</p>
@@ -34,7 +36,7 @@ onMount(async () => {
 <section
 	style="background-image: url(/defaultbg.png);"
 	class=" w-full bg-cover bg-center bg-no-repeat py-16">
-	<div class="m-auto flex max-w-6xl items-center gap-2">
+	<div class="m-auto flex max-w-6xl flex-col items-center gap-2 md:flex-row">
 		<div class="min-h-6 w-1/3">
 			{#if LottiePlayer}
 				<LottiePlayer
@@ -45,12 +47,12 @@ onMount(async () => {
 					src="{Servelottie}" />
 			{/if}
 		</div>
-		<div class=" min-h-6 w-2/3">
-			<h4 class="text-3xl font-semibold text-secondary">
+		<div class=" min-h-6 w-full p-5 md:w-2/3 md:p-0">
+			<h4 class=" text-center text-3xl font-semibold text-secondary md:text-left">
 				The <span class="text-info">beating heart</span> of our<br /> AIoT orchestration
 			</h4>
 
-			<p class="mt-5 text-neutral/60">
+			<p class="mt-5 text-center text-neutral/60 md:text-left">
 				If you have already figured out the vision <span class="text-secondary">(#sandblox)</span> &
 				the body of assets
 				<span class="text-secondary">(#edgeblox)</span>, like every tinman, what you now need is a
@@ -61,7 +63,7 @@ onMount(async () => {
 			</p>
 		</div>
 	</div>
-	<h2 class="mt-32 w-full text-center text-6xl text-neutral">
+	<h2 class=" mt-26 w-full text-center text-4xl text-neutral md:mt-32 md:text-6xl">
 		Engage <span class="font-bold text-accent">ServBloX</span>
 	</h2>
 	<div class=" min-h-16 mt-10 w-full">
@@ -75,7 +77,7 @@ onMount(async () => {
 	style=" background-image: url({gradientbackground}) "
 	class=" min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
 	<div class="m-auto max-w-7xl">
-		<h4 class=" mb-16 w-full text-center text-5xl text-base-100">Leverage ServBloX</h4>
+		<h4 class=" mb-16 w-full text-center text-4xl text-base-100 md:text-5xl">Leverage ServBloX</h4>
 		<div class="min-h-16 mt-5 w-full">
 			<TooltipWork />
 		</div>
@@ -86,17 +88,17 @@ onMount(async () => {
 	style="background-image: url(/defaultbg.png);"
 	class=" w-full bg-cover bg-center bg-no-repeat py-16 text-center">
 	<div class="m-auto flex max-w-6xl flex-col items-center">
-		<h4 class="text-3xl font-semibold text-info">
+		<h4 class="p-5 text-3xl font-semibold text-info md:p-0">
 			<span class="text-secondary">Having a good heart </span>means lots of friends…
 		</h4>
 		<br />
-		<p class="mt-5 text-neutral/60">
+		<p class="mt-0 p-5 text-neutral/60 md:mt-5 md:p-0">
 			ServBloX comes with our AIoT partners from all backgrounds → Chip manufacturers, MNPs, Cloud
 			providers, IoT platform players, AI specialists, Cybersecurity Experts, App Builders, etc.
 		</p>
 		<br />
 		<p
-			class=" bg-gradient-to-l from-secondary to-info bg-clip-text text-lg font-normal text-transparent">
+			class=" bg-gradient-to-l from-secondary to-info bg-clip-text p-5 text-lg font-normal text-transparent md:p-0">
 			Join the fun & learn about the exciting AIoT gossip from our partners from around the world…
 		</p>
 		<br />

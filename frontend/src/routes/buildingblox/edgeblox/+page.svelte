@@ -17,10 +17,12 @@ onMount(async () => {
 
 <section
 	style=" background-image: url('{EdgeBloxHero}'); "
-	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 bg-cover bg-center bg-no-repeat p-4 md:p-12">
-	<div class=" w-full max-w-7xl p-3">
-		<h1 class="mb-14 text-6xl font-bold text-base-100"><span class="text-info">Edge</span>BloX</h1>
-		<h2 class="mb-14 text-4xl font-bold text-base-100">
+	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 bg-cover bg-center bg-no-repeat p-5 md:p-12">
+	<div class=" w-full max-w-7xl p-3 text-center md:text-left">
+		<h1 class="mb-14 text-4xl font-bold text-base-100 md:text-6xl">
+			<span class="text-info">Edge</span>BloX
+		</h1>
+		<h2 class="mb-14 text-3xl font-bold text-base-100 md:text-4xl">
 			86% of corporate decision makers worry about 3 things during their IoT journey…
 		</h2>
 		<p class="mt-6 text-lg text-base-100">
@@ -35,7 +37,10 @@ onMount(async () => {
 			ensure I get realistic outcomes at multiple milestones as I crawl-walk-run-fly ?
 		</p>
 		<div class="mt-16">
-			<h3 class="text-4xl font-semibold text-base-100">With EdgeBloX, Yes, Yes & Yes !!</h3>
+			<h3 class="text-3xl font-semibold text-base-100 md:text-4xl">
+				With EdgeBloX, <span class="text-primary">Yes, </span>
+				<span class="text-secondary"> Yes & </span><span class="text-info">Yes !!</span>
+			</h3>
 		</div>
 	</div>
 </section>
@@ -43,23 +48,21 @@ onMount(async () => {
 <section
 	style="background-image: url(/defaultbg.png);"
 	class=" bg-base-100 bg-cover bg-top bg-no-repeat">
-	<div class="m-auto flex max-w-6xl items-center gap-2">
+	<div class="m-auto flex max-w-6xl flex-col items-center gap-2 md:flex-row">
 		<div class="min-h-6 w-1/3">
 			{#if LottiePlayer}
 				<LottiePlayer autoplay loop background="transparent" controls="{false}" src="{Edge}" />
 			{/if}
 		</div>
-		<div class=" min-h-6 w-2/3">
-			<h4 class="text-4xl text-secondary md:text-5xl">
+		<div class=" min-h-6 w-full text-center md:w-2/3 md:text-left">
+			<h4 class="p-5 text-3xl text-secondary md:p-0 md:text-5xl">
 				Let’s <span class="font-medium text-info"> build your IoT World </span> one block at a time !
 			</h4>
-			<p class=" mt-3 text-lg text-neutral/40 md:text-base">
+			<p class=" mt-0 p-5 text-lg text-neutral/40 md:mt-3 md:p-0 md:text-base">
 				EdgeBloX is the most flexible Edge-native AIoT suite in the world, with each layer of the
 				AIoT stack configurable to suit your enterprise environment. With the freedom to choose from
-				<span class="  text-info">
-					our array of pre-built components, you can build an AIoT environment as easy as your kids
-					building Lego sets.
-				</span>
+				our array of pre-built components, you can build an AIoT environment as easy as your kids
+				building Lego sets.
 			</p>
 		</div>
 	</div>
@@ -68,15 +71,16 @@ onMount(async () => {
 <section
 	style=" background-image: url({gradientbackground}) "
 	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
-	<h4 class="mb-16 w-full text-center text-5xl text-base-100">Experience Edgeblox</h4>
+	<h4 class="mb-16 w-full text-center text-3xl text-base-100 md:text-5xl">Experience Edgeblox</h4>
 	<img
 		class="m-auto h-auto w-full max-w-6xl object-contain object-center"
 		src="{edgebloxinfo}"
 		alt="edgebloxinfo" />
-	<div class="m-auto mt-10 flex h-auto max-w-6xl items-center justify-center gap-10 px-2">
+	<div
+		class="m-auto mt-10 flex h-auto max-w-6xl flex-col-reverse items-center justify-center gap-10 px-2 md:flex-row">
 		<GradientButton>Learn More</GradientButton>
-		<div class="text-base-100">
-			<h4 class=" text-4xl">
+		<div class="p-5 text-center text-base-100 md:p-0 md:text-left">
+			<h4 class="  text-3xl md:text-4xl">
 				<span style=" font-medium">And also </span><br />
 				<span class="font-normal text-info"
 					><span style=" font-medium">AB</span>acus <span style=" font-medium">| C</span>ollections
@@ -92,7 +96,7 @@ onMount(async () => {
 
 <section
 	style="background-image: url(/defaultbg.png);"
-	class=" bg-base-100 bg-cover bg-top bg-no-repeat">
+	class=" bg-base-100 bg-cover bg-top bg-no-repeat p-5 text-center md:p-0 md:text-left">
 	<div
 		class="m-auto flex w-full max-w-5xl flex-col items-start gap-3 px-3 py-20 text-secondary md:px-2 md:py-32">
 		<p class=" mt-3 text-lg text-neutral text-neutral/40 md:text-base">

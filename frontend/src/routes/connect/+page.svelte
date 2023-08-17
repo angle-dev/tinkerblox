@@ -20,8 +20,8 @@ import gradientbackground from '$lib/gradient_background.png';
 		action="mailto:connect@tinkerblox.io"
 		method="post"
 		enctype="text/plain">
-		<h1 class=" text-5xl">
-			Let’s build… a <br /> <span class="font-bold"> Sustainable Outcome! </span>
+		<h1 class=" text-center text-4xl md:text-left md:text-5xl">
+			Let’s build… <br /> <span class="font-bold">a Sustainable Outcome! </span>
 		</h1>
 		<div>
 			Hi I am<br /><input
@@ -42,7 +42,7 @@ import gradientbackground from '$lib/gradient_background.png';
 				Call me at<br /><input
 					name="phone"
 					type="tel"
-					placeholder="+91 8X8 076X 0XX4"
+					placeholder="+1 2XX 2X6 X81X"
 					class="input-bordered input w-full rounded-full text-neutral" />
 			</div>
 		</div>

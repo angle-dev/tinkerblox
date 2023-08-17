@@ -11,9 +11,9 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 
 <section
 	style=" background-image: url('{jobsHero}'); "
-	class="min-h-[calc(777px)] w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat p-3 md:p-12">
+	class="h-[577px] w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat p-3 md:p-12">
 	<div class=" mt-[431px] flex w-full items-end justify-center p-3 align-bottom">
-		<h3 class="text-5xl font-semibold text-base-100">Come Join our Team</h3>
+		<h3 class="text-4xl font-semibold text-base-100 md:text-5xl">Come Join our Team</h3>
 	</div>
 </section>
 
@@ -22,7 +22,8 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 		<div class="m-auto w-2/3 md:w-1/3">
 			<img src="{edgeEx}" alt="" />
 		</div>
-		<div class="m-auto flex w-11/12 flex-col items-center text-left md:w-2/3 md:items-start">
+		<div
+			class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left">
 			<h4 class="mb-6 text-4xl font-semibold text-secondary md:mb-14">
 				Edge <span class="text-info">Explorer</span>
 			</h4>
@@ -48,7 +49,8 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 		<div class="m-auto w-2/3 md:w-1/3">
 			<img src="{embedGeek}" alt="" />
 		</div>
-		<div class="m-auto flex w-11/12 flex-col items-center text-left md:w-2/3 md:items-start">
+		<div
+			class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left">
 			<h4 class="mb-6 text-4xl font-semibold text-secondary md:mb-14">
 				Embedded <span class="text-info">Geek</span>
 			</h4>
@@ -73,7 +75,8 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 		<div class="m-auto w-2/3 md:w-1/3">
 			<img src="{fullstackJug}" alt="" />
 		</div>
-		<div class="m-auto flex w-11/12 flex-col items-center text-left md:w-2/3 md:items-start">
+		<div
+			class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left">
 			<h4 class="mb-6 text-4xl font-semibold text-secondary md:mb-14">
 				Full Stack <span class="text-info">Juggler</span>
 			</h4>
@@ -99,7 +102,8 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 		<div class="m-auto w-2/3 md:w-1/3">
 			<img src="{aimlHust}" alt="" />
 		</div>
-		<div class="m-auto flex w-11/12 flex-col items-center text-left md:w-2/3 md:items-start">
+		<div
+			class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left">
 			<h4 class="mb-6 text-4xl font-semibold text-secondary md:mb-14">
 				AI/ML <span class="text-info">Hustler</span>
 			</h4>
@@ -124,7 +128,8 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 		<div class="m-auto w-2/3 md:w-1/3">
 			<img src="{uiuxartist}" alt="" />
 		</div>
-		<div class="m-auto flex w-11/12 flex-col items-center text-left md:w-2/3 md:items-start">
+		<div
+			class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left">
 			<h4 class="mb-6 text-4xl font-semibold text-secondary md:mb-14">
 				UI/UX <span class="text-info">Artist</span>
 			</h4>
@@ -147,12 +152,12 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 <section
 	style=" background-image: url('{jobsApply}'); "
 	class=" m-auto flex h-[500px] content-end items-center justify-end bg-cover bg-center bg-no-repeat p-3 text-left md:p-12">
-	<div class=" flex w-full flex-col p-3 md:w-1/3">
-		<h3 class="text-5xl font-semibold text-base-100">There’s room for more…</h3>
+	<div class=" flex w-full flex-col p-3 text-center md:w-1/3 md:text-left">
+		<h3 class=" text-4xl font-semibold text-base-100 md:text-5xl">There’s room for more…</h3>
 		<p class="mt-10 max-w-3xl text-xl text-base-100">
 			So if you find yourself compelled to be part of adventure -
 		</p>
-		<div class="mt-10 w-fit">
+		<div class="mt-10 w-fit self-center md:self-start">
 			<GradientButton>Apply Now</GradientButton>
 		</div>
 	</div>
