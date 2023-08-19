@@ -17,28 +17,28 @@ onMount(async () => {
 
 <section
 	style=" background-image: url('{EdgeBloxHero}'); "
-	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 bg-cover bg-center bg-no-repeat p-5 md:p-12">
+	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 bg-cover bg-center bg-no-repeat p-5 md:p-40">
 	<div class=" w-full max-w-7xl p-3 text-center md:text-left">
-		<h1 class="mb-14 text-4xl font-bold text-base-100 md:text-6xl">
+		<h1 class="mb-14 text-4xl font-bold text-base-100 md:text-8xl">
 			<span class="text-info">Edge</span>BloX
 		</h1>
 		<h2 class="mb-14 text-3xl font-bold text-base-100 md:text-4xl">
 			86% of corporate decision makers worry about 3 things during their IoT journey…
 		</h2>
 		<p class="mt-6 text-lg text-base-100">
-			•Why do I have to start from scratch; Is there a jump-start I can get?
+			◘ Why do I have to start from scratch; Is there a jump-start I can get?
 		</p>
 		<p class="mt-3 text-lg text-base-100">
-			•I have an existing legacy set of systems that are very heterogeneous. Can I get a solution
+			◘ I have an existing legacy set of systems that are very heterogeneous. Can I get a solution
 			that’s flexible enough to balance my current variety with my future ambitions?
 		</p>
 		<p class="mt-3 text-lg font-normal text-base-100">
-			•I get the big picture, but I want small wins that turn into bigger ones. Will this approach
+			◘ I get the big picture, but I want small wins that turn into bigger ones. Will this approach
 			ensure I get realistic outcomes at multiple milestones as I crawl-walk-run-fly ?
 		</p>
 		<div class="mt-16">
 			<h3 class="text-3xl font-semibold text-base-100 md:text-4xl">
-				With EdgeBloX, <span class="text-primary">Yes, </span>
+				With EdgeBloX, <span class="text-accent">Yes, </span>
 				<span class="text-secondary"> Yes & </span><span class="text-info">Yes !!</span>
 			</h3>
 		</div>

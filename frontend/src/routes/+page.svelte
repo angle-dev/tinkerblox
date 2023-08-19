@@ -25,11 +25,13 @@ onMount(async () => {
 	</h2>
 	<div
 		class=" mt-5 flex w-full items-center justify-center gap-1 p-5 text-center text-[20px] font-normal leading-none text-base-100 md:w-3/5 md:gap-3 md:p-0 md:text-lg">
-		<span class=" w-52 md:w-60">Blueprint Digital Journey from Innovation to Scale</span>
+		<span class=" w-52 font-bold text-accent md:w-60"
+			>Blueprint Digital Journey from Innovation to Scale</span>
 		<span>|</span>
-		<span class=" w-52 md:w-60">Design & Configure<br />AIoT at Edge</span>
+		<span class=" w-52 font-bold text-info md:w-60">Design & Configure<br />AIoT at Edge</span>
 		<span>|</span>
-		<span class=" w-52 md:w-60">Deploy & Accelerate<br /> X-as-a-Service</span>
+		<span class=" w-52 font-bold text-warning md:w-60"
+			>Deploy & Accelerate<br /> X-as-a-Service</span>
 	</div>
 </section>
 
@@ -48,17 +50,17 @@ onMount(async () => {
 					src="{Homelottie}" />
 			{/if}
 		</div>
-		<div class=" w-full p-5 text-center md:w-2/3 md:p-0">
-			<h3 class="text-3xl font-normal text-secondary md:text-4xl">
+		<div class=" w-full p-5 text-center md:w-2/3 md:p-0 md:text-left">
+			<h3 class="text-3xl font-normal text-secondary md:text-5xl">
 				Everyone believes their IoT problem is unique...
 			</h3>
 			<br />
-			<h3 class="text-3xl font-bold text-info md:text-5xl">Everyone is right!</h3>
+			<h3 class="text-3xl font-bold text-info md:text-5xl">EVERYONE IS RIGHT!</h3>
 		</div>
 	</div>
 	<div>
 		<p
-			class=" m-auto w-fit bg-gradient-to-l from-secondary to-info bg-clip-text p-5 pb-16 text-center text-lg font-medium text-info text-transparent md:w-2/3 md:text-base">
+			class=" m-auto w-fit bg-gradient-to-l from-secondary to-info bg-clip-text p-5 pb-16 text-center text-lg font-medium text-info text-transparent md:w-2/3 md:text-2xl">
 			TinkerBloX curates pre-built assets & accelerators to your context…<br /> and helps you realize
 			your digital transformation vision @ scale
 		</p>
@@ -69,7 +71,7 @@ onMount(async () => {
 	style="background-image: url({homegradient});"
 	class=" h-fit min-h-[400px] w-full bg-primary bg-cover bg-center bg-no-repeat px-3 py-16 md:px-10">
 	<div class=" m-auto flex flex-col items-center md:max-w-7xl">
-		<h3 class=" text-3xl font-bold text-base-100 md:text-5xl">Our Offerings</h3>
+		<h3 class=" text-3xl font-normal text-base-100 md:text-6xl">Our Offerings</h3>
 		<Productsection />
 	</div>
 </section>

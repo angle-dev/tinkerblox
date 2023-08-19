@@ -12,8 +12,8 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 <section
 	style=" background-image: url('{jobsHero}'); "
 	class="h-[577px] w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat p-3 md:p-12">
-	<div class=" mt-[431px] flex w-full items-end justify-center p-3 align-bottom">
-		<h3 class="text-4xl font-semibold text-base-100 md:text-5xl">Come Join our Team</h3>
+	<div class=" mt-[131px] flex w-full items-center justify-center p-3 align-middle">
+		<h3 class="text-4xl font-semibold text-base-100 md:text-8xl">COME JOIN OUR TEAM</h3>
 	</div>
 </section>
 

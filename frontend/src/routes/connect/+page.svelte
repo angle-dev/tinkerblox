@@ -14,7 +14,7 @@ import gradientbackground from '$lib/gradient_background.png';
 	style="
  background-image: url({gradientbackground});
 "
-	class=" h-fit min-h-screen w-full bg-[#002C49] bg-cover bg-no-repeat px-2 py-10">
+	class=" h-fit min-h-[60vh] w-full bg-[#002C49] bg-cover bg-no-repeat px-2 py-20">
 	<form
 		class=" m-auto flex w-full max-w-2xl flex-col gap-3 text-base-100"
 		action="mailto:connect@tinkerblox.io"
@@ -27,7 +27,7 @@ import gradientbackground from '$lib/gradient_background.png';
 			Hi I am<br /><input
 				name="name"
 				type="text"
-				placeholder="john doe/curious doe"
+				placeholder=""
 				class="input-bordered input w-full rounded-full text-neutral" />
 		</div>
 		<div class=" flex w-full justify-stretch gap-3">
@@ -35,7 +35,7 @@ import gradientbackground from '$lib/gradient_background.png';
 				Reach me at<br /><input
 					name="email"
 					type="text"
-					placeholder="john.doe@...."
+					placeholder=""
 					class="input-bordered input w-full rounded-full text-neutral" />
 			</div>
 			<div class="w-full">

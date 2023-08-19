@@ -17,14 +17,14 @@ onMount(async () => {
 
 <section
 	style=" background-image: url({SandbloxHero})"
-	class="flex h-[calc(100vh-4rem)] min-h-fit w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat p-3 md:p-12">
-	<h1 class=" text-4xl font-bold text-base-100 md:text-6xl">
+	class="flex h-[calc(100vh-4rem)] min-h-fit w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat p-3 md:p-40">
+	<h1 class=" text-4xl font-bold text-base-100 md:text-8xl">
 		<span class="text-secondary">Sand</span>BloX
 	</h1>
-	<h3 class=" mt-16 p-5 text-center text-3xl font-semibold text-base-100 md:p-0">
+	<h3 class=" mt-16 p-14 text-center text-3xl font-semibold text-base-100 md:p-5">
 		Strategize | Prototype | Scale | Repeat
 	</h3>
-	<p class="mt-2 max-w-3xl p-5 text-center text-xl text-base-100 md:p-0">
+	<p class=" mt-2 max-w-4xl p-14 text-center text-2xl text-base-100 md:p-5">
 		SandBloX is a free-for-all space created to embrace a transformational approach to AIoT problem
 		solving… an intersection of cultivated instinct and borderless creativity to build the next &
 		best version of your new reality
