@@ -106,7 +106,7 @@ const options = {
 };
 </script>
 
-<div class=" flex w-full flex-col items-center align-middle">
+<div class=" mt-5 flex w-full flex-col items-center align-middle">
 	<div class="absolute z-0 h-[100%] w-[70vw] rounded-md bg-gray-300"></div>
 	<div class=" hehehoho relative z-10 mt-4">
 		<Splide
@@ -129,11 +129,6 @@ const options = {
 				</SplideSlide>
 			{/each}
 		</Splide>
-	</div>
-
-	<div class="splide__arrows">
-		<button class="splide__arrow splide__arrow--prev">Prev</button>
-		<button class="splide__arrow splide__arrow--next">Next</button>
 	</div>
 
 	<div class=" relative w-[70vw]">
