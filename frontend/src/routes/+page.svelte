@@ -4,6 +4,7 @@ import homegradient from '$lib/homegradient.png';
 import Productsection from '$lib/components/Productsection.svelte';
 import Carouselhome from '../lib/components/Carouselhome.svelte';
 import Homelottie from '$lib/homelottie.json';
+import HeroVid from '$lib/heroVid.mp4';
 
 import { onMount } from 'svelte';
 
@@ -16,15 +17,19 @@ onMount(async () => {
 </script>
 
 <section
-	style="background-image: url(/hero.jpg);"
-	class=" flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end bg-gray-700 bg-cover bg-center bg-no-repeat p-5 md:p-12">
-	<h1 class=" mb-28 text-center text-4xl font-bold text-base-100 md:text-7xl">EDGE IS TOMORROW</h1>
-	<h2 class="mb-14 p-5 text-center text-2xl text-base-100 md:p-0 md:text-4xl">
+	class=" relative z-10 flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end p-5 md:p-12">
+	<div
+		class=" absolute top-0 z-0 flex h-full w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat">
+		<!-- svelte-ignore a11y-media-has-caption -->
+		<video loop autoplay muted volume class="h-full w-full object-cover" src="{HeroVid}"></video>
+	</div>
+
+	<h2 class=" relative mb-14 p-5 text-center text-2xl text-base-100 md:p-0 md:text-4xl">
 		Use our <span class="font-bold"> ‘Configure-and-Use AIoT’ software blocks </span>to build and<br />
 		deploy your <span class="font-bold">Edge-centric ecosystem</span> @ scale
 	</h2>
 	<div
-		class=" mt-5 flex w-full items-center justify-center gap-1 p-5 text-center text-[20px] font-normal leading-none text-base-100 md:w-3/5 md:gap-3 md:p-0 md:text-lg">
+		class=" relative mt-5 flex w-full items-center justify-center gap-1 p-5 text-center text-[20px] font-normal leading-none text-base-100 md:w-3/5 md:gap-3 md:p-0 md:text-lg">
 		<span class=" w-52 font-bold text-accent md:w-60"
 			>Blueprint Digital Journey from Innovation to Scale</span>
 		<span>|</span>

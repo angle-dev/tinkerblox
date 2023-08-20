@@ -98,7 +98,7 @@ function handelResize() {
 {/if}
 
 <nav
-	class="fixed top-0 z-[999999] flex h-16 w-full items-center justify-between bg-base-100/70 px-4 py-2.5 backdrop-blur-md lg:px-16">
+	class="fixed top-0 z-[999999] flex h-16 w-full items-center justify-between bg-base-100 px-4 py-2.5 backdrop-blur-md lg:px-16">
 	<a class=" h-full" href="/"><img class=" h-full" src="{Logo}" alt="tinkerblox logo" /></a>
 
 	<div class="hidden md:block">
@@ -253,21 +253,21 @@ function handelResize() {
 			<a class=" h-full" href="/"
 				><img class="  h-full object-contain" src="{Logo}" alt="tinkerblox logo" /></a>
 		</div>
-		<div class="grid w-3/4 grid-cols-2 gap-3 md:grid-cols-4">
+		<div class="grid w-3/4 grid-cols-2 gap-1 md:grid-cols-4">
 			<div class="prose">
 				<h4 class="text-lg">Offerings</h4>
 				<div>
 					<a href="/buildingblox/sandblox"><p>SandBloX</p> </a>
-					<p>EdgeBloX</p>
-					<p>ServBloX</p>
+					<a href="/buildingblox/edgeblox"><p>EdgeBloX</p> </a>
+					<a href="/buildingblox/servblox"><p>ServBloX</p> </a>
 				</div>
 			</div>
 			<div class="prose">
 				<h4 class="text-lg">Resource Links</h4>
 				<div>
-					<p>Meet Our Company</p>
+					<a href="/jobs"><p>Meet Our Company</p></a>
 					<p>Read Blogs</p>
-					<p>Meet Your Future Team</p>
+					<a href="/ourcompany"><p>Meet Your Future Team</p></a>
 				</div>
 			</div>
 			<div class="prose">
@@ -286,8 +286,8 @@ function handelResize() {
 						13500 Watertown Plank Rd, Elm Grove, WI 53122
 					</p>
 					<p class=" flex gap-2">
-						<img class="w-8" src="{Location}" alt="location" />S-16, 15th Main Road, Guindy
-						Industrial Estate, Chennai, Tamil Nadu 600032”
+						<img class="w-8" src="{Location}" alt="location" />
+						ELCOT IT SEZ, TIDEL Park, Coimbatore, TN 641014
 					</p>
 				</div>
 			</div>

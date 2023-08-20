@@ -81,16 +81,57 @@ import IMAGE9 from '$lib/carousel/IMAGE9.jpeg';
 import IMAGE10 from '$lib/carousel/IMAGE10.jpeg';
 
 const carouselImages = [
-	{ image: IMAGE1, head: 'Headining1', text: 'text1' },
-	{ image: IMAGE2, head: 'Headining2', text: 'text2' },
-	{ image: IMAGE3, head: 'Headining3', text: 'text3' },
-	{ image: IMAGE4, head: 'Headining4', text: 'text4' },
-	{ image: IMAGE5, head: 'Headining5', text: 'text5' },
-	{ image: IMAGE6, head: 'Headining6', text: 'text6' },
-	{ image: IMAGE7, head: 'Headining7', text: 'text7' },
-	{ image: IMAGE8, head: 'Headining8', text: 'text8' },
-	{ image: IMAGE9, head: 'Headining9', text: 'text9' },
-	{ image: IMAGE10, head: 'Headining10', text: 'text10' }
+	{
+		image: IMAGE1,
+		head: 'Remote Asset & Site Management',
+		text: 'Oil & gas remote asset monitoring & incident management. '
+	},
+	{
+		image: IMAGE2,
+		head: 'Experience the future of Community Living ',
+		text: 'Sustainable neighbourhoods with a full-fledged Digital Experience '
+	},
+	{
+		image: IMAGE3,
+		head: 'The future of Devices is User Experience',
+		text: 'As Devices turn into ecosystems, users buy into the experience delivered at their fingertips '
+	},
+	{
+		image: IMAGE4,
+		head: 'Changing Farming into a precision economy',
+		text: 'Harnessing the best of nature with the smartest technologies for your greenhouse'
+	},
+	{
+		image: IMAGE5,
+		head: 'Deploying Industry X.O Ensuring 360 Degree Value',
+		text: 'Design to implementation of industry X.O roadmap curated to your specific environment'
+	},
+	{
+		image: IMAGE6,
+		head: 'Unleashing the Hidden Potential of your Smart Utilities',
+		text: 'From an effective lever for cost optimization to the backbone of sustainable smart spaces'
+	},
+
+	{
+		image: IMAGE7,
+		head: 'Predictive Manufacturing',
+		text: 'No Unplanned Downtimes in high speed manufacturing.... Advanced Predictive Maintenance resulting in cost saving & enhance RUL'
+	},
+	{
+		image: IMAGE8,
+		head: 'Device Real-Time Precision sharing of Work-Loads',
+		text: 'Device interactions to autonomously execute actions'
+	},
+	{
+		image: IMAGE9,
+		head: 'AgriFood Net Zero',
+		text: 'Measure & manage emission to track Net-Zero outcomes for food production '
+	},
+	{
+		image: IMAGE10,
+		head: 'Autonomous Ambient Spaces',
+		text: 'Sustain product sensitive environments via autonomous command and control'
+	}
 ];
 
 const options = {
@@ -107,7 +148,7 @@ const options = {
 </script>
 
 <div class=" mt-5 flex w-full flex-col items-center align-middle">
-	<div class="absolute z-0 h-[100%] w-[70vw] rounded-md bg-gray-300"></div>
+	<div class="absolute z-0 h-[90%] w-[calc(50vw+1rem)] rounded-md bg-gray-300"></div>
 	<div class=" hehehoho relative z-10 mt-4">
 		<Splide
 			on:mounted="{(e) => {
@@ -123,7 +164,7 @@ const options = {
 			{#each carouselImages as carousel}
 				<SplideSlide>
 					<img
-						class="h-auto max-h-[650px] w-[70vw]"
+						class="h-auto max-h-[650px] w-[50vw] object-cover"
 						src="{carousel.image}"
 						alt="Image{carousel.head}" />
 				</SplideSlide>
@@ -131,12 +172,12 @@ const options = {
 		</Splide>
 	</div>
 
-	<div class=" relative w-[70vw]">
+	<div class=" relative h-64 w-[50vw] md:h-44">
 		{#each carouselImages as carousel, i}
 			{#if i === index}
 				<div class="flex flex-col justify-center p-5">
-					<h1 class="text-4xl font-bold">{carousel.head}</h1>
-					<p class="text-xl">{carousel.text}</p>
+					<h1 class=" py-10 text-4xl font-normal text-info">{carousel.head}</h1>
+					<p class="text-2xl text-neutral/40">{carousel.text}</p>
 				</div>
 			{/if}
 		{/each}
