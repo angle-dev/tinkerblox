@@ -15,17 +15,17 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 	style="  background-image: url('{aboutHero}'); "
 	class="relative z-30 flex h-fit min-h-[777px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-3 py-5 md:p-12">
 	<div class=" flex flex-col items-center p-3 text-center align-bottom">
-		<h3 class=" content-center text-4xl text-base-100 md:text-6xl">
+		<h3 class=" content-center text-4xl font-normal text-base-100 md:text-7xl">
 			Building Tomorrow<br /><span class="font-bold">@ the Edge</span>
 		</h3>
 
-		<p class="mt-16 max-w-3xl text-center text-xl text-base-100">
+		<p class="mt-16 max-w-3xl text-center text-xl text-base-100 md:text-2xl">
 			Humans are creators… & just as no two humans are alike, no two devices they create, or the
 			environment they exist in, are alike! Consequently, each device has [& deserves] its own
 			identity...and an ecosystem that enables an adaptive system of interactive experience between
 			man & machine is the future.
 		</p>
-		<p class="mt-2 max-w-3xl text-center text-xl text-base-100">
+		<p class="mt-2 max-w-3xl text-center text-xl text-base-100 md:text-2xl">
 			TinkerBloX is born out of the ambition to curate and orchestrate this world of adaptive
 			systems of devices, sustainably… a world that empowers devices to rise above the clouds…
 		</p>
@@ -42,16 +42,14 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 			<img src="{karthik}" alt="" />
 		</div>
 		<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
-			<h4 class=" text-4xl font-semibold text-secondary">
-				<h4 class=" text-4xl font-semibold text-secondary">
-					<span class="text-info">karthik </span><span class="text-gray-600"> ‘G.K.’</span><br />
-					gopalakrishnan
-				</h4>
+			<h4 class=" text-4xl font-semibold text-secondary md:text-6xl">
+				<span class="text-info">karthik </span><span class="text-gray-600"> ‘G.K.’</span><br />
+				gopalakrishnan
 			</h4>
 
 			<p class=" mt-20 w-fit text-4xl text-neutral/60">Chief Executive Officer</p>
 
-			<p class="mt-16 w-96 p-5 text-neutral/60 md:p-0">
+			<p class="mt-16 w-96 p-5 text-xl text-neutral/60 md:p-0 md:text-2xl">
 				IoT visionary  |  Magician at scaling business  | Great party host | Avid boxer | Doting
 				father  |  Confused husband …
 			</p>
@@ -61,11 +59,11 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 
 <section class=" Z-10 relative w-full bg-black/5 py-16">
 	<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
-		<h4 class="mb-6 text-4xl text-secondary md:mb-14">
+		<h4 class="mb-6 text-3xl text-secondary md:mb-14 md:text-5xl">
 			Sequencing <span class="font-semibold text-info"> Our DNA…</span>
 		</h4>
 
-		<p class="mt-5 p-5 text-neutral/60 md:p-0">
+		<p class="mt-5 p-5 text-xl text-neutral/60 md:p-0 md:text-2xl">
 			<span class="text-secondary">@ TinkerBloX</span>, each day is a step towards curating the
 			connected device habitat that helps you realize “true real-time” efficiency for your
 			operations. Our AI + IoT building blocks empower enterprises to experience the cause & effect
@@ -74,7 +72,7 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 			always give you the edge…
 		</p>
 
-		<p class="mt-5 p-5 text-info md:p-0">
+		<p class="mt-5 p-5 text-xl text-info md:p-0 md:text-2xl">
 			If you are as excited as we are at the prospect of a truly Phygital world driven by
 			device-centric experience & the servitization economy, check out our transformation blocks…
 		</p>
@@ -93,16 +91,14 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 			<img src="{anoop}" alt="" />
 		</div>
 		<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
-			<h4 class=" text-4xl font-semibold text-secondary">
-				<h4 class=" text-4xl font-semibold text-secondary">
-					<span class="text-info">anoop </span><span class="text-gray-600"> ‘A.B.C’</span><br />
-					balachandran
-				</h4>
+			<h4 class=" text-4xl font-semibold text-secondary md:text-6xl">
+				<span class="text-info">anoop </span><span class="text-gray-600"> ‘A.B.C’</span><br />
+				balachandran
 			</h4>
 
 			<p class=" mt-20 w-fit text-4xl text-neutral/60">Chief Edge-er</p>
 
-			<p class="mt-16 w-96 p-5 text-neutral/60 md:p-0">
+			<p class="mt-16 w-96 p-5 text-xl text-neutral/60 md:p-0 md:text-2xl">
 				AIoT evangelist  |  the “big picture” guy  | ardent foodie |  tourist by profession | mostly
 				single …
 			</p>
@@ -112,11 +108,11 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 
 <section class=" Z-10 relative w-full bg-black/5 py-16">
 	<div class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:p-0">
-		<h4 class="mb-6 text-4xl text-secondary md:mb-14">
+		<h4 class="mb-6 text-3xl text-secondary md:mb-14 md:text-5xl">
 			Believe in the <span class="font-semibold text-info"> edge…</span>
 		</h4>
 
-		<p class="mt-5 text-neutral/60">
+		<p class="mt-5 text-xl text-neutral/60 md:text-2xl">
 			To build a new world of autonomous device ecosystems…<br />
 			To work tirelessly on the belief that true distributed intelligence is possible at the edge…<br />
 			To orchestrate a truly seamless experience that enables interaction between every device and its
@@ -124,7 +120,7 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 		</p>
 
 		<p
-			class=" mt-5 bg-gradient-to-l from-secondary to-info bg-clip-text text-lg font-medium text-transparent">
+			class=" mt-5 bg-gradient-to-l from-secondary to-info bg-clip-text text-xl font-medium text-transparent md:text-2xl">
 			and to do all this while driving home tangible business outcomes for our clients & partners
 			every step of the way…sustainably…
 		</p>
@@ -142,16 +138,14 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 			<img src="{karthikIR}" alt="" />
 		</div>
 		<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
-			<h4 class=" text-4xl font-semibold text-secondary">
-				<h4 class=" text-4xl font-semibold text-secondary">
-					<span class="text-info">karthik </span><span class="text-gray-600"> ‘IR’</span><br />
-					rangasamy
-				</h4>
+			<h4 class=" text-4xl font-semibold text-secondary md:text-6xl">
+				<span class="text-info">karthik </span><span class="text-gray-600"> ‘IR’</span><br />
+				rangasamy
 			</h4>
 
 			<p class=" mt-20 w-fit text-4xl text-neutral/60">Chief Tech-y</p>
 
-			<p class="mt-16 w-96 p-5 text-neutral/60 md:p-0">
+			<p class="mt-16 w-96 p-5 text-xl text-neutral/60 md:p-0 md:text-2xl">
 				digital geek  |  nurtures great teams  | coffee connoisseur  |  chef crafting the perfect
 				recipes - both food & software
 			</p>
@@ -161,11 +155,11 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 
 <section class=" Z-10 relative w-full bg-black/5 py-16">
 	<div class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:p-0">
-		<h4 class="mb-6 text-4xl text-secondary md:mb-14">
+		<h4 class="mb-6 text-3xl text-secondary md:mb-14 md:text-5xl">
 			We’ve got “just” what you <span class="font-semibold text-info"> need... </span>
 		</h4>
 
-		<p class="mt-5 text-neutral/60">
+		<p class="mt-5 text-xl text-neutral/60 md:text-2xl">
 			The world has fooled us into thinking that we need to pick from what’s available, and live
 			with it…just accept the shortcomings…pay for features we’d never use…be happy with the
 			half-baked outcomes…because “that’s what you get” ! Not anymore…<br /><span
@@ -175,7 +169,7 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 			consulting to implementation to ensure you get nothing short of your desired outcome!
 		</p>
 
-		<p class="mt-5 text-info">
+		<p class="mt-5 text-xl text-info md:text-2xl">
 			& for our focus verticals, this comes with our promise for Value-Of-Investment : a promise of
 			needing to spend on only what you need; a promise of outcomes from pilot → scale → service
 			delivery aaS
@@ -196,16 +190,14 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 			<img src="{prakash}" alt="" />
 		</div>
 		<div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
-			<h4 class=" text-4xl font-semibold text-secondary">
-				<h4 class=" text-4xl font-semibold text-secondary">
-					<span class="text-info">prakash </span>
-					G.R.
-				</h4>
+			<h4 class=" text-4xl font-semibold text-secondary md:text-6xl">
+				<span class="text-info">prakash </span>
+				G.R.
 			</h4>
 
 			<p class=" mt-20 w-fit text-4xl text-neutral/60">Chief Builder</p>
 
-			<p class="mt-16 w-96 p-5 text-neutral/60 md:p-0">
+			<p class="mt-16 w-96 p-5 text-xl text-neutral/60 md:p-0 md:text-2xl">
 				Farmer; Engineering Leader; Continuous Learner & Problem Solver; Makes money in Software :
 				spends some of it in farming and loses the rest in stock markets
 			</p>
@@ -215,11 +207,11 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 
 <section class=" Z-10 relative w-full bg-black/5 py-16">
 	<div class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:p-0">
-		<h4 class="mb-6 text-4xl font-semibold text-secondary md:mb-14">
+		<h4 class="mb-6 text-3xl font-semibold text-secondary md:mb-14 md:text-5xl">
 			Democratizing <span class=" text-info"> Tech…</span>
 		</h4>
 
-		<p class="mt-5 text-neutral/60">
+		<p class="mt-5 text-xl text-neutral/60 md:text-2xl">
 			A true techie isn’t happy with building tech products ; he wants to be part of a family of
 			creators… <br />A true techie doesn’t hoard power; he empowers his fellows to tinker around
 			with his creation & make it better… <br />A true techie is cognizant of security, but works
@@ -227,7 +219,7 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 		</p>
 
 		<p
-			class=" mt-5 bg-gradient-to-l from-secondary to-info bg-clip-text text-lg font-medium text-transparent">
+			class=" mt-5 bg-gradient-to-l from-secondary to-info bg-clip-text text-xl font-medium text-transparent md:text-2xl">
 			With some very passionate Tech-“BloXers”, TinkerBloX isn’t a company that sells tech ; We are
 			the first step to a community that brings tomorrow’s tech to life.
 		</p>
@@ -242,9 +234,9 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 <section
 	style="  background-image: url({gradientbackground}) "
 	class=" min-h-16 relative z-30 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
-	<div class="m-auto max-w-7xl">
-		<h4 class=" mb-16 w-full text-center text-4xl text-base-100 md:text-5xl">Values we live by…</h4>
-		<p class="mt-16 max-w-3xl p-5 text-center text-xl text-base-100 md:p-0">
+	<div class="m-auto flex max-w-7xl flex-col items-center text-center">
+		<h4 class=" mb-5 w-full text-4xl text-base-100 md:text-5xl">Values we live by…</h4>
+		<p class="mt-5 max-w-3xl p-5 text-xl text-base-100 md:p-0 md:text-2xl">
 			A new world needs to update to some new values while at the same time holding on to some
 			traditional ones… Here’s what we live by through thick & thin…
 		</p>

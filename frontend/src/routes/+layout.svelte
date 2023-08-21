@@ -54,10 +54,14 @@ function handelResize() {
 				>SUPERBLOX</span>
 			{#if openMobileMenu === 'superblox'}
 				<div class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100">
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Spaces</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Devices</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Utilities</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/">Smart Industry</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
+						>Smart Spaces</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
+						>Smart Devices</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
+						>Smart Utilities</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
+						>Smart Industry</a>
 				</div>
 			{/if}
 		</div>
@@ -161,28 +165,28 @@ function handelResize() {
 		<div
 			on:mouseleave="{() => (open = false)}"
 			class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm">
-			<a href="/" on:click="{() => (open = false)}">
+			<a href="/superblox/smartspaces" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#89C365] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Spaces</h3>
 					<p>Digital + Sustainable Ecosystems. Communities. Buildings. Farms.</p>
 				</div>
 			</a>
-			<a href="/" on:click="{() => (open = false)}">
+			<a href="/superblox/smartspaces" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#C66A66] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Devices</h3>
 					<p>From Devices to Device-based Experience as a Service.</p>
 				</div>
 			</a>
-			<a href="/" on:click="{() => (open = false)}">
+			<a href="/superblox/smartspaces" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#CED17A] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Utilities</h3>
 					<p>Net Zero & Beyond... O&G. Energy. Industry. Commercial.</p>
 				</div>
 			</a>
-			<a href="/" on:click="{() => (open = false)}">
+			<a href="/superblox/smartspaces" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#5C5C5C] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Industry</h3>
@@ -248,7 +252,7 @@ function handelResize() {
 <footer
 	style="background-image: url(/defaultbg.png);"
 	class=" relative z-[99999999] bg-gray-200 bg-cover bg-top bg-no-repeat pt-14">
-	<div class="m-auto flex max-w-5xl gap-6 p-3">
+	<div class="m-auto flex max-w-5xl gap-14 p-3">
 		<div class="h-14 w-1/4">
 			<a class=" h-full" href="/"
 				><img class="  h-full object-contain" src="{Logo}" alt="tinkerblox logo" /></a>
@@ -266,16 +270,16 @@ function handelResize() {
 				<h4 class="text-lg">Resource Links</h4>
 				<div>
 					<a href="/jobs"><p>Meet Our Company</p></a>
-					<p>Read Blogs</p>
+					<a href="/comingsoon"><p>Read Blogs</p></a>
 					<a href="/ourcompany"><p>Meet Your Future Team</p></a>
 				</div>
 			</div>
 			<div class="prose">
 				<h4 class="text-lg">Good To Know</h4>
 				<div>
-					<p>Privacy Policy</p>
-					<p>Term of Use</p>
-					<p>FAQ</p>
+					<a href="/comingsoon"><p>Privacy Policy</p></a>
+					<a href="/comingsoon"><p>Term of Use</p></a>
+					<a href="/comingsoon"><p>FAQ</p></a>
 				</div>
 			</div>
 			<div class="prose">
