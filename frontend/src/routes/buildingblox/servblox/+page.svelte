@@ -96,12 +96,12 @@ function handleMouseLeave() {
 			on:mouseenter="{handleMouseEnter}"
 			on:mouseleave="{handleMouseLeave}"
 			style="position: relative; text-align: center;">
-			<img class=" h-[688px] w-[1311]" src="{servbloxleverage}" alt="" />
+			<img class=" object-contain object-center" src="{servbloxleverage}" alt="" />
 
 			{#if isHovered}
 				<!-- svelte-ignore a11y-img-redundant-alt -->
 				<img
-					class=" h-[1108] w-[1788]"
+					class="object-contain object-center"
 					src="{servlevinfo}"
 					alt="Additional Image"
 					style="position: absolute; top: 0%; left: 50%; transform: translateX(-50%); margin-top: 0px;" />
