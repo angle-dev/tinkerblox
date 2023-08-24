@@ -143,7 +143,7 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 				rangasamy
 			</h4>
 
-			<p class=" mt-20 w-fit text-4xl text-neutral/60">Chief Tech-y</p>
+			<p class=" mt-20 w-fit text-4xl text-neutral/60">Chief Builder</p>
 
 			<p class="mt-16 w-96 p-5 text-xl text-neutral/60 md:p-0 md:text-2xl">
 				digital geek  |  nurtures great teams  | coffee connoisseur  |  chef crafting the perfect
@@ -164,9 +164,9 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 			with it…just accept the shortcomings…pay for features we’d never use…be happy with the
 			half-baked outcomes…because “that’s what you get” ! Not anymore…<br /><span
 				class="text-secondary">@ TinkerBloX</span
-			>@ TinkerBloX, we’ve made it our mission to enable businesses with the power of tech with full
-			freedom to build the solution exactly as you’d want to; & a full set of services from
-			consulting to implementation to ensure you get nothing short of your desired outcome!
+			>, we’ve made it our mission to enable businesses with the power of tech with full freedom to
+			build the solution exactly as you’d want to; & a full set of services from consulting to
+			implementation to ensure you get nothing short of your desired outcome!
 		</p>
 
 		<p class="mt-5 text-xl text-info md:text-2xl">
@@ -195,7 +195,7 @@ import valuesWe from '$lib/ValuesWeLiveBy .png';
 				G.R.
 			</h4>
 
-			<p class=" mt-20 w-fit text-4xl text-neutral/60">Chief Builder</p>
+			<p class=" mt-20 w-fit text-4xl text-neutral/60">Chief Tech-y</p>
 
 			<p class="mt-16 w-96 p-5 text-xl text-neutral/60 md:p-0 md:text-2xl">
 				Farmer; Engineering Leader; Continuous Learner & Problem Solver; Makes money in Software :

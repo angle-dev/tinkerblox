@@ -148,7 +148,9 @@ const options = {
 </script>
 
 <div class=" mt-5 flex w-full flex-col items-center pb-[200px] align-middle">
-	<div class="absolute z-0 h-[300px] w-[calc(30vw+1rem)] bg-[#F0F0F0] shadow-md md:h-[700px]"></div>
+	<div
+		class="absolute z-0 h-[450px] w-64 bg-[#F0F0F0] shadow-md md:h-[750px] md:w-[calc(30vw+1rem)]">
+	</div>
 	<div class=" hehehoho relative z-10 mt-4">
 		<Splide
 			on:mounted="{(e) => {
@@ -164,7 +166,7 @@ const options = {
 			{#each carouselImages as carousel}
 				<SplideSlide>
 					<img
-						class="h-auto max-h-[650px] w-[30vw] object-cover"
+						class="h-auto max-h-[650px] w-60 object-cover md:w-[30vw]"
 						src="{carousel.image}"
 						alt="Image{carousel.head}" />
 				</SplideSlide>
@@ -172,12 +174,14 @@ const options = {
 		</Splide>
 	</div>
 
-	<div class=" relative h-64 w-[30vw] md:h-44">
+	<div class=" relative h-64 w-60 md:h-44 md:w-[30vw]">
 		{#each carouselImages as carousel, i}
 			{#if i === index}
 				<div class="flex flex-col justify-center p-5">
-					<h1 class=" py-10 text-2xl font-normal text-info md:text-4xl">{carousel.head}</h1>
-					<p class="text-base text-neutral/40 md:text-2xl">{carousel.text}</p>
+					<h1 class=" py-2 text-lg font-normal text-info md:py-10 md:text-4xl">
+						{carousel.head}
+					</h1>
+					<p class=" text-base text-neutral/40 md:text-2xl">{carousel.text}</p>
 				</div>
 			{/if}
 		{/each}

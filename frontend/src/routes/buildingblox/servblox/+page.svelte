@@ -7,6 +7,7 @@ import GradientButton from '$lib/components/GradientButton.svelte';
 import Servelottie from '$lib/Servelottie.json';
 import { onMount } from 'svelte';
 import TooltipWork from '$lib/components/TooltipWork.svelte';
+import servlevinfo from '$lib/servlevinfo.png';
 
 let LottiePlayer;
 
@@ -14,6 +15,16 @@ onMount(async () => {
 	const module = await import('@lottiefiles/svelte-lottie-player');
 	LottiePlayer = module.LottiePlayer;
 });
+
+let isHovered = false;
+
+function handleMouseEnter() {
+	isHovered = true;
+}
+
+function handleMouseLeave() {
+	isHovered = false;
+}
 </script>
 
 <section
@@ -74,12 +85,50 @@ onMount(async () => {
 	</div>
 </section>
 <section
-	style=" background-image: url({gradientbackground}) "
-	class=" min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
+	style="background-image: url({gradientbackground})"
+	class="min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
 	<div class="m-auto max-w-7xl">
-		<h4 class=" mb-16 w-full text-center text-4xl text-base-100 md:text-5xl">Leverage ServBloX</h4>
+		<h4 class="mb-16 w-full text-center text-4xl text-base-100 md:text-5xl">Leverage ServBloX</h4>
+
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<div
+			class="{isHovered ? 'subtle-shake' : ''} object-contain"
+			on:mouseenter="{handleMouseEnter}"
+			on:mouseleave="{handleMouseLeave}"
+			style="position: relative; text-align: center;">
+			<img class=" h-[688px] w-[1311]" src="{servbloxleverage}" alt="" />
+
+			{#if isHovered}
+				<!-- svelte-ignore a11y-img-redundant-alt -->
+				<img
+					class=" h-[1108] w-[1788]"
+					src="{servlevinfo}"
+					alt="Additional Image"
+					style="position: absolute; top: 0%; left: 50%; transform: translateX(-50%); margin-top: 0px;" />
+			{/if}
+		</div>
+
+		<style>
+		/* Define your shake animation CSS here */
+		.subtle-shake {
+			animation: subtle-shake 0.3s; /* Decreased the duration to make it faster */
+		}
+
+		@keyframes subtle-shake {
+			0%,
+			100% {
+				transform: translate(0, 0);
+			}
+			25% {
+				transform: translate(-2px, 0);
+			}
+			75% {
+				transform: translate(2px, 0);
+			}
+		}
+		</style>
 		<div class="min-h-16 mt-5 w-full">
-			<TooltipWork />
+			<!-- <TooltipWork /> -->
 		</div>
 	</div>
 </section>

@@ -77,9 +77,9 @@ function handelResize() {
 				<div class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100">
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/edgeblox"
 						>EdgeBloX</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/sandblox"
-						>ServBloX</a>
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/servblox"
+						>ServBloX</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/buildingblox/sandblox"
 						>SandBloX</a>
 				</div>
 			{/if}
@@ -251,7 +251,7 @@ function handelResize() {
 
 <footer
 	style="background-image: url(/defaultbg.png);"
-	class=" relative z-[99999999] bg-gray-200 bg-cover bg-top bg-no-repeat pt-14">
+	class=" relative z-[9999] bg-gray-200 bg-cover bg-top bg-no-repeat pt-14">
 	<div class="m-auto flex max-w-5xl gap-14 p-3">
 		<div class="h-14 w-1/4">
 			<a class=" h-full" href="/"
@@ -269,9 +269,9 @@ function handelResize() {
 			<div class="prose">
 				<h4 class="text-lg">Resource Links</h4>
 				<div>
-					<a href="/jobs"><p>Meet Our Company</p></a>
+					<a href="/ourcompany"><p>Meet Our Company</p></a>
 					<a href="/comingsoon"><p>Read Blogs</p></a>
-					<a href="/ourcompany"><p>Meet Your Future Team</p></a>
+					<a href="/jobs"><p>Meet Your Future Team</p></a>
 				</div>
 			</div>
 			<div class="prose">
@@ -297,7 +297,11 @@ function handelResize() {
 			</div>
 		</div>
 	</div>
-	<div class="flex w-full justify-center pb-6">
-		<p class=" text-lg">© 2023 Tinkerblox, All rights reserved.</p>
+	<div class="flex w-full justify-center pb-6 text-center">
+		<p class=" text-lg">
+			© 2023 Tinkerblox, All rights reserved.<br />
+			<span class="text-base opacity-70"
+				>Designed and developed by <a href="https://angle.services/">Angle</a></span>
+		</p>
 	</div>
 </footer>
