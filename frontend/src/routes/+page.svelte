@@ -28,16 +28,6 @@ onMount(async () => {
 		Use our <span class="font-bold"> ‘Configure-and-Use AIoT’ software blocks </span>to build and<br />
 		deploy your <span class="font-bold">Edge-centric ecosystem</span> @ scale
 	</h2>
-	<div
-		class=" relative mt-5 flex w-full items-center justify-center gap-1 p-5 text-center text-[20px] font-normal leading-none text-base-100 md:w-3/5 md:gap-3 md:p-0 md:text-lg">
-		<span class=" w-52 font-bold text-accent md:w-60"
-			>Blueprint Digital Journey from Innovation to Scale</span>
-		<span>|</span>
-		<span class=" w-52 font-bold text-info md:w-60">Design & Configure<br />AIoT at Edge</span>
-		<span>|</span>
-		<span class=" w-52 font-bold text-warning md:w-60"
-			>Deploy & Accelerate<br /> X-as-a-Service</span>
-	</div>
 </section>
 
 <section
@@ -69,6 +59,14 @@ onMount(async () => {
 			TinkerBloX curates pre-built assets & accelerators to your context…<br /> and helps you realize
 			your digital transformation vision @ scale
 		</p>
+	</div>
+	<div
+		class=" m-auto mb-10 flex w-full items-center justify-center gap-1 p-5 text-center text-[20px] font-bold leading-none text-base-100 text-neutral/40 md:gap-3 md:p-0 md:text-lg">
+		<span>Blueprint Digital Journey<br /> from Innovation to Scale </span>
+		<span>| </span>
+		<span>Design & Configure<br />AIoT at Edge </span>
+		<span>| </span>
+		<span>Deploy & Accelerate<br /> X-as-a-Service</span>
 	</div>
 </section>
 
