@@ -5,6 +5,7 @@ import Productsection from '$lib/components/Productsection.svelte';
 import Carouselhome from '../lib/components/Carouselhome.svelte';
 import Homelottie from '$lib/homelottie.json';
 import HeroVid from '$lib/heroVid.mp4';
+import HeroVidMob from '$lib/heroVidMob.mp4';
 
 import { onMount } from 'svelte';
 
@@ -21,7 +22,13 @@ onMount(async () => {
 	<div
 		class=" absolute top-0 z-0 flex h-full w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat">
 		<!-- svelte-ignore a11y-media-has-caption -->
-		<video loop autoplay muted volume class="h-full w-full object-cover" src="{HeroVid}"></video>
+		<video
+			loop
+			autoplay
+			muted
+			volume
+			class="h-full w-full object-cover"
+			src="{window.innerWidth <= 768 ? HeroVidMob : HeroVid}"></video>
 	</div>
 
 	<h2 class=" relative mb-14 p-5 text-center text-2xl text-base-100 md:p-0 md:text-4xl">
@@ -55,17 +62,17 @@ onMount(async () => {
 	</div>
 	<div>
 		<p
-			class=" m-auto w-fit bg-gradient-to-l from-secondary to-info bg-clip-text p-5 pb-16 text-center text-lg font-medium text-info text-transparent md:w-2/3 md:text-2xl">
+			class=" m-auto w-fit bg-gradient-to-l from-secondary to-info bg-clip-text p-5 pb-5 text-center text-lg font-medium text-info text-transparent md:w-2/3 md:pb-16 md:text-2xl">
 			TinkerBloX curates pre-built assets & accelerators to your context…<br /> and helps you realize
 			your digital transformation vision @ scale
 		</p>
 	</div>
 	<div
-		class=" m-auto mb-10 flex w-full items-center justify-center gap-1 p-5 text-center text-[20px] font-bold leading-none text-base-100 text-neutral/40 md:gap-3 md:p-0 md:text-lg">
-		<span>Blueprint Digital Journey<br /> from Innovation to Scale </span>
-		<span>| </span>
-		<span>Design & Configure<br />AIoT at Edge </span>
-		<span>| </span>
+		class=" m-auto mb-10 flex w-full flex-col items-center justify-center gap-1 p-5 text-center text-lg font-bold leading-none text-neutral/40 md:flex-row md:gap-3 md:p-0 md:text-[20px] md:text-lg">
+		<span class=" pb-5 md:pb-0">Blueprint Digital Journey<br /> from Innovation to Scale </span>
+		<span class=" hidden md:block">| </span>
+		<span class=" pb-5 md:pb-0">Design & Configure<br />AIoT at Edge </span>
+		<span class=" hidden md:block">| </span>
 		<span>Deploy & Accelerate<br /> X-as-a-Service</span>
 	</div>
 </section>

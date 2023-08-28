@@ -5,6 +5,7 @@ import gradientbackground from '$lib/gradient_background.png';
 import servbloxleverage from '$lib/servbloxleverage.png';
 import GradientButton from '$lib/components/GradientButton.svelte';
 import Servelottie from '$lib/Servelottie.json';
+import Servelottieimg from '$lib/Servelottie.png';
 import { onMount } from 'svelte';
 import TooltipWork from '$lib/components/TooltipWork.svelte';
 import servlevinfo from '$lib/servlevinfo.png';
@@ -46,24 +47,25 @@ function handleMouseLeave() {
 </section>
 <section
 	style="background-image: url(/defaultbg.png);"
-	class=" w-full bg-cover bg-center bg-no-repeat py-16">
-	<div class="m-auto flex max-w-6xl flex-col items-center gap-2 md:flex-row">
+	class=" min-h-[561px] w-full bg-cover bg-center bg-no-repeat py-16">
+	<div class="m-auto flex min-h-[561px] max-w-6xl flex-col items-center gap-2 md:flex-row">
 		<div class="min-h-6 w-1/3">
-			{#if LottiePlayer}
+			<!-- {#if LottiePlayer}
 				<LottiePlayer
 					autoplay
 					loop
 					background="transparent"
 					controls="{false}"
 					src="{Servelottie}" />
-			{/if}
+			{/if} -->
+			<img src="{Servelottieimg}" alt="" />
 		</div>
 		<div class=" min-h-6 w-full p-5 md:w-2/3 md:p-0">
 			<h4 class=" text-center text-3xl font-semibold text-secondary md:text-left">
 				The <span class="text-info">beating heart</span> of our<br /> AIoT orchestration
 			</h4>
 
-			<p class="mt-5 text-center text-neutral/60 md:text-left">
+			<p class="mt-5 text-center text-lg text-neutral/60 md:text-left md:text-2xl">
 				If you have already figured out the vision <span class="text-secondary">(#sandblox)</span> &
 				the body of assets
 				<span class="text-secondary">(#edgeblox)</span>, like every tinman, what you now need is a
@@ -74,7 +76,7 @@ function handleMouseLeave() {
 			</p>
 		</div>
 	</div>
-	<h2 class=" mt-26 w-full text-center text-4xl text-neutral md:mt-32 md:text-6xl">
+	<h2 class=" mt-26 w-full pt-5 text-center text-4xl text-neutral md:mt-32 md:pt-0 md:text-6xl">
 		Engage <span class="font-bold text-accent">ServBloX</span>
 	</h2>
 	<div class=" min-h-16 mt-10 w-full">

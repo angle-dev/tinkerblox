@@ -21,10 +21,10 @@ onMount(async () => {
 	<h1 class=" text-4xl font-bold text-base-100 md:text-8xl">
 		<span class="text-secondary">Sand</span>BloX
 	</h1>
-	<h3 class=" mt-16 p-14 text-center text-3xl font-semibold text-base-100 md:p-5">
+	<h3 class=" mt-16 p-14 text-center text-2xl font-semibold text-base-100 md:p-5 md:text-3xl">
 		Strategize | Prototype | Scale | Repeat
 	</h3>
-	<p class=" mt-2 max-w-4xl p-14 text-center text-2xl text-base-100 md:p-5">
+	<p class=" mt-2 max-w-4xl p-14 text-center text-lg text-base-100 md:p-5 md:text-2xl">
 		SandBloX is a free-for-all space created to embrace a transformational approach to AIoT problem
 		solving… an intersection of cultivated instinct and borderless creativity to build the next &
 		best version of your new reality
@@ -33,8 +33,8 @@ onMount(async () => {
 
 <section
 	style="background-image: url(/defaultbg.png);"
-	class="  w-full bg-cover bg-center bg-no-repeat py-16">
-	<div class="m-auto flex max-w-6xl flex-col gap-2 md:flex-row">
+	class="  min-h-[561px] w-full bg-cover bg-center bg-no-repeat py-16">
+	<div class="m-auto flex min-h-[561px] max-w-6xl flex-col items-center gap-2 md:flex-row">
 		<div class="min-h-6 w-full md:w-1/3">
 			{#if LottiePlayer}
 				<LottiePlayer autoplay loop background="transparent" controls="{false}" src="{Sand}" />
@@ -47,7 +47,7 @@ onMount(async () => {
 			<h4 class=" text-center text-3xl font-bold md:text-left">
 				Pick your SandBloX,<span class="text-info">for Outcomes…</span>
 			</h4>
-			<p class=" mt-3 text-center text-neutral/40 md:mt-7 md:text-left">
+			<p class=" mt-3 text-center text-lg text-neutral/40 md:mt-7 md:text-left md:text-2xl">
 				AIoT vision -> solution | Failsafe AIoT product journey | Faster Time-to-Market | X-aaS
 				orchestration | Industry X.0 | Net-Zero Enterprise | Sustainable Economy
 			</p>
