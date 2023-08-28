@@ -3,7 +3,7 @@ import SandbloxHero from '$lib/sandbloxhero.png';
 import gradientbackground from '$lib/gradient_background.png';
 import GradientButton from '$lib/components/GradientButton.svelte';
 import sandbloxinfo from '$lib/sandbloxinfo.png';
-
+import SandImg from '$lib/Sand.png';
 import Sand from '$lib/Sand.json';
 import { onMount } from 'svelte';
 
@@ -35,10 +35,11 @@ onMount(async () => {
 	style="background-image: url(/defaultbg.png);"
 	class="  min-h-[561px] w-full bg-cover bg-center bg-no-repeat py-16">
 	<div class="m-auto flex min-h-[561px] max-w-6xl flex-col items-center gap-2 md:flex-row">
-		<div class="min-h-6 w-full md:w-1/3">
-			{#if LottiePlayer}
+		<div class="min-h-6 w-1/3">
+			<!-- {#if LottiePlayer} in lottie width full
 				<LottiePlayer autoplay loop background="transparent" controls="{false}" src="{Sand}" />
-			{/if}
+			{/if} -->
+			<img src="{SandImg}" alt="" />
 		</div>
 		<div class="min-h-6 w-full p-5 md:w-2/3 md:p-0">
 			<h6 class=" mb-1.5 text-center font-normal text-secondary md:text-left">
