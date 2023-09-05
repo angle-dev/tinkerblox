@@ -3,7 +3,6 @@ import EdgeBloxHero from '$lib/edgebloxhero.png';
 import edgebloxinfo from '$lib/edgebloxinfo.png';
 import GradientButton from '$lib/components/GradientButton.svelte';
 import gradientbackground from '$lib/gradient_background.png';
-import Edgeimg from '$lib/Edge.png';
 import Edge from '$lib/Edge.json';
 import { onMount } from 'svelte';
 
@@ -50,10 +49,9 @@ onMount(async () => {
 	class=" min-h-[561px] bg-base-100 bg-cover bg-top bg-no-repeat">
 	<div class="m-auto flex min-h-[561px] max-w-6xl flex-col items-center gap-2 md:flex-row">
 		<div class="min-h-6 w-1/3">
-			<!-- {#if LottiePlayer}
+			{#if LottiePlayer}
 				<LottiePlayer autoplay loop background="transparent" controls="{false}" src="{Edge}" />
-			{/if} -->
-			<img src="{Edgeimg}" alt="" />
+			{/if}
 		</div>
 		<div class=" min-h-6 w-full text-center md:w-2/3 md:text-left">
 			<h4 class="p-5 text-3xl text-secondary md:p-0 md:text-5xl">

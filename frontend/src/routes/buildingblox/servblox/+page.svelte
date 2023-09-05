@@ -5,7 +5,6 @@ import gradientbackground from '$lib/gradient_background.png';
 import servbloxleverage from '$lib/servbloxleverage.png';
 import GradientButton from '$lib/components/GradientButton.svelte';
 import Servelottie from '$lib/Servelottie.json';
-import Servelottieimg from '$lib/Servelottie.png';
 import { onMount } from 'svelte';
 import TooltipWork from '$lib/components/TooltipWork.svelte';
 import servlevinfo from '$lib/servlevinfo.png';
@@ -50,15 +49,14 @@ function handleMouseLeave() {
 	class=" min-h-[561px] w-full bg-cover bg-center bg-no-repeat py-16">
 	<div class="m-auto flex min-h-[561px] max-w-6xl flex-col items-center gap-2 md:flex-row">
 		<div class="min-h-6 w-1/3">
-			<!-- {#if LottiePlayer}
+			{#if LottiePlayer}
 				<LottiePlayer
 					autoplay
 					loop
 					background="transparent"
 					controls="{false}"
 					src="{Servelottie}" />
-			{/if} -->
-			<img src="{Servelottieimg}" alt="" />
+			{/if}
 		</div>
 		<div class=" min-h-6 w-full p-5 md:w-2/3 md:p-0">
 			<h4 class=" text-center text-3xl font-semibold text-secondary md:text-left">
