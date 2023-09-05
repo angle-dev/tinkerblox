@@ -1,5 +1,6 @@
 <script>
 import SmartSpaces from '$lib/smartspaces_hero.png';
+import sSHt from '$lib/sSHt.svg';
 import gradientbackground from '$lib/gradient_background.png';
 import GradientButton from '$lib/components/GradientButton.svelte';
 import smartBuildings from '$lib/smartBuildings.png';
@@ -29,6 +30,7 @@ import es2 from '$lib/es2.png';
 import es3 from '$lib/es3.png';
 import es4 from '$lib/es4.png';
 import es5 from '$lib/es5.png';
+import CarouselSS from '$lib/components/CarouselSS.svelte';
 let selected = 'Sustainable';
 function handleClick(newValue) {
 	selected = newValue;
@@ -38,6 +40,11 @@ function handleClick(newValue) {
 <section
 	style="  background-image: url('{SmartSpaces}'); "
 	class="relative z-30 flex h-fit min-h-[777px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-3 py-2 md:p-10">
+	<div class=" flex w-full flex-col items-start gap-2 p-10 md:flex-row">
+		<div class=" w-full md:ml-40 md:w-1/3">
+			<img src="{sSHt}" alt="" />
+		</div>
+	</div>
 </section>
 
 <section
@@ -74,7 +81,7 @@ function handleClick(newValue) {
 	<a href="#tinker" class=" relative z-10"> <span>The TinkerBloX USP</span></a>
 	<a href="#stories" class=" relative z-10"> <span>Stories we bring to life</span></a>
 
-	<div class="absolute z-0 -ml-4 h-full w-[10%] bg-gradient-to-b from-info to-secondary"></div>
+	<!-- <div class="absolute z-0 -ml-4 h-full w-[10%] bg-gradient-to-b from-info to-secondary"></div> -->
 </div>
 
 <br />
@@ -467,13 +474,15 @@ function handleClick(newValue) {
 	</div>
 </section>
 
-<section id="stories"></section>
+<section id="stories">
+	<CarouselSS />
+</section>
 
 <section
 	style=" background-image: url({gradientbackground}) "
-	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
+	class="min-h-[497px] w-full bg-primary bg-cover bg-bottom bg-no-repeat py-32">
 	<h4
-		class="m-auto mb-16 w-full max-w-2xl p-5 text-center text-5xl font-bold text-base-100 md:p-0 md:text-6xl">
+		class="m-auto mb-16 w-full max-w-2xl p-5 text-center text-5xl font-medium text-base-100 md:p-0 md:text-6xl">
 		Be part of our  Smart Spaces huddle
 	</h4>
 
