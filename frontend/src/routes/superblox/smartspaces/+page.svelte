@@ -1,6 +1,32 @@
+<style>
+.red-text {
+	color: #ed7d31;
+}
+
+.blue-text {
+	color: #ffc000;
+}
+
+.green-text {
+	color: #00b0f0;
+}
+
+.purple-text {
+	color: #cc00cc;
+}
+
+.orange-text {
+	color: #c00000;
+}
+
+.pink-text {
+	color: #92d050;
+}
+</style>
+
 <script>
 import SmartSpaces from '$lib/smartspaces_hero.png';
-import sSHt from '$lib/sSHt.svg';
+import edgeCentric from '$lib/edgeCentric.png';
 import gradientbackground from '$lib/gradient_background.png';
 import GradientButton from '$lib/components/GradientButton.svelte';
 import smartBuildings from '$lib/smartBuildings.png';
@@ -35,6 +61,80 @@ let selected = 'Sustainable';
 function handleClick(newValue) {
 	selected = newValue;
 }
+
+import { onMount, onDestroy, afterUpdate } from 'svelte';
+
+let greetings = [
+	{ text: 'Edge-Centric', colorClass: 'red-text' },
+	{ text: 'Data-Secure', colorClass: 'blue-text' },
+	{ text: '5G', colorClass: 'green-text' },
+	{ text: 'Autonomous', colorClass: 'purple-text' },
+	{ text: 'True Real-Time', colorClass: 'orange-text' },
+	{ text: 'Sustainable', colorClass: 'pink-text' }
+];
+let index = 0;
+let roller;
+
+onMount(() => {
+	roller = setInterval(() => {
+		if (index === greetings.length - 1) index = 0;
+		else index++;
+	}, 1250);
+});
+
+onDestroy(() => {
+	clearInterval(roller);
+});
+
+let colorIndicator = null;
+let sections = [
+	{ id: 'safe', text: 'SAFE Spaces for you' },
+	{ id: 'future', text: 'Future of Spaces' },
+	{ id: 'tinker', text: 'The TinkerBloX USP' },
+	{ id: 'stories', text: 'Stories we bring to life' }
+];
+
+let activeSection = sections[0].id; // Initialize with the first section
+
+onMount(() => {
+	const updateActiveSection = () => {
+		const scrollPosition = window.scrollY;
+		for (const section of sections) {
+			const element = document.getElementById(section.id);
+			if (element) {
+				const rect = element.getBoundingClientRect();
+				if (rect.top <= 0 && rect.bottom >= 0) {
+					activeSection = section.id;
+				}
+			}
+		}
+		updateColorIndicatorPosition();
+	};
+
+	window.addEventListener('scroll', updateActiveSection);
+
+	updateActiveSection(); // Initial update
+
+	onDestroy(() => {
+		window.removeEventListener('scroll', updateActiveSection);
+	});
+
+	// Re-calculate color indicator position after updates (e.g., window resize)
+	afterUpdate(() => {
+		updateColorIndicatorPosition();
+	});
+});
+
+function updateColorIndicatorPosition() {
+	if (colorIndicator) {
+		const activeIndex = sections.findIndex((section) => section.id === activeSection);
+		if (activeIndex !== -1) {
+			const totalSections = sections.length;
+			const width = ((activeIndex + 1) / totalSections) * 100;
+			colorIndicator.style.width = `${width}%`;
+		}
+	}
+}
 </script>
 
 <section
@@ -42,7 +142,34 @@ function handleClick(newValue) {
 	class="relative z-30 flex h-fit min-h-[777px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-3 py-2 md:p-10">
 	<div class=" flex w-full flex-col items-start gap-2 p-10 md:flex-row">
 		<div class=" w-full md:ml-40 md:w-1/3">
-			<img src="{sSHt}" alt="" />
+			<h1 class="text-4xl font-bold text-base-100 md:text-8xl">Experience</h1>
+			<div class="relative">
+				<!-- Image -->
+				<!-- svelte-ignore a11y-img-redundant-alt -->
+				<img src="{edgeCentric}" alt="Image" class="w-full" />
+
+				<!-- Text Carousel Container 1 -->
+				<div
+					class="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center bg-opacity-50 text-white opacity-100 transition-opacity duration-500"
+					id="text-carousel-1">
+					<!-- Text Content 1 -->
+					<div class="text-center">
+						{#key index}
+							<h1
+								class=" greeting ml-8 text-3xl font-bold italic text-secondary md:ml-14 md:text-6xl {greetings[
+									index
+								].colorClass}">
+								{greetings[index].text}
+							</h1>
+						{/key}
+					</div>
+				</div>
+			</div>
+			<h1 class="text-4xl font-bold text-base-100 md:text-8xl">Smart Spaces</h1>
+
+			<p class=" mt-20 max-w-3xl p-5 text-justify text-xl text-base-100 md:p-5 md:text-2xl">
+				Build an autonomous & sustainable AIoT eco-system of your living & work spaces.
+			</p>
 		</div>
 	</div>
 </section>
@@ -74,14 +201,28 @@ function handleClick(newValue) {
 		</p>
 	</div>
 </section>
-<div
+<!-- <div
 	class=" min-h-4 sticky top-16 z-50 m-auto flex h-fit w-full max-w-5xl items-center justify-between gap-2 overflow-hidden rounded-full bg-[#B5B5B5] px-4 py-2 text-center text-sm text-white md:text-lg">
 	<a href="#safe" class=" relative z-10"> <span>SAFE Spaces for you</span></a>
 	<a href="#future" class=" relative z-10"> <span>Future of Spaces</span></a>
 	<a href="#tinker" class=" relative z-10"> <span>The TinkerBloX USP</span></a>
 	<a href="#stories" class=" relative z-10"> <span>Stories we bring to life</span></a>
 
-	<!-- <div class="absolute z-0 -ml-4 h-full w-[10%] bg-gradient-to-b from-info to-secondary"></div> -->
+	<div class="absolute z-0 -ml-4 h-full w-[10%] bg-gradient-to-b from-info to-secondary"></div>
+</div> -->
+
+<div
+	class="min-h-4 sticky top-16 z-50 m-auto flex h-fit w-full max-w-5xl items-center justify-between gap-2 overflow-hidden rounded-full bg-[#B5B5B5] px-4 py-2 text-center text-sm text-white md:text-lg">
+	{#each sections as section (section.id)}
+		<a href="{'#' + section.id}" class="relative z-10">
+			<span>{section.text}</span>
+		</a>
+	{/each}
+
+	<div
+		class="absolute z-0 -ml-4 h-full bg-gradient-to-b from-info to-secondary"
+		bind:this="{colorIndicator}">
+	</div>
 </div>
 
 <br />
@@ -92,7 +233,7 @@ function handleClick(newValue) {
 	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
 	<h4
 		class="m-auto mb-10 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl">
-		Safe Spaces for you
+		SAFE Spaces for you
 	</h4>
 	<p class="m-auto w-full text-center text-3xl text-white">Click to read more</p>
 	<!-- svelte-ignore a11y-no-static-element-interactions -->

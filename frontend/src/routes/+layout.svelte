@@ -56,11 +56,11 @@ function handelResize() {
 				<div class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100">
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
 						>Smart Spaces</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartdevices"
 						>Smart Devices</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartutilities"
 						>Smart Utilities</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartindustry"
 						>Smart Industry</a>
 				</div>
 			{/if}
@@ -172,21 +172,21 @@ function handelResize() {
 					<p>Digital + Sustainable Ecosystems. Communities. Buildings. Farms.</p>
 				</div>
 			</a>
-			<a href="/superblox/smartspaces" on:click="{() => (open = false)}">
+			<a href="/superblox/smartdevices" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#C66A66] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Devices</h3>
 					<p>From Devices to Device-based Experience as a Service.</p>
 				</div>
 			</a>
-			<a href="/superblox/smartspaces" on:click="{() => (open = false)}">
+			<a href="/superblox/smartutilities" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#CED17A] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Utilities</h3>
 					<p>Net Zero & Beyond... O&G. Energy. Industry. Commercial.</p>
 				</div>
 			</a>
-			<a href="/superblox/smartspaces" on:click="{() => (open = false)}">
+			<a href="/superblox/smartindustry" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#5C5C5C] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Industry</h3>
