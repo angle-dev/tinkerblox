@@ -91,35 +91,6 @@ let sections = [
 
 let activeSection = sections[0].id; // Initialize with the first section
 
-onMount(() => {
-	const updateActiveSection = () => {
-		const scrollPosition = window.scrollY;
-		for (const section of sections) {
-			const element = document.getElementById(section.id);
-			if (element) {
-				const rect = element.getBoundingClientRect();
-				if (rect.top <= 0 && rect.bottom >= 0) {
-					activeSection = section.id;
-				}
-			}
-		}
-		updateColorIndicatorPosition();
-	};
-
-	window.addEventListener('scroll', updateActiveSection);
-
-	updateActiveSection(); // Initial update
-
-	onDestroy(() => {
-		window.removeEventListener('scroll', updateActiveSection);
-	});
-
-	// Re-calculate color indicator position after updates (e.g., window resize)
-	afterUpdate(() => {
-		updateColorIndicatorPosition();
-	});
-});
-
 function updateColorIndicatorPosition() {
 	if (colorIndicator) {
 		const activeIndex = sections.findIndex((section) => section.id === activeSection);

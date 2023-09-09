@@ -21,14 +21,13 @@ onMount(async () => {
 	class=" relative z-10 flex h-fit min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-end p-5 md:p-12">
 	<div
 		class=" absolute top-0 z-0 flex h-full w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat">
-		<!-- svelte-ignore a11y-media-has-caption -->
-		<video
+		<!-- <video
 			loop
 			autoplay
 			muted
 			volume
 			class="h-full w-full object-cover"
-			src="{window.innerWidth <= 768 ? HeroVidMob : HeroVid}"></video>
+			src="{window.innerWidth <= 768 ? HeroVidMob : HeroVid}"></video> -->
 	</div>
 
 	<h2 class=" relative mb-14 p-5 text-center text-2xl text-base-100 md:p-0 md:text-4xl">
