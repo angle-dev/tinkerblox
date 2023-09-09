@@ -56,8 +56,7 @@ function handelResize() {
 				<div class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100">
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartspaces"
 						>Smart Spaces</a>
-					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartdevices"
-						>Smart Devices</a>
+					<a on:click="{toggleMenu}" class="cursor-pointer" href="/comingsoon">Smart Devices</a>
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartutilities"
 						>Smart Utilities</a>
 					<a on:click="{toggleMenu}" class="cursor-pointer" href="/superblox/smartindustry"
@@ -172,7 +171,7 @@ function handelResize() {
 					<p>Digital + Sustainable Ecosystems. Communities. Buildings. Farms.</p>
 				</div>
 			</a>
-			<a href="/superblox/smartdevices" on:click="{() => (open = false)}">
+			<a href="/comingsoon" on:click="{() => (open = false)}">
 				<div
 					class="prose h-full max-w-xs rounded-md bg-[#C66A66] p-3 text-base-100 hover:brightness-105">
 					<h3 class=" text-xl font-medium text-base-100">Smart Devices</h3>

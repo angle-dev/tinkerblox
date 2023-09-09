@@ -4,11 +4,11 @@
 }
 
 .blue-text {
-	color: #ffc000;
+	color: #ffb800;
 }
 
 .green-text {
-	color: #00b0f0;
+	color: #01a4df;
 }
 
 .purple-text {
@@ -20,7 +20,7 @@
 }
 
 .pink-text {
-	color: #92d050;
+	color: #00cf2e;
 }
 </style>
 
@@ -176,7 +176,7 @@ function updateColorIndicatorPosition() {
 
 <section
 	style="background-image: url(/defaultbg.png);"
-	class=" w-full bg-cover bg-center bg-no-repeat py-10">
+	class=" w-full bg-cover bg-center bg-no-repeat py-20">
 	<div class="m-auto flex max-w-6xl flex-col items-center gap-2">
 		<h4 class=" w-3/5 text-center text-2xl text-secondary md:text-4xl">
 			Take the next step in your <span class=" font-bold text-info">smart spaces</span> journey…
@@ -185,7 +185,7 @@ function updateColorIndicatorPosition() {
 
 		<p class="mt-5 p-6 text-justify text-xl text-neutral/60 md:p-0 md:text-center md:text-2xl">
 			There used to be a time when the spaces we lived in, travelled in, worked in and played in,
-			were only that – spaces.  Interactions, if any, were limited, unidirectional and mostly,
+			were only that – spaces. Interactions, if any, were limited, unidirectional and mostly,
 			boring. <br /> <br /> With digital technologies becoming mainstream, this has changed
 			drastically. Today, it’s not unimaginable for homes to interact with its inhabitants, for
 			offices to proactively care for the environment of its workers, for factories to take
@@ -230,7 +230,7 @@ function updateColorIndicatorPosition() {
 <section
 	id="safe"
 	style=" background-image: url({gradientbackground}) "
-	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
+	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20">
 	<h4
 		class="m-auto mb-10 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl">
 		SAFE Spaces for you
@@ -520,7 +520,7 @@ function updateColorIndicatorPosition() {
 <section
 	id="future"
 	style="background-image: url(/defaultbg.png);"
-	class="  bg-cover bg-center bg-no-repeat py-10">
+	class="  bg-cover bg-center bg-no-repeat py-20">
 	<h4 class=" m-auto w-3/5 text-center text-4xl text-primary">Future of Spaces</h4>
 	<div class=" m-auto flex w-full max-w-5xl flex-wrap">
 		<div

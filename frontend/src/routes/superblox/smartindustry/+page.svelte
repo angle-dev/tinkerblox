@@ -4,11 +4,11 @@
 }
 
 .blue-text {
-	color: #ffc000;
+	color: #ffb800;
 }
 
 .green-text {
-	color: #00b0f0;
+	color: #01a4df;
 }
 
 .purple-text {
@@ -20,7 +20,7 @@
 }
 
 .pink-text {
-	color: #92d050;
+	color: #00cf2e;
 }
 </style>
 
@@ -41,12 +41,12 @@ import sX02 from '$lib/sX.02.png';
 import sX03 from '$lib/sX.03.png';
 import sX04 from '$lib/sX.04.png';
 import sX05 from '$lib/sX.05.png';
-import es1 from '$lib/es1.png';
-import es2 from '$lib/es2.png';
-import es3 from '$lib/es3.png';
-import es4 from '$lib/es4.png';
-import es5 from '$lib/es5.png';
-import CarouselSS from '$lib/components/CarouselSS.svelte';
+import bif1 from '$lib/bif1.png';
+import bif2 from '$lib/bif2.png';
+import bif3 from '$lib/bif3.png';
+import bif4 from '$lib/bif4.png';
+import bif5 from '$lib/bif5.png';
+import CarouselSI from '$lib/components/CarouselSI.svelte';
 let selected = 'Sustainable';
 function handleClick(newValue) {
 	selected = newValue;
@@ -166,7 +166,7 @@ function updateColorIndicatorPosition() {
 
 <section
 	style="background-image: url(/defaultbg.png);"
-	class=" w-full bg-cover bg-center bg-no-repeat py-10">
+	class=" w-full bg-cover bg-center bg-no-repeat py-20">
 	<div class="m-auto flex max-w-6xl flex-col items-center gap-2">
 		<h4 class=" w-3/5 text-center text-2xl text-secondary md:text-4xl">
 			Take the next step in your <span class=" font-bold text-info">smart industry</span> journey…
@@ -211,7 +211,7 @@ function updateColorIndicatorPosition() {
 <section
 	id="safe"
 	style=" background-image: url({gradientbackground}) "
-	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10">
+	class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20">
 	<h4
 		class="m-auto mb-10 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl">
 		SAFE Industry for you
@@ -305,54 +305,53 @@ function updateColorIndicatorPosition() {
 		<div
 			class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2">
 			<div class=" flex w-96 flex-col items-center gap-4 p-8">
-				<img class=" w-32" src="{es1}" alt="" />
+				<img class=" w-32" src="{bif1}" alt="" />
 				<h5 class=" w-80 text-center text-2xl font-semibold text-white">
-					Unlock inefficiencies in your building ecosystems
+					Digital Twins : Assets Systems Process
 				</h5>
 				<p class="w-80 text-center font-normal text-white">
-					Target margin expansion & improve free-cash-flow through automation & green-tech
+					Move to prescriptive interventions with digital twins of assets, systems & processes;
+					Mature to implement Mfg Enterprise Digital Thread
 				</p>
 			</div>
 
 			<div class=" flex w-96 flex-col items-center gap-4 p-8">
-				<img class=" w-32" src="{es2}" alt="" />
+				<img class=" w-32" src="{bif2}" alt="" />
 				<h5 class=" w-80 text-center text-2xl font-semibold text-white">
-					A well-oiled refinery – no pun intended !
+					Agile Ops : Manufacturing Logistics
 				</h5>
 				<p class="w-80 text-center font-normal text-white">
-					Maximize the value of your O&G resources be it onshore, offshore or unconventionals
+					Self-Aware & Self-Optimizing manufacturing & logistics processes for truly agile
+					factory(ies)
 				</p>
 			</div>
 
 			<div class=" flex w-96 flex-col items-center gap-4 p-8">
-				<img class=" w-32" src="{es3}" alt="" />
-				<h5 class=" w-80 text-center text-2xl font-semibold text-white">
-					Enhance your factory infrastructure with AIoT
-				</h5>
+				<img class=" w-32" src="{bif3}" alt="" />
+				<h5 class=" w-80 text-center text-2xl font-semibold text-white">Autonomous Shopfloor</h5>
 				<p class="w-80 text-center font-normal text-white">
-					Target transparency & control of your factory utilities & ageing infra through intelligent
-					networks
+					100% lights-out factory combining “as-appropriate” maturities of vision factory, digital
+					threads, AGV/AMRs, etc.
 				</p>
 			</div>
 
 			<div class=" flex w-96 flex-col items-center gap-4 p-8">
-				<img class=" w-32" src="{es4}" alt="" />
-				<h5 class=" w-80 text-center text-2xl font-semibold text-white">
-					360o value generation with digital greenhouses
-				</h5>
+				<img class=" w-32" src="{bif4}" alt="" />
+				<h5 class=" w-80 text-center text-2xl font-semibold text-white">Networked Factory(ies)</h5>
 				<p class="w-80 text-center font-normal text-white">
-					From maximizing yield to optimizing resources (esp. water & energy), AIoT enhances farm
-					ops
+					Move towards federated manufacturing & additive manufacturing leveraging the power of 5G &
+					the Network Edge
 				</p>
 			</div>
 
 			<div class=" flex w-96 flex-col items-center gap-4 p-8">
-				<img class=" w-32" src="{es5}" alt="" />
+				<img class=" w-32" src="{bif5}" alt="" />
 				<h5 class=" w-80 text-center text-2xl font-semibold text-white">
-					Autonomous drones for perimeter security
+					Sustainable Supply Chain
 				</h5>
 				<p class="w-80 text-center font-normal text-white">
-					Engage drone fleets for uber-efficient safety & security management of your spaces
+					Build a highly resilient supply chain with focus on across the board sustainability 🡪
+					circular economy
 				</p>
 			</div>
 
@@ -368,7 +367,7 @@ function updateColorIndicatorPosition() {
 <section
 	id="future"
 	style="background-image: url(/defaultbg.png);"
-	class="  bg-cover bg-center bg-no-repeat py-10">
+	class="  bg-cover bg-center bg-no-repeat py-20">
 	<h4 class=" m-auto w-3/5 text-center text-4xl text-primary">Future of Spaces</h4>
 	<div class=" m-auto flex w-full max-w-5xl flex-wrap">
 		<div
@@ -464,7 +463,7 @@ function updateColorIndicatorPosition() {
 </section>
 
 <section id="stories">
-	<CarouselSS />
+	<CarouselSI />
 </section>
 
 <section
