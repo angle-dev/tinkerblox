@@ -28,6 +28,7 @@ onMount(async () => {
 			volume
 			class="h-full w-full object-cover"
 			src="{window.innerWidth <= 768 ? HeroVidMob : HeroVid}"></video> -->
+		<video loop autoplay muted volume class="h-full w-full object-cover" src="{HeroVid}"></video>
 	</div>
 
 	<h2 class=" relative mb-14 p-5 text-center text-2xl text-base-100 md:p-0 md:text-4xl">
