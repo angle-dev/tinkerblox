@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/superblox/smartutilities/+page.svelte";
