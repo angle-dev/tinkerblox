@@ -20,7 +20,7 @@ jobs:
       - name: Deploy on CapRover
         uses: caprover/deploy-from-github@v1.1.2
         with:
-          server: https://www.tinkerblox.io
+          server: https://tinkerblox.io
           app: "tinkerblox"
           token: "${{ secrets.APP_TOKEN }}"
           image: "ghcr.io/glitchnobody/tinkerblox:latest"
