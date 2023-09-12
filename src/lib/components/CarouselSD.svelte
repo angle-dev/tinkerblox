@@ -1,0 +1,128 @@
+<script>
+  import { Splide, SplideSlide } from "@splidejs/svelte-splide";
+  import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+
+  let index = 0;
+
+  import IMAGE1 from "$lib/carouselSD/IMAGE1.png";
+
+  import IMAGE2 from "$lib/carouselSD/IMAGE2.png";
+
+  import IMAGE3 from "$lib/carouselSD/IMAGE3.png";
+
+  import IMAGE4 from "$lib/carouselSD/IMAGE4.png";
+
+  import IMAGE5 from "$lib/carouselSD/IMAGE5.png";
+
+  import IMAGE6 from "$lib/carouselSD/IMAGE6.png";
+
+  import IMAGE7 from "$lib/carouselSD/IMAGE7.png";
+
+  import IMAGE8 from "$lib/carouselSD/IMAGE8.png";
+
+  const carouselImages = [
+    {
+      image: IMAGE1,
+      head: "Clients: Utility OEMs, Utility distribution enterprises",
+      text: "Accelerated orchestration of the enterprise digital thread across the product lifecycle thus providing real-time field insights to R&D, engineering and field service teams",
+    },
+    {
+      image: IMAGE2,
+      head: "Clients: Industrial machines OEM, Utility OEM",
+      text: "TinkerBloX partners with device OEMs to leapfrog their devices into a smart & connected portfolio with out hardware-agnostic, OS-agnostic, environment-agnostic software blocks",
+    },
+    {
+      image: IMAGE3,
+      head: "Clients: Utility OEM, Smart building operators",
+      text: "TinkerBloX deploys out-of-the-box digital twins for device manufacturers to provide prescriptive field support for remote installations",
+    },
+    {
+      image: IMAGE4,
+      head: "Clients: MedTech R&D divisions",
+      text: "Tinkerblox provides pre-curated certified infrastructure packages for faster Proofs & Time-to-Market Companies targeting faster smart device releases use this as a scalable platform to develop & release their product versions",
+    },
+    {
+      image: IMAGE5,
+      head: "Clients: Advanced Tech orgs, Consumer Goods R&D",
+      text: "Workload sharing is the sure-shot way to succeed at the edge. Companies leverage Tinkerblox to build highly configurable distributed compute ecosystems for easy & secure workload sharing",
+    },
+    {
+      image: IMAGE6,
+      head: "Clients: Future Tech companies",
+      text: "Tinkerblox ecosystem helps build device centric experience of the future with multiple interactive components",
+    },
+    {
+      image: IMAGE7,
+      head: "Client: Industrial OEM",
+      text: "TinkerBloX helps curate devices aware of its inherent & ancillary footprint through its operational lifecycle in real time",
+    },
+    {
+      image: IMAGE8,
+      head: "Clients: NA gaming company",
+      text: "The future of gaming is more than AR-VR Device rendered gaming experience is the obvious future",
+    },
+  ];
+
+  const options = {
+    type: "loop",
+    gap: "1rem",
+    padding: "1rem",
+    focus: "center",
+    pagination: false,
+    autoplay: true,
+    interval: 2000,
+    autoWidth: true,
+    width: "100%",
+  };
+</script>
+
+<div
+  class=" mt-5 flex w-full flex-col items-center bg-cover bg-center bg-no-repeat pb-[200px] align-middle"
+  style="background-image: url(/defaultbg.png);"
+>
+  <h2 class=" mt-12 text-3xl font-normal text-primary md:pb-14 md:text-6xl">
+    Stories we bring to Life
+  </h2>
+  <div class="absolute z-0 h-[450px] w-[80vw] md:h-[750px]" />
+  <div class=" relative z-10 mt-4">
+    <Splide
+      on:mounted={(e) => {
+        index = e.detail.splide.index;
+        console.log(index);
+      }}
+      on:move={(e) => {
+        index = e.detail.splide.index;
+        console.log(index);
+      }}
+      {options}
+      aria-labelledby="basic-example-heading"
+    >
+      {#each carouselImages as carousel}
+        <SplideSlide>
+          <img
+            class="h-auto max-h-[650px] w-[80vw] object-contain"
+            src={carousel.image}
+            alt="Image{carousel.head}"
+          />
+        </SplideSlide>
+      {/each}
+    </Splide>
+  </div>
+
+  <div class=" relative h-64 w-60 md:h-44 md:w-[30vw]">
+    {#each carouselImages as carousel, i}
+      {#if i === index}
+        <div class="flex flex-col justify-center p-5">
+          <h6 class=" text-center text-base text-neutral/40 md:text-2xl">
+            {carousel.text}
+          </h6>
+          <p
+            class=" bg-gradient-to-l from-secondary to-info bg-clip-text py-2 text-center text-base font-normal text-info text-transparent md:py-10 md:text-2xl"
+          >
+            {carousel.head}
+          </p>
+        </div>
+      {/if}
+    {/each}
+  </div>
+</div>
