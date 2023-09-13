@@ -218,7 +218,7 @@
     {/if}
     {#if index === 3}
       <div
-        style="width: {offset * 100}%;"
+        style="width: {offset * 130}%;"
         class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
       />
     {:else}
