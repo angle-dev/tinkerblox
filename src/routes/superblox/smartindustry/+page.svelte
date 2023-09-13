@@ -349,7 +349,7 @@
   class="  bg-cover bg-center bg-no-repeat py-20"
 >
   <h4 class=" m-auto w-3/5 text-center text-4xl text-primary">
-    Future of Spaces
+    Future of Industry
   </h4>
   <div class=" m-auto flex w-full max-w-5xl flex-wrap">
     <div
