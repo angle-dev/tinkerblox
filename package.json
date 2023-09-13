@@ -37,6 +37,7 @@
 	"type": "module",
 	"dependencies": {
 		"@lottiefiles/svelte-lottie-player": "^0.3.0",
-		"@splidejs/svelte-splide": "^0.2.9"
+		"@splidejs/svelte-splide": "^0.2.9",
+		"@sveltejs/svelte-scroller": "^2.0.7"
 	}
 }

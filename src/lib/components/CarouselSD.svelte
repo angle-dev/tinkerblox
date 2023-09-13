@@ -80,7 +80,7 @@
   class=" mt-5 flex w-full flex-col items-center bg-cover bg-center bg-no-repeat pb-[200px] align-middle"
   style="background-image: url(/defaultbg.png);"
 >
-  <h2 class=" mt-12 text-3xl font-normal text-primary md:pb-14 md:text-6xl">
+  <h2 class=" mt-32 text-3xl font-normal text-primary md:pb-14 md:text-6xl">
     Stories we bring to Life
   </h2>
   <div class="absolute z-0 h-[450px] w-[80vw] md:h-[750px]" />
