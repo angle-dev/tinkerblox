@@ -39,6 +39,8 @@
 
   import { onMount, onDestroy, afterUpdate } from "svelte";
 
+  import Scroller from "@sveltejs/svelte-scroller";
+
   let greetings = [
     { text: "Edge-Centric", colorClass: "red-text" },
     { text: "Data-Secure", colorClass: "blue-text" },
@@ -47,13 +49,13 @@
     { text: "True Real-Time", colorClass: "orange-text" },
     { text: "Sustainable", colorClass: "pink-text" },
   ];
-  let index = 0;
+  let index2 = 0;
   let roller;
 
   onMount(() => {
     roller = setInterval(() => {
-      if (index === greetings.length - 1) index = 0;
-      else index++;
+      if (index2 === greetings.length - 1) index2 = 0;
+      else index2++;
     }, 1250);
   });
 
@@ -73,15 +75,29 @@
 
   function updateColorIndicatorPosition() {
     if (colorIndicator) {
-      const activeIndex = sections.findIndex(
+      const activeIndex2 = sections.findIndex2(
         (section) => section.id === activeSection
       );
-      if (activeIndex !== -1) {
+      if (activeIndex2 !== -1) {
         const totalSections = sections.length;
-        const width = ((activeIndex + 1) / totalSections) * 100;
+        const width = ((activeIndex2 + 1) / totalSections) * 100;
         colorIndicator.style.width = `${width}%`;
       }
     }
+  }
+
+  let fullwidth = false;
+  $: active_class = fullwidth ? " " : "max-w-5xl";
+  let count;
+  let index;
+  let offset;
+  let progress;
+  let top = 0;
+  let threshold = 0;
+  let bottom = 0;
+  if (progress > 0) {
+    fullwidth = true;
+    console.log(progress);
   }
 </script>
 
@@ -104,13 +120,13 @@
         >
           <!-- Text Content 1 -->
           <div class="text-center">
-            {#key index}
+            {#key index2}
               <h1
                 class=" greeting ml-8 text-3xl font-bold italic text-secondary md:ml-14 md:text-6xl {greetings[
-                  index
+                  index2
                 ].colorClass}"
               >
-                {greetings[index].text}
+                {greetings[index2].text}
               </h1>
             {/key}
           </div>
@@ -121,8 +137,8 @@
       <p
         class=" mt-20 max-w-3xl p-5 text-justify text-xl text-base-100 md:p-5 md:text-2xl"
       >
-        Build a self-sufficient & self-aware AIoT eco-system within your factory
-        site
+        Build an adaptive eco-system of interactive experience between man &
+        machine
       </p>
     </div>
   </div>
@@ -166,475 +182,510 @@
     </p>
   </div>
 </section>
-<!-- <div
-	  class=" min-h-4 sticky top-16 z-50 m-auto flex h-fit w-full max-w-5xl items-center justify-between gap-2 overflow-hidden rounded-full bg-[#B5B5B5] px-4 py-2 text-center text-sm text-white md:text-lg">
-	  <a href="#safe" class=" relative z-10"> <span>SAFE Spaces for you</span></a>
-	  <a href="#future" class=" relative z-10"> <span>Future of Spaces</span></a>
-	  <a href="#tinker" class=" relative z-10"> <span>The TinkerBloX USP</span></a>
-	  <a href="#stories" class=" relative z-10"> <span>Stories we bring to life</span></a>
-  
-	  <div class="absolute z-0 -ml-4 h-full w-[10%] bg-gradient-to-b from-info to-secondary"></div>
-  </div> -->
 
 <div
-  class="min-h-4 sticky top-16 z-50 m-auto flex h-fit w-full max-w-5xl items-center justify-between gap-2 overflow-hidden rounded-full bg-[#B5B5B5] px-4 py-2 text-center text-sm text-white md:text-lg"
+  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit w-full grid-cols-4 {active_class} items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] px-4 py-2 text-center text-[10px] text-white md:text-lg"
 >
   {#each sections as section (section.id)}
     <a href={"#" + section.id} class="relative z-10">
-      <span>{section.text}</span>
+      <span class="px-3">{section.text}</span>
     </a>
   {/each}
 
-  <div
-    class="absolute z-0 -ml-4 h-full bg-gradient-to-b from-info to-secondary"
-    bind:this={colorIndicator}
-  />
+  <div class="absolute left-0 z-0 grid h-full w-full grid-cols-4">
+    {#if index === 0}
+      <div
+        style="width: {offset * 100}%;"
+        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+      />
+    {:else}
+      <div />
+    {/if}
+    {#if index === 1}
+      <div
+        style="width: {offset * 100}%;"
+        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+      />
+    {:else}
+      <div />
+    {/if}
+    {#if index === 2}
+      <div
+        style="width: {offset * 100}%;"
+        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+      />
+    {:else}
+      <div />
+    {/if}
+    {#if index === 3}
+      <div
+        style="width: {offset * 130}%;"
+        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+      />
+    {:else}
+      <div />
+    {/if}
+  </div>
 </div>
 
 <br />
 
-<section
-  id="safe"
-  style=" background-image: url({gradientbackground}) "
-  class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20"
+<Scroller
+  {top}
+  {threshold}
+  {bottom}
+  bind:count
+  bind:index
+  bind:offset
+  bind:progress
 >
-  <h4
-    class="m-auto mb-10 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
-  >
-    SMART devices for you
-  </h4>
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div
-    class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
-  >
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <span
-      on:click={() => handleClick("Sustainable")}
-      class="{'relative z-10 w-80 cursor-pointer rounded-full border border-[#00BE2A] px-3 py-2   '} {selected ===
-      'Sustainable'
-        ? 'bg-[#00BE2A] shadow-md shadow-[#00BE2A] '
-        : ''}">Connected</span
+  <div slot="background" />
+  <div slot="foreground">
+    <section
+      id="safe"
+      style=" background-image: url({gradientbackground}) "
+      class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20"
     >
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <span
-      on:click={() => handleClick("Autonomous")}
-      class="relative z-10 w-80 cursor-pointer rounded-full border border-[#00A7E5] px-3 py-2 {selected ===
-      'Autonomous'
-        ? 'bg-[#00A7E5] shadow-md shadow-[#00A7E5]'
-        : ''}">Intelligent</span
-    >
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <span
-      on:click={() => handleClick("Federated")}
-      class="relative z-10 w-80 cursor-pointer rounded-full border border-[#E76120] px-3 py-2 {selected ===
-      'Federated'
-        ? 'bg-[#E76120] shadow-md shadow-[#E76120]'
-        : ''}">Autonomous</span
-    >
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <span
-      on:click={() => handleClick("Efficient")}
-      class="relative z-10 w-80 cursor-pointer rounded-full border border-[#A1499C] px-3 py-2 {selected ===
-      'Efficient'
-        ? 'bg-[#A1499C] shadow-md shadow-[#A1499C]'
-        : ''}">Sustainable</span
-    >
-  </div>
-
-  {#if selected === "Sustainable"}
-    <div
-      class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-    >
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={c1} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Device Connectivity
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Creation of connected devices [OE & Retrofit] to stream data and
-          execute command & control
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={c2} alt="" />
-        <h5 class="w-80 text-center text-2xl font-semibold text-white">
-          Boundless Interoperability
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Interoperability across tech stacks & vendors for a seamless system of
-          operations
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={c3} alt="" />
-        <h5 class="w-80 text-center text-2xl font-semibold text-white">
-          First Mile & Last Mile Transparency
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Device transparency at the most remote points of the value chain
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={c4} alt="" />
-        <h5 class="w-80 text-center text-2xl font-semibold text-white">
-          Field Support
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Maintenance & upkeep of field assets for continuous operations
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={c5} alt="" />
-        <h5 class="w-80 text-center text-2xl font-semibold text-white">
-          Secure Field Assets
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Uniquely identifiable field assets with secure communications
-        </p>
-      </div>
-
-      <a href="/connect">
-        <div
-          class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+      <h4
+        class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
+      >
+        SMART devices for you
+      </h4>
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <div
+        class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
+      >
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <span
+          on:click={() => handleClick("Sustainable")}
+          class="{'relative z-10 w-80 cursor-pointer rounded-full border border-[#00BE2A] px-3 py-2   '} {selected ===
+          'Sustainable'
+            ? 'bg-[#00BE2A] shadow-md shadow-[#00BE2A] '
+            : ''}">Connected</span
         >
-          Learn More...
-        </div>
-      </a>
-    </div>
-  {/if}
-  {#if selected === "Autonomous"}
-    <div
-      class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-    >
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={I1} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Digital Twins : <br />Assets
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Move to prescriptive interventions with digital twins
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={I2} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Packaged Device software infrastructure
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Pre-curated certified infrastructure packages for faster Proofs &
-          Time-to-Market
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={I3} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Product lifecycle<br /> Digital Thread
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Tap into complete product lifecycle transparency & feedback from
-          cradle to grave
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={I4} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Edge for Trust
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Edge for trust exchange applications. Device as a single source of
-          truth
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={I5} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Diagnostics for heterogeneous device ecosystems
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Plug & play diagnostics of fungible, heterogenous device eco-systems
-          as a service
-        </p>
-      </div>
-
-      <a href="/connect">
-        <div
-          class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <span
+          on:click={() => handleClick("Autonomous")}
+          class="relative z-10 w-80 cursor-pointer rounded-full border border-[#00A7E5] px-3 py-2 {selected ===
+          'Autonomous'
+            ? 'bg-[#00A7E5] shadow-md shadow-[#00A7E5]'
+            : ''}">Intelligent</span
         >
-          Learn More...
-        </div>
-      </a>
-    </div>
-  {/if}
-  {#if selected === "Federated"}
-    <div
-      class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-    >
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={A1} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Autonomous self-diagnosis & treatment
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Near-self-aware devices that optimize their own settings for higher
-          efficiency and sustainability
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={A2} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Adaptive Device Ecosystems
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Adaptive and autonomous closed-loop systems that self-adjust to the
-          environment
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={A3} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Autonomous Field Operations
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Un-intervened, self-supervised device operations with low-latency
-          outcomes
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={A4} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Autonomous Workload Sharing
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Constraint-driven autonomous workload sharing between co-working
-          devices
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={A5} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Millions &<br /> Millions…
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Self-optimizing federated system of millions of devices managed across
-          generations & diversities
-        </p>
-      </div>
-
-      <a href="/connect">
-        <div
-          class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <span
+          on:click={() => handleClick("Federated")}
+          class="relative z-10 w-80 cursor-pointer rounded-full border border-[#E76120] px-3 py-2 {selected ===
+          'Federated'
+            ? 'bg-[#E76120] shadow-md shadow-[#E76120]'
+            : ''}">Autonomous</span
         >
-          Learn More...
-        </div>
-      </a>
-    </div>
-  {/if}
-  {#if selected === "Efficient"}
-    <div
-      class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-    >
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={S1} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Green &<br /> Sustainable
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Low footprint, inherently green-aware AI@Edge devices
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={S2} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Circular <br />Economy
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Trace the journey of a product for reduce, reuse, & recycle
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={S3} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Intelligent Energy Sourcing
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Devices capable of tapping into the most optimum [cost vs footprint]
-          energy sources on the fly
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={S4} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Devices smart through to aftermarket
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Devices capable of self-diagnostics & valuation for re-sale and/or
-          re-deployment
-        </p>
-      </div>
-
-      <div class=" flex w-96 flex-col items-center gap-4 p-8">
-        <img class=" w-32" src={S5} alt="" />
-        <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-          Impact Scope III with green-aware devices
-        </h5>
-        <p class="w-80 text-center font-normal text-white">
-          Devices aware of its inherent & ancillary footprint through scope III
-          across its lifecycle in real time
-        </p>
-      </div>
-
-      <a href="/connect">
-        <div
-          class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <span
+          on:click={() => handleClick("Efficient")}
+          class="relative z-10 w-80 cursor-pointer rounded-full border border-[#A1499C] px-3 py-2 {selected ===
+          'Efficient'
+            ? 'bg-[#A1499C] shadow-md shadow-[#A1499C]'
+            : ''}">Sustainable</span
         >
-          Learn More...
-        </div>
-      </a>
-    </div>
-  {/if}
-</section>
+      </div>
 
-<section
-  id="future"
-  style="background-image: url(/defaultbg.png);"
-  class="  bg-cover bg-center bg-no-repeat py-20"
+      {#if selected === "Sustainable"}
+        <div
+          class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+        >
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={c1} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Device Connectivity
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Creation of connected devices [OE & Retrofit] to stream data and
+              execute command & control
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={c2} alt="" />
+            <h5 class="w-80 text-center text-2xl font-semibold text-white">
+              Boundless Interoperability
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Interoperability across tech stacks & vendors for a seamless
+              system of operations
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={c3} alt="" />
+            <h5 class="w-80 text-center text-2xl font-semibold text-white">
+              First Mile & Last Mile Transparency
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Device transparency at the most remote points of the value chain
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={c4} alt="" />
+            <h5 class="w-80 text-center text-2xl font-semibold text-white">
+              Field Support
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Maintenance & upkeep of field assets for continuous operations
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={c5} alt="" />
+            <h5 class="w-80 text-center text-2xl font-semibold text-white">
+              Secure Field Assets
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Uniquely identifiable field assets with secure communications
+            </p>
+          </div>
+
+          <a href="/connect">
+            <div
+              class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+            >
+              Learn More...
+            </div>
+          </a>
+        </div>
+      {/if}
+      {#if selected === "Autonomous"}
+        <div
+          class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+        >
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={I1} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Digital Twins : <br />Assets
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Move to prescriptive interventions with digital twins
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={I2} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Packaged Device software infrastructure
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Pre-curated certified infrastructure packages for faster Proofs &
+              Time-to-Market
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={I3} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Product lifecycle<br /> Digital Thread
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Tap into complete product lifecycle transparency & feedback from
+              cradle to grave
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={I4} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Edge for Trust
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Edge for trust exchange applications. Device as a single source of
+              truth
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={I5} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Diagnostics for heterogeneous device ecosystems
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Plug & play diagnostics of fungible, heterogenous device
+              eco-systems as a service
+            </p>
+          </div>
+
+          <a href="/connect">
+            <div
+              class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+            >
+              Learn More...
+            </div>
+          </a>
+        </div>
+      {/if}
+      {#if selected === "Federated"}
+        <div
+          class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+        >
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={A1} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Autonomous self-diagnosis & treatment
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Near-self-aware devices that optimize their own settings for
+              higher efficiency and sustainability
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={A2} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Adaptive Device Ecosystems
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Adaptive and autonomous closed-loop systems that self-adjust to
+              the environment
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={A3} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Autonomous Field Operations
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Un-intervened, self-supervised device operations with low-latency
+              outcomes
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={A4} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Autonomous Workload Sharing
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Constraint-driven autonomous workload sharing between co-working
+              devices
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={A5} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Millions &<br /> Millions…
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Self-optimizing federated system of millions of devices managed
+              across generations & diversities
+            </p>
+          </div>
+
+          <a href="/connect">
+            <div
+              class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+            >
+              Learn More...
+            </div>
+          </a>
+        </div>
+      {/if}
+      {#if selected === "Efficient"}
+        <div
+          class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+        >
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={S1} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Green &<br /> Sustainable
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Low footprint, inherently green-aware AI@Edge devices
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={S2} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Circular <br />Economy
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Trace the journey of a product for reduce, reuse, & recycle
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={S3} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Intelligent Energy Sourcing
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Devices capable of tapping into the most optimum [cost vs
+              footprint] energy sources on the fly
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={S4} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Devices smart through to aftermarket
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Devices capable of self-diagnostics & valuation for re-sale and/or
+              re-deployment
+            </p>
+          </div>
+
+          <div class=" flex w-96 flex-col items-center gap-4 p-8">
+            <img class=" w-32" src={S5} alt="" />
+            <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+              Impact Scope III with green-aware devices
+            </h5>
+            <p class="w-80 text-center font-normal text-white">
+              Devices aware of its inherent & ancillary footprint through scope
+              III across its lifecycle in real time
+            </p>
+          </div>
+
+          <a href="/connect">
+            <div
+              class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+            >
+              Learn More...
+            </div>
+          </a>
+        </div>
+      {/if}
+    </section>
+
+    <section
+      id="future"
+      style="background-image: url(/defaultbg.png);"
+      class="  bg-cover bg-center bg-no-repeat py-20"
+    >
+      <h4 class=" m-auto w-3/5 text-center text-4xl text-primary">
+        The Future Device Habitat
+      </h4>
+      <div class=" m-auto flex w-full max-w-5xl flex-wrap">
+        <div
+          class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
+        >
+          <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
+            <h5
+              class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
+            >
+              Device as a Service
+            </h5>
+            <img class="  w-64 hover:scale-105" src={fdh1} alt="" />
+            <p class=" p-2 text-center text-black/40">
+              Move towards continuous revenue streams with Device-as-a-Service
+              offerings
+            </p>
+          </div>
+        </div>
+        <div
+          class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
+        >
+          <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
+            <h5
+              class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
+            >
+              Device personalization
+            </h5>
+            <img class="  w-64 hover:scale-105" src={fdh2} alt="" />
+            <p class=" p-2 text-center text-black/40">
+              Empower your customers to personalize device behavior's with
+              AI@Edge
+            </p>
+          </div>
+        </div>
+        <div
+          class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
+        >
+          <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
+            <h5
+              class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
+            >
+              Edge for Trust
+            </h5>
+            <img class="  w-64 hover:scale-105" src={fdh3} alt="" />
+            <p class=" p-2 text-center text-black/40">
+              Trust the edge for a data-secure & compliant environment for your
+              devices
+            </p>
+          </div>
+        </div>
+        <div
+          class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
+        >
+          <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
+            <h5
+              class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
+            >
+              Device Habitat
+            </h5>
+            <img class="  w-64 hover:scale-105" src={fdh4} alt="" />
+            <p class=" p-2 text-center text-black/40">
+              Micro-ecosystems where devices communicate with each other edge to
+              edge
+            </p>
+          </div>
+        </div>
+        <div
+          class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
+        >
+          <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
+            <h5
+              class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
+            >
+              Device Twins
+            </h5>
+            <img class="  w-64 hover:scale-105" src={fdh5} alt="" />
+            <p class=" p-2 text-center text-black/40">
+              Twin your assets @ the edge & ensure unparalleled service for your
+              customers
+            </p>
+          </div>
+        </div>
+        <div
+          class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
+        >
+          <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
+            <h5
+              class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
+            >
+              Devices That Love Our Planet
+            </h5>
+            <img class="  w-64 hover:scale-105" src={fdh6} alt="" />
+            <p class=" p-2 text-center text-black/40">
+              Sustainability conscious devices that self-adjust for best
+              performance sustainably
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="tinker"
+      style="background-image: url({gradientbackground})"
+      class="min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-60"
+    >
+      <div class="m-auto max-w-4xl">
+        <div style="position: relative; text-align: center;">
+          <img
+            class=" object-contain object-center"
+            src={TheTinkerBloXUSP}
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="stories">
+      <CarouselSD />
+    </section>
+  </div></Scroller
 >
-  <h4 class=" m-auto w-3/5 text-center text-4xl text-primary">
-    The Future Device Habitat
-  </h4>
-  <div class=" m-auto flex w-full max-w-5xl flex-wrap">
-    <div
-      class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
-    >
-      <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
-        <h5
-          class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
-        >
-          Device as a Service
-        </h5>
-        <img class="  w-64 hover:scale-105" src={fdh1} alt="" />
-        <p class=" p-2 text-center text-black/40">
-          Move towards continuous revenue streams with Device-as-a-Service
-          offerings
-        </p>
-      </div>
-    </div>
-    <div
-      class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
-    >
-      <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
-        <h5
-          class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
-        >
-          Device personalization
-        </h5>
-        <img class="  w-64 hover:scale-105" src={fdh2} alt="" />
-        <p class=" p-2 text-center text-black/40">
-          Empower your customers to personalize device behavior's with AI@Edge
-        </p>
-      </div>
-    </div>
-    <div
-      class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
-    >
-      <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
-        <h5
-          class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
-        >
-          Edge for Trust
-        </h5>
-        <img class="  w-64 hover:scale-105" src={fdh3} alt="" />
-        <p class=" p-2 text-center text-black/40">
-          Trust the edge for a data-secure & compliant environment for your
-          devices
-        </p>
-      </div>
-    </div>
-    <div
-      class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
-    >
-      <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
-        <h5
-          class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
-        >
-          Device Habitat
-        </h5>
-        <img class="  w-64 hover:scale-105" src={fdh4} alt="" />
-        <p class=" p-2 text-center text-black/40">
-          Micro-ecosystems where devices communicate with each other edge to
-          edge
-        </p>
-      </div>
-    </div>
-    <div
-      class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
-    >
-      <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
-        <h5
-          class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
-        >
-          Device Twins
-        </h5>
-        <img class="  w-64 hover:scale-105" src={fdh5} alt="" />
-        <p class=" p-2 text-center text-black/40">
-          Twin your assets @ the edge & ensure unparalleled service for your
-          customers
-        </p>
-      </div>
-    </div>
-    <div
-      class=" min-h-4 top-16 m-auto mt-7 flex h-fit w-fit flex-wrap items-center justify-center gap-6 overflow-hidden px-4 py-2"
-    >
-      <div class=" flex h-full w-64 flex-col items-center bg-[#E9E9E9]">
-        <h5
-          class=" flex h-10 w-full items-center justify-center bg-gradient-to-r from-info to-secondary text-center text-lg font-semibold text-white"
-        >
-          Devices That Love Our Planet
-        </h5>
-        <img class="  w-64 hover:scale-105" src={fdh6} alt="" />
-        <p class=" p-2 text-center text-black/40">
-          Sustainability conscious devices that self-adjust for best performance
-          sustainably
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section
-  id="tinker"
-  style="background-image: url({gradientbackground})"
-  class="min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-60"
->
-  <div class="m-auto max-w-4xl">
-    <div style="position: relative; text-align: center;">
-      <img
-        class=" object-contain object-center"
-        src={TheTinkerBloXUSP}
-        alt=""
-      />
-    </div>
-  </div>
-</section>
-
-<section id="stories">
-  <CarouselSD />
-</section>
 
 <section
   style=" background-image: url({gradientbackground}) "

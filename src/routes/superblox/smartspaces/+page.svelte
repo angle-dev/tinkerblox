@@ -184,11 +184,11 @@
 </section>
 
 <div
-  class="min-h-4 sticky top-16 z-50 m-auto flex h-fit w-full {active_class} items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] px-4 py-2 text-center text-sm text-white md:text-lg"
+  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit w-full grid-cols-4 {active_class} items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] px-4 py-2 text-center text-[10px] text-white md:text-lg"
 >
   {#each sections as section (section.id)}
     <a href={"#" + section.id} class="relative z-10">
-      <span>{section.text}</span>
+      <span class="px-3">{section.text}</span>
     </a>
   {/each}
   <div class="absolute left-0 z-0 grid h-full w-full grid-cols-4">
@@ -694,7 +694,7 @@
 
 <section
   style=" background-image: url({gradientbackground}) "
-  class="min-h-[497px] w-full bg-primary bg-cover bg-bottom bg-no-repeat py-32"
+  class=" min-h-[497px] w-full bg-primary bg-cover bg-bottom bg-no-repeat py-32"
 >
   <h4
     class="m-auto mb-16 w-full max-w-2xl p-5 text-center text-5xl font-medium text-base-100 md:p-0 md:text-6xl"

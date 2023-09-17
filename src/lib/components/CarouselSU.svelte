@@ -56,7 +56,7 @@
 </script>
 
 <div
-  class=" mt-5 flex w-full flex-col items-center bg-cover bg-center bg-no-repeat pb-[200px] align-middle"
+  class=" mt-5 flex w-full flex-col items-center overflow-hidden bg-cover bg-center bg-no-repeat pb-[200px] align-middle"
   style="background-image: url(/defaultbg.png);"
 >
   <h2 class=" mt-32 text-3xl font-normal text-primary md:pb-14 md:text-6xl">
