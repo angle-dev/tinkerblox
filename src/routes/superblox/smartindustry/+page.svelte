@@ -111,7 +111,7 @@
           <div class="text-center">
             {#key index2}
               <h1
-                class=" greeting ml-8 text-3xl font-bold italic text-secondary md:ml-14 md:text-6xl {greetings[
+                class=" greeting ml-8 text-2xl font-bold italic text-secondary sm:text-2xl md:ml-14 xl:text-4xl 2xl:text-5xl {greetings[
                   index2
                 ].colorClass}"
               >
@@ -173,11 +173,11 @@
 </section>
 
 <div
-  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit w-full grid-cols-4 {active_class} items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] px-4 py-2 text-center text-[11px] text-white md:text-lg"
+  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit w-full grid-cols-4 {active_class} items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] px-4 py-2 text-left text-[10px] text-white md:text-lg"
 >
   {#each sections as section (section.id)}
     <a href={"#" + section.id} class="relative z-10">
-      <span class="px-1.5">{section.text}</span>
+      <span class="pl-0.5">{section.text}</span>
     </a>
   {/each}
 
