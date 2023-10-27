@@ -34,6 +34,7 @@
   import { onMount, onDestroy, afterUpdate } from "svelte";
 
   import Scroller from "@sveltejs/svelte-scroller";
+  import { expoIn } from "svelte/easing";
 
   let greetings = [
     { text: "Edge-Centric", colorClass: "red-text" },
@@ -67,21 +68,8 @@
 
   let activeSection = sections[0].id; // Initialize with the first section
 
-  function updateColorIndicatorPosition() {
-    if (colorIndicator) {
-      const activeIndex2 = sections.findIndex2(
-        (section) => section.id === activeSection
-      );
-      if (activeIndex2 !== -1) {
-        const totalSections = sections.length;
-        const width = ((activeIndex2 + 1) / totalSections) * 100;
-        colorIndicator.style.width = `${width}%`;
-      }
-    }
-  }
-
   let fullwidth = false;
-  $: active_class = fullwidth ? " " : "max-w-5xl";
+  $: active_class = fullwidth ? "max-w-full" : "max-w-5xl";
   let count;
   let index;
   let offset;
@@ -89,10 +77,36 @@
   let top = 0;
   let threshold = 0;
   let bottom = 0;
-  if (progress > 0) {
-    fullwidth = true;
-    console.log(progress);
-  }
+
+  let targetElement;
+  let intersectionObserver;
+
+  // Options for the Intersection Observer
+  const options = {
+    root: null, // Use the viewport as the root
+    rootMargin: "0px",
+    threshold: 0.6, // Trigger when at least 50% of the target is visible
+  };
+
+  // Callback function when the target is in/out of the intersection
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        fullwidth = true;
+      } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+        fullwidth = false;
+      }
+    });
+  };
+
+  onMount(() => {
+    targetElement = document.getElementById("line"); // Replace with your target element's ID or reference
+    intersectionObserver = new IntersectionObserver(
+      handleIntersection,
+      options
+    );
+    intersectionObserver.observe(targetElement);
+  });
 </script>
 
 <section
@@ -109,7 +123,7 @@
 
         <!-- Text Carousel Container 1 -->
         <div
-          class="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center bg-opacity-50 text-white opacity-100 transition-opacity duration-500"
+          class="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center bg-opacity-50 text-white opacity-100 transition-opacity duration-[0.75s]"
           id="text-carousel-1"
         >
           <!-- Text Content 1 -->
@@ -181,11 +195,14 @@
 </section>
 
 <div
-  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit w-full grid-cols-4 {active_class} items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] px-4 py-2 text-left text-[10px] text-white md:text-lg"
+  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit grid-cols-4 {active_class}  items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] py-2 text-[10px] text-white duration-75 md:text-lg"
 >
   {#each sections as section (section.id)}
-    <a href={"#" + section.id} class="relative z-10">
-      <span class="pl-0.5">{section.text}</span>
+    <a
+      href={"#" + section.id}
+      class="relative z-10 flex items-center text-center"
+    >
+      <span class="w-full text-center">{section.text}</span>
     </a>
   {/each}
 
@@ -248,6 +265,7 @@
       >
         SMART Utilities for you
       </h4>
+
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
         class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
@@ -328,7 +346,7 @@
           </div>
 
           <div class=" flex w-96 flex-col items-center gap-4 p-8">
-            <img class=" w-32" src={fuat5} alt="" />
+            <img id="line" class=" w-32" src={fuat5} alt="" />
             <h5 class="w-80 text-center text-2xl font-semibold text-white">
               Secure your utility ecosystem
             </h5>
