@@ -207,38 +207,36 @@
   {/each}
 
   <div class="absolute left-0 z-0 grid h-full w-full grid-cols-4">
-    {#if index === 0}
+    {#if index === 0 || index > 0}
       {#if offset > 0}
         <div
-          style="width: {offset * 2000}%;
-        "
-          class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary"
+          style="width: {index > 0 ? 100 : offset * 2000}%;"
+          class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
         />
       {/if}
     {:else}
       <div />
     {/if}
-    {#if index === 1}
+    {#if index === 1 || index > 1}
       <div
-        style="width: {offset * 2000}%;
-        "
-        class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 1 ? 100 : offset * 2000}%;"
+        class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
     {/if}
-    {#if index === 2}
+    {#if index === 2 || index > 2}
       <div
-        style="width: {offset * 2000}%;"
-        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 2 ? 100 : offset * 2000}%;"
+        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
     {/if}
-    {#if index === 3}
+    {#if index === 3 || index > 3}
       <div
-        style="width: {offset * 2000}%;"
-        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 3 ? 100 : offset * 2000}%;"
+        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
