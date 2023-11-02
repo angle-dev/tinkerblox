@@ -208,33 +208,37 @@
 
   <div class="absolute left-0 z-0 grid h-full w-full grid-cols-4">
     {#if index === 0}
-      <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
-      />
+      {#if offset > 0}
+        <div
+          style="width: {offset * 2000}%;
+        "
+          class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary"
+        />
+      {/if}
     {:else}
       <div />
     {/if}
     {#if index === 1}
       <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {offset * 2000}%;
+        "
+        class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary"
       />
     {:else}
       <div />
     {/if}
     {#if index === 2}
       <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {offset * 2000}%;"
+        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary"
       />
     {:else}
       <div />
     {/if}
     {#if index === 3}
       <div
-        style="width: {offset * 130}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {offset * 2000}%;"
+        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary"
       />
     {:else}
       <div />
