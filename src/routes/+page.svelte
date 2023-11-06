@@ -6,6 +6,7 @@
   import Homelottie from "$lib/homelottie.json";
   import HeroVid from "$lib/heroVid.mp4";
   import HeroVidMob from "$lib/heroVidMob.mp4";
+  import IntersectionObserver from "../lib/components/IntersectionObserver.svelte";
 
   import { onMount } from "svelte";
 
@@ -69,15 +70,17 @@
         />
       {/if}
     </div>
-    <div class=" w-full p-5 text-center md:w-2/3 md:p-0 md:text-left">
-      <h3 class="text-3xl font-normal text-secondary md:text-5xl">
-        Everyone believes their IoT problem is unique...
-      </h3>
-      <br />
-      <h3 class="text-3xl font-bold text-info md:text-5xl">
-        EVERYONE IS RIGHT!
-      </h3>
-    </div>
+    <IntersectionObserver>
+      <div class=" w-full p-5 text-center md:w-2/3 md:p-0 md:text-left">
+        <h3 class="text-3xl font-normal text-secondary md:text-5xl">
+          Everyone believes their IoT problem is unique...
+        </h3>
+        <br />
+        <h3 class="text-3xl font-bold text-info md:text-5xl">
+          EVERYONE IS RIGHT!
+        </h3>
+      </div>
+    </IntersectionObserver>
   </div>
   <div>
     <p

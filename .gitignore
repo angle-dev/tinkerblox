@@ -25,9 +25,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+./svelte-kit
+
 
 node_modules
 
+.svelte-kit
 /.svelte-kit
 /package
 .env
@@ -37,3 +40,8 @@ node_modules
 .output
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+.svelte-kit/ambient.d.ts
+.svelte-kit/tsconfig.json
+.svelte-kit/generated/root.svelte
+.svelte-kit/generated/client/app.js
+.svelte-kit/generated/server/internal.js
