@@ -4,39 +4,34 @@
 
   let index = 0;
 
-  import IMAGE1 from "$lib/carouselSU/IMAGE1.png";
-
-  import IMAGE2 from "$lib/carouselSU/IMAGE2.png";
-
-  import IMAGE3 from "$lib/carouselSU/IMAGE3.png";
-
-  import IMAGE4 from "$lib/carouselSU/IMAGE4.png";
-
-  import IMAGE5 from "$lib/carouselSU/IMAGE5.png";
-
   const carouselImages = [
     {
-      image: IMAGE1,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Utility%20Images/Stories%20we%20bring%20to%20life_Map%20out%20Net-Zero%20journey%20for%20your%20utility%20site.png",
       head: "",
       text: "Every utility site approaches sustainability differently – as it should… TinkerBloX curated realistic but visionary roadmaps for multiple utility spaces, and partnered through the road to achieve targeted outcomes",
     },
     {
-      image: IMAGE2,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Utility%20Images/Stories%20we%20bring%20to%20life_Targeting%20ALWAYS%20ON%20utility%20assets.png",
       head: "Clients: Commercial Buildings",
       text: "TinkerBloX helps asset manufacturers & utility site supervisors monitor their machines real-time 🡪 predictive 🡪 prescriptive to ensure peak performance & zero unplanned downtime",
     },
     {
-      image: IMAGE3,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Utility%20Images/Stories%20we%20bring%20to%20life_Transform%20energy%20meters%20into%20experience-centric%20utility.png",
       head: "Clients: Energy Meter OEM",
       text: "TinkerBloX partnered with an energy meter manufacturer to inject AI into the meters and offer energy monitoring & sourcing as a service to its customers",
     },
     {
-      image: IMAGE4,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Utility%20Images/Stories%20we%20bring%20to%20life_Measure%20real-time%20impact%20of%20supply%20chain%20ops.png",
       head: "Clients: 3PL player",
       text: "Logistics players can now measure the real-time ecological footprint of their operations across the supply chain & take necessary actions to mitigate",
     },
     {
-      image: IMAGE5,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Utility%20Images/Stories%20we%20bring%20to%20life_Digital%20Twins%20for%20critical%20Utility%20Assets.png",
       head: "Clients: Transformer OEM",
       text: "TinkerBloX works with utility asset OEMs & site owners to build agile digital twins leveraging Edge AI ensuring optimized operations",
     },

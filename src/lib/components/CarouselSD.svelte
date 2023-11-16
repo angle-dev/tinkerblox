@@ -4,60 +4,52 @@
 
   let index = 0;
 
-  import IMAGE1 from "$lib/carouselSD/IMAGE1.png";
-
-  import IMAGE2 from "$lib/carouselSD/IMAGE2.png";
-
-  import IMAGE3 from "$lib/carouselSD/IMAGE3.png";
-
-  import IMAGE4 from "$lib/carouselSD/IMAGE4.png";
-
-  import IMAGE5 from "$lib/carouselSD/IMAGE5.png";
-
-  import IMAGE6 from "$lib/carouselSD/IMAGE6.png";
-
-  import IMAGE7 from "$lib/carouselSD/IMAGE7.png";
-
-  import IMAGE8 from "$lib/carouselSD/IMAGE8.png";
-
   const carouselImages = [
     {
-      image: IMAGE1,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20devices%20Image/Stories%20we%20bring%20to%20life%20_%20Realizing%20the%20lifecycle%20digital%20thread.png",
       head: "Clients: Utility OEMs, Utility distribution enterprises",
       text: "Accelerated orchestration of the enterprise digital thread across the product lifecycle thus providing real-time field insights to R&D, engineering and field service teams",
     },
     {
-      image: IMAGE2,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20devices%20Image/Stories%20we%20bring%20to%20life_%20Plug%20_%20play%20device%20connectivity.png",
       head: "Clients: Industrial machines OEM, Utility OEM",
       text: "TinkerBloX partners with device OEMs to leapfrog their devices into a smart & connected portfolio with out hardware-agnostic, OS-agnostic, environment-agnostic software blocks",
     },
     {
-      image: IMAGE3,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20devices%20Image/Stories%20we%20bring%20to%20life_%20Unparalled%20feild%20service%20with%20in%20built%20digital%20twins.png",
       head: "Clients: Utility OEM, Smart building operators",
       text: "TinkerBloX deploys out-of-the-box digital twins for device manufacturers to provide prescriptive field support for remote installations",
     },
     {
-      image: IMAGE4,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20devices%20Image/Stories%20we%20bring%20to%20life_%20Plug%207%20play%20software%20infrastructure%20%20the%20edge.png",
       head: "Clients: MedTech R&D divisions",
       text: "Tinkerblox provides pre-curated certified infrastructure packages for faster Proofs & Time-to-Market Companies targeting faster smart device releases use this as a scalable platform to develop & release their product versions",
     },
     {
-      image: IMAGE5,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20devices%20Image/Stories%20we%20bring%20to%20life_%20The%20name%20of%20the%20game%20is%20teamwork.png",
       head: "Clients: Advanced Tech orgs, Consumer Goods R&D",
       text: "Workload sharing is the sure-shot way to succeed at the edge. Companies leverage Tinkerblox to build highly configurable distributed compute ecosystems for easy & secure workload sharing",
     },
     {
-      image: IMAGE6,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20devices%20Image/Stories%20we%20bring%20to%20life_%20stand%20alone%20decive%20ecosystems.png",
       head: "Clients: Future Tech companies",
       text: "Tinkerblox ecosystem helps build device centric experience of the future with multiple interactive components",
     },
     {
-      image: IMAGE7,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20devices%20Image/Stories%20we%20bring%20to%20life_Device%20centric%20sustainabilty%20on%20the%20go.png",
       head: "Client: Industrial OEM",
       text: "TinkerBloX helps curate devices aware of its inherent & ancillary footprint through its operational lifecycle in real time",
     },
     {
-      image: IMAGE8,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20devices%20Image/Stories%20we%20bring%20to%20life_%20re-defining%20gaming.png",
       head: "Clients: NA gaming company",
       text: "The future of gaming is more than AR-VR Device rendered gaming experience is the obvious future",
     },

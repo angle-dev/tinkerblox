@@ -4,60 +4,52 @@
 
   let index = 0;
 
-  import IMAGE1 from "$lib/carouselSI/IMAGE1.png";
-
-  import IMAGE2 from "$lib/carouselSI/IMAGE2.png";
-
-  import IMAGE3 from "$lib/carouselSI/IMAGE3.png";
-
-  import IMAGE4 from "$lib/carouselSI/IMAGE4.png";
-
-  import IMAGE5 from "$lib/carouselSI/IMAGE5.png";
-
-  import IMAGE6 from "$lib/carouselSI/IMAGE6.png";
-
-  import IMAGE7 from "$lib/carouselSI/IMAGE7.png";
-
-  import IMAGE8 from "$lib/carouselSI/IMAGE8.png";
-
   const carouselImages = [
     {
-      image: IMAGE1,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Industry%20Images/Stories%20we%20bring%20to%20life_A%20roadmap%20for%20_your_%20industry%20X.0%20outcomes.png",
       head: "",
       text: "Every enterprise has different smart manufacturing goals, & every one takes a different path to achieve them. TInkerBloX curated realistic but visionary roadmaps for multiple manufacturers, and ensured achievement of each & every milestone along the way to the larger goal.",
     },
     {
-      image: IMAGE2,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Industry%20Images/Stories%20we%20bring%20to%20life_Targeting%20ZERO%20unplanned%20downtimes.png",
       head: "Clients: Automotive Tier-1, Industrial machines OEM, O&G refineries…",
       text: "TinkerBloX helps shopfloor managers & line supervisors monitor their machines real-time 🡪 predictive 🡪 prescriptive to ensure peak performance & zero unplanned downtime",
     },
     {
-      image: IMAGE3,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Industry%20Images/Stories%20we%20bring%20to%20life_Vision%20Systems%20for%20in-line%20quality%20management.png",
       head: "Clients: Automotive OEM, Tier-1, Semiconductor Mfg…",
       text: "TinkerBloX vision systems deployed at the network edge aids manufacturers to mature from defect outflow detection 🡪 defect detection 🡪 defect prevention",
     },
     {
-      image: IMAGE4,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Industry%20Images/Stories%20we%20bring%20to%20life_Tracking%20goods%20through%20the%20Warehouse.png",
       head: "Clients: Industrial warehouses",
       text: "Logistics players can extract tremendous value by optimizing goods movement & storage, thereby unlocking locked capital TinkerBloX enhances your ability to track & trace goods across your warehouses maximising space utility & order fulfilment",
     },
     {
-      image: IMAGE5,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Industry%20Images/Stories%20we%20bring%20to%20life_Digital%20Supply%20Chain%20Resiliency.png",
       head: "Cients: 3PL players, Industrial warehouses, Automotive Tier 1…",
       text: "Geopolitical disruptions have prompted the industry players to focus on supply chain resiliency like never before. Leverage TinkerBloX to improve your supply chain visibility, security & sustainability",
     },
     {
-      image: IMAGE6,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Industry%20Images/Stories%20we%20bring%20to%20life_AIEdge%20Security%20Systems.png",
       head: "Clients: Warehouses, Industrial complex…",
       text: "Enhance your perimeter security management leveraging edge-to-edge AI monitoring from TinkerBloX We build on your existing infrastructure to deploy sensor/camera based security",
     },
     {
-      image: IMAGE7,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Industry%20Images/Stories%20we%20bring%20to%20life_Sustainabilty%20scope%201%20_%202.png",
       head: "Clients: Automotive Tier-1, Industrial OEM, CPG Tier 1…",
       text: "TinkerBloX helps you moderate your carbon footprint by optimizing your energy [W.A.G.E.S] consumption across production and utility assets",
     },
     {
-      image: IMAGE8,
+      image:
+        "https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Industry%20Images/Stories%20we%20bring%20to%20life_Sustainability%20_%C2%A0Scope%203.png",
       head: "Clients: Industrial warehouses",
       text: "Scope 3 emissions (esp. upstream) put the biggest dent in a manufacturer’s sustainability outcomes. Leverage TInkerBloX assets to bring visibility & controllability across your supply chain",
     },

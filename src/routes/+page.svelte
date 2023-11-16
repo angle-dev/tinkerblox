@@ -107,12 +107,15 @@
   style="background-image: url({homegradient});"
   class=" h-fit min-h-[400px] w-full bg-primary bg-cover bg-center bg-no-repeat px-3 py-16 md:px-10"
 >
-  <div class=" m-auto flex flex-col items-center md:max-w-7xl">
-    <h3 class=" text-3xl font-normal text-base-100 md:text-6xl">
-      Our Offerings
-    </h3>
-    <Productsection />
-  </div>
+  <IntersectionObserver>
+    <div class=" m-auto flex flex-col items-center md:max-w-7xl">
+      <h3 class=" text-3xl font-normal text-base-100 md:text-6xl">
+        Our Offerings
+      </h3>
+
+      <Productsection />
+    </div>
+  </IntersectionObserver>
 </section>
 
 <section
@@ -122,5 +125,7 @@
   <h2 class=" mt-12 text-3xl font-normal text-primary md:text-6xl">
     Stories we bring to Life
   </h2>
-  <Carouselhome />
+  <IntersectionObserver>
+    <Carouselhome />
+  </IntersectionObserver>
 </section>
