@@ -1,11 +1,9 @@
 <script lang="ts">
   import { inview } from "svelte-inview";
-  import { fly } from "svelte/transition";
   let isInView;
 </script>
 
 <div
-  class="wrapper"
   use:inview={{ unobserveOnEnter: true, threshold: 0.5, rootMargin: "-10%" }}
   on:inview_enter={(event) => {
     const { inView } = event.detail;
