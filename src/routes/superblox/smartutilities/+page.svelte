@@ -58,7 +58,7 @@
     { id: "stories", text: "Our Stories" },
   ];
 
-  let activeSection = sections[0].id; // Initialize with the first section
+  // Initialize with the first section
 
   let fullwidth = false;
   $: active_class = fullwidth ? "max-w-full" : "max-w-5xl";

@@ -1,17 +1,11 @@
 <script>
-  import jobsHero from "$lib/jobsHero.png";
-  import edgeEx from "$lib/edgeEx.png";
-  import embedGeek from "$lib/embedGeek.png";
-  import fullstackJug from "$lib/fullstackJug.png";
-  import aimlHust from "$lib/aimlHust.png";
-  import uiuxartist from "$lib/uiuxartist.png";
   import jobsApply from "$lib/jobsApply.png";
   import GradientButton from "$lib/components/GradientButton.svelte";
   import ScrollTransition from "../../lib/components/ScrollTransition.svelte";
 </script>
 
 <section
-  style=" background-image: url('{jobsHero}'); "
+  style=" background-image: url('https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20future%20team/Our%20Future%20Team_Header.png'); "
   class="h-[577px] w-full flex-col items-center justify-end bg-cover bg-center bg-no-repeat p-3 md:p-12"
 >
   <div
@@ -29,7 +23,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={edgeEx} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20future%20team/Edge%20Explorer.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left"
@@ -62,7 +59,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={embedGeek} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20future%20team/Embedded%20Geek.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left"
@@ -95,7 +95,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={fullstackJug} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20future%20team/Full%20Stack%20Juggler.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left"
@@ -127,7 +130,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={aimlHust} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20future%20team/ML%20Hustler.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left"
@@ -161,7 +167,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={uiuxartist} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20future%20team/UX%20Artist.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:items-start md:p-0 md:text-left"
