@@ -23,4 +23,4 @@ jobs:
           server: https://tinkerblox.io
           app: "www"
           token: "${{ secrets.APP_TOKEN }}"
-          image: "ghcr.io/angle-dev/tinkerblox:latest"
+          image: "ghcr.io/glitchnobody/tinkerblox:latest"
