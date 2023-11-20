@@ -20,7 +20,7 @@
   import es3 from "$lib/es3.png";
   import es4 from "$lib/es4.png";
   import es5 from "$lib/es5.png";
-  import IntersectionObserver1 from "../../../lib/components/IntersectionObserver.svelte";
+  import ScrollTransition from "../../../lib/components/ScrollTransition.svelte";
 
   import CarouselSS from "$lib/components/CarouselSS.svelte";
   let selected = "Sustainable";
@@ -145,7 +145,7 @@
   style="background-image: url(/defaultbg.png);"
   class=" w-full bg-cover bg-center bg-no-repeat py-20"
 >
-  <IntersectionObserver1>
+  <ScrollTransition>
     <div class="m-auto flex max-w-6xl flex-col items-center gap-2">
       <h4 class=" w-3/5 text-center text-2xl text-secondary md:text-4xl">
         Take the next step in your <span class=" font-bold text-info"
@@ -177,7 +177,7 @@
         </span>
       </p>
     </div>
-  </IntersectionObserver1>
+  </ScrollTransition>
 </section>
 
 <div
@@ -242,7 +242,7 @@
       style=" background-image: url('https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Spaces%20Images/Smart%20Spaces%20for%20you_Gradient.png') "
       class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20"
     >
-      <IntersectionObserver1>
+      <ScrollTransition>
         <h4
           class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
         >
@@ -558,7 +558,7 @@
             </a>
           </div>
         {/if}
-      </IntersectionObserver1>
+      </ScrollTransition>
     </section>
 
     <section
@@ -566,7 +566,7 @@
       style="background-image: url(/defaultbg.png);"
       class="  bg-cover bg-center bg-no-repeat py-20"
     >
-      <IntersectionObserver1>
+      <ScrollTransition>
         <h4 class=" m-auto mt-12 w-3/5 text-center text-4xl text-primary">
           Future of Spaces
         </h4>
@@ -692,7 +692,7 @@
             </div>
           </div>
         </div>
-      </IntersectionObserver1>
+      </ScrollTransition>
     </section>
 
     <section
@@ -700,7 +700,7 @@
       style="background-image: url('https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Spaces%20Images/Smart%20Spaces%20for%20you_Gradient.png')"
       class="min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-60"
     >
-      <IntersectionObserver1>
+      <ScrollTransition>
         <div class="m-auto max-w-4xl">
           <div style="position: relative; text-align: center;">
             <img
@@ -710,13 +710,13 @@
             />
           </div>
         </div>
-      </IntersectionObserver1>
+      </ScrollTransition>
     </section>
 
     <section id="stories">
-      <IntersectionObserver1>
+      <ScrollTransition>
         <CarouselSS />
-      </IntersectionObserver1>
+      </ScrollTransition>
     </section>
   </div>
 </Scroller>
@@ -725,7 +725,7 @@
   style=" background-image: url('https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Spaces%20Images/Smart%20Spaces%20for%20you_Gradient.png') "
   class=" min-h-[497px] w-full bg-primary bg-cover bg-bottom bg-no-repeat py-32"
 >
-  <IntersectionObserver1>
+  <ScrollTransition>
     <h4
       class="m-auto mb-16 w-full max-w-2xl p-5 text-center text-5xl font-medium text-base-100 md:p-0 md:text-6xl"
     >
@@ -737,7 +737,7 @@
     >
       <GradientButton>JOIN OUR ALLIANCE</GradientButton>
     </div>
-  </IntersectionObserver1>
+  </ScrollTransition>
 </section>
 
 <style>

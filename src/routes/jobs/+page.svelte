@@ -7,7 +7,7 @@
   import uiuxartist from "$lib/uiuxartist.png";
   import jobsApply from "$lib/jobsApply.png";
   import GradientButton from "$lib/components/GradientButton.svelte";
-  import IntersectionObserver from "../../lib/components/IntersectionObserver.svelte";
+  import ScrollTransition from "../../lib/components/ScrollTransition.svelte";
 </script>
 
 <section
@@ -24,7 +24,7 @@
 </section>
 
 <section class=" w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
@@ -53,11 +53,11 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section class=" w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center"
     >
@@ -86,11 +86,11 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section class=" w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
@@ -118,11 +118,11 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section class=" w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center"
     >
@@ -152,11 +152,11 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section class=" w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
@@ -185,7 +185,7 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section

@@ -7,7 +7,7 @@
   import anoop from "$lib/Anoop 1.png";
   import gradientbackground from "$lib/gradient_background.png";
   import valuesWe from "$lib/ValuesWeLiveBy .png";
-  import IntersectionObserver from "../../lib/components/IntersectionObserver.svelte";
+  import ScrollTransition from "../../lib/components/ScrollTransition.svelte";
 </script>
 
 <div
@@ -46,7 +46,7 @@
 </section>
 
 <section class=" relative z-10 w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
@@ -73,9 +73,9 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
-<IntersectionObserver>
+<ScrollTransition>
   <div class=" absolute m-auto flex h-fit w-full items-center justify-center">
     <svg
       class=" absolute m-auto mb-5 h-32 w-32"
@@ -89,9 +89,9 @@
       />
     </svg>
   </div>
-</IntersectionObserver>
+</ScrollTransition>
 <section class=" Z-10 relative w-full bg-black/5 py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3">
       <h4 class="mb-6 text-3xl text-secondary md:mb-14 md:text-5xl">
         Sequencing <span class="font-semibold text-info"> Our DNA…</span>
@@ -119,11 +119,11 @@
         SandBlox | EdgeBlox  | ServBlox
       </p>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section class=" relative z-10 w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center"
     >
@@ -148,9 +148,9 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
-<IntersectionObserver>
+<ScrollTransition>
   <div class=" absolute m-auto flex h-fit w-full items-center justify-center">
     <svg
       class=" absolute m-auto mb-5 h-32 w-32"
@@ -164,9 +164,9 @@
       />
     </svg>
   </div>
-</IntersectionObserver>
+</ScrollTransition>
 <section class=" Z-10 relative w-full bg-black/5 py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:p-0"
     >
@@ -194,11 +194,11 @@
         <span class="text-secondary">TinkerBloX</span>
       </p>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section class=" relative z-10 w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
@@ -223,9 +223,9 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
-<IntersectionObserver>
+<ScrollTransition>
   <div class=" absolute m-auto flex h-fit w-full items-center justify-center">
     <svg
       class=" absolute m-auto mb-5 h-32 w-32"
@@ -239,9 +239,9 @@
       />
     </svg>
   </div>
-</IntersectionObserver>
+</ScrollTransition>
 <section class=" Z-10 relative w-full bg-black/5 py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:p-0"
     >
@@ -276,11 +276,11 @@
         Smart Spaces | Smart Devices  | Smart Utilities | Smart Industry
       </p>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section class=" relative z-10 w-full py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center"
     >
@@ -304,9 +304,9 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
-<IntersectionObserver>
+<ScrollTransition>
   <div class=" absolute m-auto flex h-fit w-full items-center justify-center">
     <svg
       class=" absolute m-auto mb-5 h-32 w-32"
@@ -320,9 +320,9 @@
       />
     </svg>
   </div>
-</IntersectionObserver>
+</ScrollTransition>
 <section class=" Z-10 relative w-full bg-black/5 py-16">
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex w-11/12 flex-col items-center p-5 text-center md:w-2/3 md:p-0"
     >
@@ -354,14 +354,14 @@
         <span class="text-secondary">be with you !!</span>
       </p>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section
   style="  background-image: url({gradientbackground}) "
   class=" min-h-16 relative z-30 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <div class="m-auto flex max-w-7xl flex-col items-center text-center">
       <h4 class=" mb-5 w-full text-4xl text-base-100 md:text-5xl">
         Values we live by…
@@ -379,5 +379,5 @@
         />
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>

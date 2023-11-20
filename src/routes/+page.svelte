@@ -6,7 +6,7 @@
   import Homelottie from "$lib/homelottie.json";
   import HeroVid from "$lib/heroVid.mp4";
   import HeroVidMob from "$lib/heroVidMob.mp4";
-  import IntersectionObserver from "../lib/components/IntersectionObserver.svelte";
+  import ScrollTransition from "../lib/components/ScrollTransition.svelte";
 
   import { onMount } from "svelte";
 
@@ -70,7 +70,7 @@
         />
       {/if}
     </div>
-    <IntersectionObserver>
+    <ScrollTransition>
       <div class=" w-full p-5 text-center md:w-2/3 md:p-0 md:text-left">
         <h3 class="text-3xl font-normal text-secondary md:text-5xl">
           Everyone believes their IoT problem is unique...
@@ -80,7 +80,7 @@
           EVERYONE IS RIGHT!
         </h3>
       </div>
-    </IntersectionObserver>
+    </ScrollTransition>
   </div>
   <div>
     <p
@@ -107,7 +107,7 @@
   style="background-image: url({homegradient});"
   class=" h-fit min-h-[400px] w-full bg-primary bg-cover bg-center bg-no-repeat px-3 py-16 md:px-10"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <div class=" m-auto flex flex-col items-center md:max-w-7xl">
       <h3 class=" text-3xl font-normal text-base-100 md:text-6xl">
         Our Offerings
@@ -115,7 +115,7 @@
 
       <Productsection />
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section
@@ -125,7 +125,7 @@
   <h2 class=" mt-12 text-3xl font-normal text-primary md:text-6xl">
     Stories we bring to Life
   </h2>
-  <IntersectionObserver>
+  <ScrollTransition>
     <Carouselhome />
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
