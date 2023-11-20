@@ -8,7 +8,7 @@
   import { onMount } from "svelte";
   import TooltipWork from "$lib/components/TooltipWork.svelte";
   import servlevinfo from "$lib/servlevinfo.png";
-  import IntersectionObserver from "../../../lib/components/IntersectionObserver.svelte";
+  import ScrollTransition from "../../../lib/components/ScrollTransition.svelte";
 
   let LottiePlayer;
 
@@ -52,7 +52,7 @@
   style="background-image: url(/defaultbg.png);"
   class=" min-h-[561px] w-full bg-cover bg-center bg-no-repeat py-16"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex min-h-[561px] max-w-6xl flex-col items-center gap-2 md:flex-row"
     >
@@ -91,7 +91,7 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 
   <h2
     class=" mt-26 w-full pt-5 text-center text-4xl text-neutral md:mt-32 md:pt-0 md:text-6xl"
@@ -110,7 +110,7 @@
   style="background-image: url({gradientbackground})"
   class="min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <div class="m-auto max-w-7xl">
       <h4 class="mb-16 w-full text-center text-4xl text-base-100 md:text-5xl">
         Leverage ServBloX
@@ -163,14 +163,14 @@
         <!-- <TooltipWork /> -->
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section
   style="background-image: url(/defaultbg.png);"
   class=" w-full bg-cover bg-center bg-no-repeat py-16 text-center"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <div class="m-auto flex max-w-6xl flex-col items-center">
       <h4 class="p-5 text-3xl font-semibold text-info md:p-0">
         <span class="text-secondary">Having a good heart </span>means lots of
@@ -193,5 +193,5 @@
       <br />
       <GradientButton>Join our ALLIANCE</GradientButton>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>

@@ -5,7 +5,7 @@
   import gradientbackground from "$lib/gradient_background.png";
   import Edge from "$lib/Edge.json";
   import { onMount } from "svelte";
-  import IntersectionObserver from "../../../lib/components/IntersectionObserver.svelte";
+  import ScrollTransition from "../../../lib/components/ScrollTransition.svelte";
 
   let LottiePlayer;
 
@@ -55,7 +55,7 @@
   style="background-image: url(/defaultbg.png);"
   class=" min-h-[561px] bg-base-100 bg-cover bg-top bg-no-repeat"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex min-h-[561px] max-w-6xl flex-col items-center gap-2 md:flex-row"
     >
@@ -85,14 +85,14 @@
         </p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section
   style=" background-image: url({gradientbackground}) "
   class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <h4 class="mb-16 w-full text-center text-3xl text-base-100 md:text-5xl">
       Experience Edgeblox
     </h4>
@@ -120,14 +120,14 @@
         <p class=" font-medium text-secondary">and many more...</p>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section
   style="background-image: url(/defaultbg.png);"
   class=" bg-base-100 bg-cover bg-top bg-no-repeat p-5 text-center md:p-0 md:text-left"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex w-full max-w-5xl flex-col items-start gap-3 px-3 py-20 text-secondary md:px-2 md:py-32"
     >
@@ -154,5 +154,5 @@
         around with…
       </p>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>

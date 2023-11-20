@@ -5,7 +5,7 @@
   import sandbloxinfo from "$lib/sandbloxinfo.png";
   import Sand from "$lib/Sand.json";
   import { onMount } from "svelte";
-  import IntersectionObserver from "../../../lib/components/IntersectionObserver.svelte";
+  import ScrollTransition from "../../../lib/components/ScrollTransition.svelte";
 
   let LottiePlayer;
 
@@ -40,7 +40,7 @@
   style="background-image: url(/defaultbg.png);"
   class="  min-h-[561px] w-full bg-cover bg-center bg-no-repeat py-16"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <div
       class="m-auto flex min-h-[561px] max-w-6xl flex-col items-center gap-2 md:flex-row"
     >
@@ -78,14 +78,14 @@
         </h4>
       </div>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
 
 <section
   style=" background-image: url({gradientbackground}) "
   class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-10"
 >
-  <IntersectionObserver>
+  <ScrollTransition>
     <h4
       class="mb-16 w-full p-5 text-center text-4xl font-bold text-base-100 md:p-0 md:text-5xl"
     >
@@ -101,5 +101,5 @@
     >
       <GradientButton>Learn More</GradientButton>
     </div>
-  </IntersectionObserver>
+  </ScrollTransition>
 </section>
