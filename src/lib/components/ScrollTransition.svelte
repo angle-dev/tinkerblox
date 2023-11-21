@@ -4,7 +4,7 @@
 </script>
 
 <div
-  use:inview={{ unobserveOnEnter: true, threshold: 0.5, rootMargin: "-10%" }}
+  use:inview={{ unobserveOnEnter: true, threshold: 0.2, rootMargin: "-10%" }}
   on:inview_enter={(event) => {
     const { inView } = event.detail;
     isInView = inView;

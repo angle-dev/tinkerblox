@@ -60,23 +60,10 @@
     { id: "stories", text: "Our Stories" },
   ];
 
-  let activeSection = sections[0].id; // Initialize with the first section
-
-  function updateColorIndicatorPosition() {
-    if (colorIndicator) {
-      const activeIndex2 = sections.findIndex2(
-        (section) => section.id === activeSection
-      );
-      if (activeIndex2 !== -1) {
-        const totalSections = sections.length;
-        const width = ((activeIndex2 + 1) / totalSections) * 100;
-        colorIndicator.style.width = `${width}%`;
-      }
-    }
-  }
+  // Initialize with the first section
 
   let fullwidth = false;
-  $: active_class = fullwidth ? " " : "max-w-5xl";
+  $: active_class = fullwidth ? "max-w-full" : "max-w-5xl";
   let count;
   let index;
   let offset;
@@ -84,10 +71,36 @@
   let top = 0;
   let threshold = 0;
   let bottom = 0;
-  if (progress > 0) {
-    fullwidth = true;
-    console.log(progress);
-  }
+
+  let targetElement;
+  let intersectionObserver;
+
+  // Options for the Intersection Observer
+  const options = {
+    root: null, // Use the viewport as the root
+    rootMargin: "0px",
+    threshold: 0.8, // Trigger when at least 50% of the target is visible
+  };
+
+  // Callback function when the target is in/out of the intersection
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        fullwidth = true;
+      } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+        fullwidth = false;
+      }
+    });
+  };
+
+  onMount(() => {
+    targetElement = document.getElementById("line"); // Replace with your target element's ID or reference
+    intersectionObserver = new IntersectionObserver(
+      handleIntersection,
+      options
+    );
+    intersectionObserver.observe(targetElement);
+  });
 </script>
 
 <section
@@ -180,43 +193,48 @@
 </section>
 
 <div
-  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit w-full grid-cols-4 {active_class} items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] px-4 py-2 text-left text-[10px] text-white md:text-lg"
+  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit grid-cols-4 {active_class}  items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] py-2 text-[10px] text-white duration-75 md:text-lg"
 >
   {#each sections as section (section.id)}
-    <a href={"#" + section.id} class="relative z-10">
-      <span class="pl-0.5">{section.text}</span>
+    <a
+      href={"#" + section.id}
+      class="relative z-10 flex items-center text-center"
+    >
+      <span class="w-full text-center">{section.text}</span>
     </a>
   {/each}
 
   <div class="absolute left-0 z-0 grid h-full w-full grid-cols-4">
-    {#if index === 0}
+    {#if index === 0 || index > 0}
+      {#if offset > 0}
+        <div
+          style="width: {index > 0 ? 100 : offset * 2000}%;"
+          class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
+        />
+      {/if}
+    {:else}
+      <div />
+    {/if}
+    {#if index === 1 || index > 1}
       <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 1 ? 100 : offset * 2000}%;"
+        class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
     {/if}
-    {#if index === 1}
+    {#if index === 2 || index > 2}
       <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 2 ? 100 : offset * 2000}%;"
+        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
     {/if}
-    {#if index === 2}
+    {#if index === 3 || index > 3}
       <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
-      />
-    {:else}
-      <div />
-    {/if}
-    {#if index === 3}
-      <div
-        style="width: {offset * 130}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 3 ? 100 : offset * 2000}%;"
+        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
@@ -243,170 +261,172 @@
       class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20"
     >
       <ScrollTransition>
-        <h4
-          class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
-        >
-          SMART Industry for you
-        </h4>
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div
-          class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
-        >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Sustainable")}
-            class="{'relative z-10 w-[773px] cursor-pointer rounded-full border border-[#00BE2A] px-3 py-2   '} {selected ===
-            'Sustainable'
-              ? 'bg-[#00BE2A] shadow-md shadow-[#00BE2A] '
-              : ''}">Solve your today’s Industry X.0 challenges with TBx</span
+        <div id="line">
+          <h4
+            class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
           >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Efficient")}
-            class="relative z-10 w-[635px] cursor-pointer rounded-full border border-[#A1499C] px-3 py-2 {selected ===
-            'Efficient'
-              ? 'bg-[#A1499C] shadow-md shadow-[#A1499C]'
-              : ''}">Build your Industry of the Future with TBx</span
+            SMART Industry for you
+          </h4>
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <div
+            class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
           >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Sustainable")}
+              class="{'relative z-10 w-[773px] cursor-pointer rounded-full border border-[#00BE2A] px-3 py-2   '} {selected ===
+              'Sustainable'
+                ? 'bg-[#00BE2A] shadow-md shadow-[#00BE2A] '
+                : ''}">Solve your today’s Industry X.0 challenges with TBx</span
+            >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Efficient")}
+              class="relative z-10 w-[635px] cursor-pointer rounded-full border border-[#A1499C] px-3 py-2 {selected ===
+              'Efficient'
+                ? 'bg-[#A1499C] shadow-md shadow-[#A1499C]'
+                : ''}">Build your Industry of the Future with TBx</span
+            >
+          </div>
+
+          {#if selected === "Sustainable"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={sX01} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Ensure near-100% uptime of your machines
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Realize ZERO unplanned downtime of your machines with
+                  condition monitoring 🡪 predictive maintenance
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={sX02} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Monitor & Improve your OEE & Cycle Time
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Real-time interventions to improve OEE and CT is the quickest
+                  way to improve throughput and thereby revenue
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={sX03} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Track & Optimize your intra-logistics assets
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Know the real-time status of every asset [tuggers, pallets,
+                  RM-WIP-FG etc.] at your site to optimize fleet & implement JIT
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={sX04} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Quality management with Camera-as-a-Sensor
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Camera-&-edge systems to manage defect outflow detection 🡪
+                  defect occurrence detection 🡪 defect prevention
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={sX05} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Supply Chain Digitalization
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  End-to-end supply chain visibility in real-time to detect 🡪
+                  predict 🡪 pre-empt delays, pilferage, loss of goods
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
+          {#if selected === "Efficient"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={bif1} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Digital Twins : Assets Systems Process
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Move to prescriptive interventions with digital twins of
+                  assets, systems & processes; Mature to implement Mfg
+                  Enterprise Digital Thread
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={bif2} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Agile Ops : Manufacturing Logistics
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Self-Aware & Self-Optimizing manufacturing & logistics
+                  processes for truly agile factory(ies)
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={bif3} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Autonomous Shopfloor
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  100% lights-out factory combining “as-appropriate” maturities
+                  of vision factory, digital threads, AGV/AMRs, etc.
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={bif4} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Networked Factory(ies)
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Move towards federated manufacturing & additive manufacturing
+                  leveraging the power of 5G & the Network Edge
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={bif5} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Sustainable Supply Chain
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Build a highly resilient supply chain with focus on across the
+                  board sustainability 🡪 circular economy
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
         </div>
-
-        {#if selected === "Sustainable"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={sX01} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Ensure near-100% uptime of your machines
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Realize ZERO unplanned downtime of your machines with condition
-                monitoring 🡪 predictive maintenance
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={sX02} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Monitor & Improve your OEE & Cycle Time
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Real-time interventions to improve OEE and CT is the quickest
-                way to improve throughput and thereby revenue
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={sX03} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Track & Optimize your intra-logistics assets
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Know the real-time status of every asset [tuggers, pallets,
-                RM-WIP-FG etc.] at your site to optimize fleet & implement JIT
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={sX04} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Quality management with Camera-as-a-Sensor
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Camera-&-edge systems to manage defect outflow detection 🡪
-                defect occurrence detection 🡪 defect prevention
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={sX05} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Supply Chain Digitalization
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                End-to-end supply chain visibility in real-time to detect 🡪
-                predict 🡪 pre-empt delays, pilferage, loss of goods
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
-        {#if selected === "Efficient"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={bif1} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Digital Twins : Assets Systems Process
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Move to prescriptive interventions with digital twins of assets,
-                systems & processes; Mature to implement Mfg Enterprise Digital
-                Thread
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={bif2} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Agile Ops : Manufacturing Logistics
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Self-Aware & Self-Optimizing manufacturing & logistics processes
-                for truly agile factory(ies)
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={bif3} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Autonomous Shopfloor
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                100% lights-out factory combining “as-appropriate” maturities of
-                vision factory, digital threads, AGV/AMRs, etc.
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={bif4} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Networked Factory(ies)
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Move towards federated manufacturing & additive manufacturing
-                leveraging the power of 5G & the Network Edge
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={bif5} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Sustainable Supply Chain
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Build a highly resilient supply chain with focus on across the
-                board sustainability 🡪 circular economy
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
       </ScrollTransition>
     </section>
 

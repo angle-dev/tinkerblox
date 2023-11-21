@@ -62,24 +62,10 @@
     { id: "stories", text: "Stories we bring to life" },
   ];
 
-  let activeSection = sections[0].id; // Initialize with the first section
-
-  function updateColorIndicatorPosition() {
-    if (colorIndicator) {
-      const activeindex2 = sections.findindex2(
-        (section) => section.id === activeSection
-      );
-      if (activeindex2 !== -1) {
-        const totalSections = sections.length;
-        const width = ((activeindex2 + 1) / totalSections) * 100;
-        colorIndicator.style.width = `${width}%`;
-      }
-    }
-  }
+  // Initialize with the first section
 
   let fullwidth = false;
-  $: active_class = fullwidth ? " " : "max-w-5xl";
-
+  $: active_class = fullwidth ? "max-w-full" : "max-w-5xl";
   let count;
   let index;
   let offset;
@@ -88,10 +74,35 @@
   let threshold = 0;
   let bottom = 0;
 
-  if (progress > 0) {
-    fullwidth = true;
-    console.log(progress);
-  }
+  let targetElement;
+  let intersectionObserver;
+
+  // Options for the Intersection Observer
+  const options = {
+    root: null, // Use the viewport as the root
+    rootMargin: "0px",
+    threshold: 0.8, // Trigger when at least 50% of the target is visible
+  };
+
+  // Callback function when the target is in/out of the intersection
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        fullwidth = true;
+      } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+        fullwidth = false;
+      }
+    });
+  };
+
+  onMount(() => {
+    targetElement = document.getElementById("line"); // Replace with your target element's ID or reference
+    intersectionObserver = new IntersectionObserver(
+      handleIntersection,
+      options
+    );
+    intersectionObserver.observe(targetElement);
+  });
 </script>
 
 <section
@@ -181,42 +192,48 @@
 </section>
 
 <div
-  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit w-full grid-cols-4 {active_class} items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] px-4 py-2 text-left text-[10px] text-white md:text-lg"
+  class="min-h-4 sticky top-16 z-50 m-auto grid h-fit grid-cols-4 {active_class}  items-center justify-between gap-2 overflow-hidden rounded-md bg-[#B5B5B5] py-2 text-[10px] text-white duration-75 md:text-lg"
 >
   {#each sections as section (section.id)}
-    <a href={"#" + section.id} class="relative z-10">
-      <span class="pl-0.5">{section.text}</span>
+    <a
+      href={"#" + section.id}
+      class="relative z-10 flex items-center text-center"
+    >
+      <span class="w-full text-center">{section.text}</span>
     </a>
   {/each}
+
   <div class="absolute left-0 z-0 grid h-full w-full grid-cols-4">
-    {#if index === 0}
+    {#if index === 0 || index > 0}
+      {#if offset > 0}
+        <div
+          style="width: {index > 0 ? 100 : offset * 2000}%;"
+          class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
+        />
+      {/if}
+    {:else}
+      <div />
+    {/if}
+    {#if index === 1 || index > 1}
       <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 1 ? 100 : offset * 2000}%;"
+        class=" z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
     {/if}
-    {#if index === 1}
+    {#if index === 2 || index > 2}
       <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 2 ? 100 : offset * 2000}%;"
+        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
     {/if}
-    {#if index === 2}
+    {#if index === 3 || index > 3}
       <div
-        style="width: {offset * 100}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
-      />
-    {:else}
-      <div />
-    {/if}
-    {#if index === 3}
-      <div
-        style="width: {offset * 130}%;"
-        class=" z-0 h-full bg-gradient-to-b from-info to-secondary"
+        style="width: {index > 3 ? 100 : offset * 2000}%;"
+        class="z-0 h-full w-0 max-w-full bg-gradient-to-b from-info to-secondary transition-all duration-75"
       />
     {:else}
       <div />
@@ -243,321 +260,325 @@
       class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20"
     >
       <ScrollTransition>
-        <h4
-          class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
-        >
-          SMART Spaces for you
-        </h4>
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div
-          class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
-        >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Sustainable")}
-            class="{'relative z-10 w-80 cursor-pointer rounded-full border border-[#00BE2A] px-3 py-2   '} {selected ===
-            'Sustainable'
-              ? 'bg-[#00BE2A] shadow-md shadow-[#00BE2A] '
-              : ''}">Sustainable Spaces</span
+        <div id="line">
+          <h4
+            class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
           >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Autonomous")}
-            class="relative z-10 w-80 cursor-pointer rounded-full border border-[#00A7E5] px-3 py-2 {selected ===
-            'Autonomous'
-              ? 'bg-[#00A7E5] shadow-md shadow-[#00A7E5]'
-              : ''}">Autonomous Spaces</span
+            SMART Spaces for you
+          </h4>
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <div
+            class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
           >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Federated")}
-            class="relative z-10 w-80 cursor-pointer rounded-full border border-[#E76120] px-3 py-2 {selected ===
-            'Federated'
-              ? 'bg-[#E76120] shadow-md shadow-[#E76120]'
-              : ''}">Federated Spaces</span
-          >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Efficient")}
-            class="relative z-10 w-80 cursor-pointer rounded-full border border-[#A1499C] px-3 py-2 {selected ===
-            'Efficient'
-              ? 'bg-[#A1499C] shadow-md shadow-[#A1499C]'
-              : ''}">Efficient Spaces</span
-          >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Sustainable")}
+              class="{'relative z-10 w-80 cursor-pointer rounded-full border border-[#00BE2A] px-3 py-2   '} {selected ===
+              'Sustainable'
+                ? 'bg-[#00BE2A] shadow-md shadow-[#00BE2A] '
+                : ''}">Sustainable Spaces</span
+            >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Autonomous")}
+              class="relative z-10 w-80 cursor-pointer rounded-full border border-[#00A7E5] px-3 py-2 {selected ===
+              'Autonomous'
+                ? 'bg-[#00A7E5] shadow-md shadow-[#00A7E5]'
+                : ''}">Autonomous Spaces</span
+            >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Federated")}
+              class="relative z-10 w-80 cursor-pointer rounded-full border border-[#E76120] px-3 py-2 {selected ===
+              'Federated'
+                ? 'bg-[#E76120] shadow-md shadow-[#E76120]'
+                : ''}">Federated Spaces</span
+            >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Efficient")}
+              class="relative z-10 w-80 cursor-pointer rounded-full border border-[#A1499C] px-3 py-2 {selected ===
+              'Efficient'
+                ? 'bg-[#A1499C] shadow-md shadow-[#A1499C]'
+                : ''}">Efficient Spaces</span
+            >
+          </div>
+
+          {#if selected === "Sustainable"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={ss1} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  (Re)Design your building for WELL standards
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Leverage AIoT to meet regulatory requirements for health,
+                  well-being & comfort of occupants
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={ss2} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Protect your O&G spaces against eco-logical events
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Real-time 🡪 predictive 🡪 prescriptive management of O&G spaces
+                  for ~ZERO hazards
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={ss3} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Optimize your manufacturing footprint
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Optimize/minimize the overall efficiency of your factory space
+                  across the sustainability matrix
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={ss4} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Your greenhouse can now be truly green
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  AIoT based end-to-end greenhouse management for maximizing
+                  plant & environmental health
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={ss5} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Optimize your multi-sourced energy needs
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Leverage AIoT for optimizing your energy needs across
+                  W.A.G.E.S
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
+          {#if selected === "Autonomous"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={as1} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Autonomous utility management for buildings
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  IoT-ize your utility assets to ensure 360o value for your
+                  commercial spaces
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={as2} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Autonomize your O&G property, plant & equipment
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Create autonomous closed-loop systems for maximum efficiency &
+                  safety of your refinery
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={as3} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Autonomous Shopfloor
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  100% lights-out factory combining “as-appropriate” maturities
+                  of vision factory, digital threads, AGV/AMRs, etc.
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={as4} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Autonomous Farm Managements Systems
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Leverage AIoT to autonomize your farm/crop management system
+                  for higher yield at higher quality
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={as5} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Autonomous spaces with private 5G
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Build & manage autonomous sites with the power of private 5G &
+                  the network edge
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
+          {#if selected === "Federated"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fs1} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Every building as a federated eco-system
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Realize symbiosis & circularity across all systems & processes
+                  of standalone / networked buildings
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fs2} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Federated control over remote O&G sites
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Resilient yet fungible assets & systems boosted by distributed
+                  compute & supervised control
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fs3} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Move towards federated assets process factories
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Balance autonomy with federation for a truly digital factory
+                  at your fingertips
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fs4} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Farming-as-a-Service [FaaS] is now real with AIoT based
+                  agritech
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Reimagine farming with digital disruptions across the
+                  agricultural value-chain
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fs5} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Federation as the key to resilient & sustainable global supply
+                  chain
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Multi-modal transport & multi-network transactions unified to
+                  form a circular ecosystem
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
+          {#if selected === "Efficient"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={es1} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Unlock inefficiencies in your building ecosystems
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Target margin expansion & improve free-cash-flow through
+                  automation & green-tech
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={es2} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  A well-oiled refinery – no pun intended !
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Maximize the value of your O&G resources be it onshore,
+                  offshore or unconventionals
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={es3} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Enhance your factory infrastructure with AIoT
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Target transparency & control of your factory utilities &
+                  ageing infra through intelligent networks
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={es4} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  360o value generation with digital greenhouses
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  From maximizing yield to optimizing resources (esp. water &
+                  energy), AIoT enhances farm ops
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={es5} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Autonomous drones for perimeter security
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Engage drone fleets for uber-efficient safety & security
+                  management of your spaces
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
         </div>
-
-        {#if selected === "Sustainable"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={ss1} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                (Re)Design your building for WELL standards
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Leverage AIoT to meet regulatory requirements for health,
-                well-being & comfort of occupants
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={ss2} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Protect your O&G spaces against eco-logical events
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Real-time 🡪 predictive 🡪 prescriptive management of O&G spaces
-                for ~ZERO hazards
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={ss3} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Optimize your manufacturing footprint
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Optimize/minimize the overall efficiency of your factory space
-                across the sustainability matrix
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={ss4} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Your greenhouse can now be truly green
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                AIoT based end-to-end greenhouse management for maximizing plant
-                & environmental health
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={ss5} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Optimize your multi-sourced energy needs
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Leverage AIoT for optimizing your energy needs across W.A.G.E.S
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
-        {#if selected === "Autonomous"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={as1} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Autonomous utility management for buildings
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                IoT-ize your utility assets to ensure 360o value for your
-                commercial spaces
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={as2} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Autonomize your O&G property, plant & equipment
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Create autonomous closed-loop systems for maximum efficiency &
-                safety of your refinery
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={as3} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Autonomous Shopfloor
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                100% lights-out factory combining “as-appropriate” maturities of
-                vision factory, digital threads, AGV/AMRs, etc.
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={as4} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Autonomous Farm Managements Systems
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Leverage AIoT to autonomize your farm/crop management system for
-                higher yield at higher quality
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={as5} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Autonomous spaces with private 5G
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Build & manage autonomous sites with the power of private 5G &
-                the network edge
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
-        {#if selected === "Federated"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fs1} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Every building as a federated eco-system
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Realize symbiosis & circularity across all systems & processes
-                of standalone / networked buildings
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fs2} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Federated control over remote O&G sites
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Resilient yet fungible assets & systems boosted by distributed
-                compute & supervised control
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fs3} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Move towards federated assets process factories
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Balance autonomy with federation for a truly digital factory at
-                your fingertips
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fs4} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Farming-as-a-Service [FaaS] is now real with AIoT based agritech
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Reimagine farming with digital disruptions across the
-                agricultural value-chain
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fs5} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Federation as the key to resilient & sustainable global supply
-                chain
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Multi-modal transport & multi-network transactions unified to
-                form a circular ecosystem
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
-        {#if selected === "Efficient"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={es1} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Unlock inefficiencies in your building ecosystems
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Target margin expansion & improve free-cash-flow through
-                automation & green-tech
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={es2} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                A well-oiled refinery – no pun intended !
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Maximize the value of your O&G resources be it onshore, offshore
-                or unconventionals
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={es3} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Enhance your factory infrastructure with AIoT
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Target transparency & control of your factory utilities & ageing
-                infra through intelligent networks
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={es4} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                360o value generation with digital greenhouses
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                From maximizing yield to optimizing resources (esp. water &
-                energy), AIoT enhances farm ops
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={es5} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Autonomous drones for perimeter security
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Engage drone fleets for uber-efficient safety & security
-                management of your spaces
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
       </ScrollTransition>
     </section>
 

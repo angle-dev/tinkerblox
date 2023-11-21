@@ -1,12 +1,7 @@
 <script>
   import aboutHero from "$lib/aboutHero.png";
   import GradientButton from "$lib/components/GradientButton.svelte";
-  import karthik from "$lib/Karthik.png";
-  import prakash from "$lib/Prakash.png";
-  import karthikIR from "$lib/KarthikIR.png";
-  import anoop from "$lib/Anoop 1.png";
   import gradientbackground from "$lib/gradient_background.png";
-  import valuesWe from "$lib/ValuesWeLiveBy .png";
   import ScrollTransition from "../../lib/components/ScrollTransition.svelte";
 </script>
 
@@ -51,7 +46,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={karthik} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20company/Karthik%20G.K.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3"
@@ -128,7 +126,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={anoop} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20company/Anoop%20A.B.C.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3"
@@ -203,7 +204,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={karthikIR} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20company/Karthik%20I.R.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3"
@@ -285,7 +289,10 @@
       class="m-auto flex max-w-6xl flex-col items-start gap-14 md:flex-row-reverse md:items-center"
     >
       <div class="m-auto w-2/3 md:w-1/3">
-        <img src={prakash} alt="" />
+        <img
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20company/Prakash.png"}
+          alt=""
+        />
       </div>
       <div
         class="m-auto flex w-11/12 flex-col items-center text-center md:w-2/3"
@@ -373,7 +380,7 @@
       </p>
       <div class="min-h-16 mt-5 w-full">
         <img
-          src={valuesWe}
+          src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Our%20company/Value%20we%20believe%20By.png"}
           alt="values we live by"
           class=" h-auto w-full object-contain object-center"
         />
