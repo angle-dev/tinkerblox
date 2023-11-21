@@ -39,6 +39,38 @@
       open = "false";
     }
   }
+
+  import Cursor from "../lib/components/CustomCursor.svelte";
+  import { onMount, afterUpdate } from "svelte";
+  let cursorColor = "green";
+  let cursorSize = 28;
+  let cursorSquare = false;
+  let cursorMixBlendMode = "exclusion";
+  let cursorShape = "circle";
+
+  if (cursorSquare) {
+    cursorShape = "square";
+  }
+
+  onMount(() => {
+    const cursorElement = document.querySelector(".cursor-element");
+    const cursorOutput = document.querySelector(".cursor-output");
+    if (cursorElement && cursorOutput) {
+      cursorOutput.textContent =
+        // format the output
+        `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}" />`;
+    }
+  });
+
+  afterUpdate(() => {
+    const cursorElement = document.querySelector(".cursor-element");
+    const cursorOutput = document.querySelector(".cursor-output");
+    if (cursorElement && cursorOutput) {
+      cursorOutput.textContent =
+        // format the output
+        `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}"  />`;
+    }
+  });
 </script>
 
 {#if BurgerMenuOpen}
@@ -50,7 +82,7 @@
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <span
-        class="cursor-pointer"
+        class=" "
         on:click={() =>
           (openMobileMenu =
             openMobileMenu === "superblox" ? false : "superblox")}
@@ -60,25 +92,17 @@
         <div
           class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100"
         >
-          <a
-            on:click={toggleMenu}
-            class="cursor-pointer"
-            href="/superblox/smartspaces">Smart Spaces</a
+          <a on:click={toggleMenu} class=" " href="/superblox/smartspaces"
+            >Smart Spaces</a
           >
-          <a
-            on:click={toggleMenu}
-            class="cursor-pointer"
-            href="/superblox/smartdevices">Smart Devices</a
+          <a on:click={toggleMenu} class=" " href="/superblox/smartdevices"
+            >Smart Devices</a
           >
-          <a
-            on:click={toggleMenu}
-            class="cursor-pointer"
-            href="/superblox/smartutilities">Smart Utilities</a
+          <a on:click={toggleMenu} class=" " href="/superblox/smartutilities"
+            >Smart Utilities</a
           >
-          <a
-            on:click={toggleMenu}
-            class="cursor-pointer"
-            href="/superblox/smartindustry">Smart Industry</a
+          <a on:click={toggleMenu} class=" " href="/superblox/smartindustry"
+            >Smart Industry</a
           >
         </div>
       {/if}
@@ -87,7 +111,7 @@
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <span
-        class="cursor-pointer"
+        class=" "
         on:click={() =>
           (openMobileMenu =
             openMobileMenu === "buildingblox" ? false : "buildingblox")}
@@ -97,20 +121,14 @@
         <div
           class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100"
         >
-          <a
-            on:click={toggleMenu}
-            class="cursor-pointer"
-            href="/buildingblox/edgeblox">EdgeBloX</a
+          <a on:click={toggleMenu} class=" " href="/buildingblox/edgeblox"
+            >EdgeBloX</a
           >
-          <a
-            on:click={toggleMenu}
-            class="cursor-pointer"
-            href="/buildingblox/servblox">ServBloX</a
+          <a on:click={toggleMenu} class=" " href="/buildingblox/servblox"
+            >ServBloX</a
           >
-          <a
-            on:click={toggleMenu}
-            class="cursor-pointer"
-            href="/buildingblox/sandblox">SandBloX</a
+          <a on:click={toggleMenu} class=" " href="/buildingblox/sandblox"
+            >SandBloX</a
           >
         </div>
       {/if}
@@ -119,7 +137,7 @@
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <span
-        class="cursor-pointer"
+        class=" "
         on:click={() =>
           (openMobileMenu = openMobileMenu === "meet" ? false : "meet")}
         >MEET</span
@@ -128,12 +146,8 @@
         <div
           class="my-4 flex flex-col items-center justify-center gap-3 font-light text-base-100"
         >
-          <a on:click={toggleMenu} class="cursor-pointer" href="/ourcompany"
-            >Our Company</a
-          >
-          <a on:click={toggleMenu} class="cursor-pointer" href="/jobs"
-            >Your Future Team</a
-          >
+          <a on:click={toggleMenu} class=" " href="/ourcompany">Our Company</a>
+          <a on:click={toggleMenu} class=" " href="/jobs">Your Future Team</a>
         </div>
       {/if}
     </div>
@@ -323,6 +337,15 @@
   <slot />
 </main>
 
+<div class="cursor-element">
+  <Cursor
+    color={cursorColor}
+    mixBlendMode={cursorMixBlendMode}
+    size={cursorSize}
+    shape={cursorSquare ? "square" : "circle"}
+  />
+</div>
+
 <footer
   style="background-image: url(/defaultbg.png);"
   class=" relative z-[9999] bg-gray-200 bg-cover bg-top bg-no-repeat pt-14"
@@ -387,3 +410,11 @@
     </p>
   </div>
 </footer>
+
+<style scoped>
+  .cursor-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

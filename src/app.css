@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 html:root {
-	scroll-behavior: smooth;
-	@apply bg-base-100 text-neutral;
+  cursor: none;
+  scroll-behavior: smooth;
+  @apply bg-base-100 text-neutral;
+}
+
+.cursor-pointer {
+  cursor: none !important;
+}
+a,
+button {
+  cursor: none !important;
 }
