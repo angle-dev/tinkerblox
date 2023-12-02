@@ -3,6 +3,52 @@
   import connectphone from "$lib/connectphone.png";
   import connectmail from "$lib/connectmail.png";
   import linkedin from "$lib/linkedin.png";
+
+  const sendEmail = async (event) => {
+    event.preventDefault();
+
+    const userID = "Br_RZT8c37gYYjS7q";
+    const serviceID = "service_x76ppna";
+    const templateID = "template_56t42y9";
+    const formData = new FormData(event.target);
+
+    try {
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            service_id: serviceID,
+            template_id: templateID,
+            user_id: userID,
+            template_params: {
+              from_name: formData.get("name"),
+              from_email: formData.get("email"),
+              to_email: "connect@tinkerblox.io",
+              message: formData.get("message"),
+              subject: formData.get("subject"),
+              from_phone: formData.get("phone"),
+              from_company: formData.get("company"),
+            },
+          }),
+        }
+      );
+
+      if (response.ok) {
+        console.log("Email sent successfully");
+        // You can add logic here to show a success message or redirect the user
+      } else {
+        console.error("Failed to send email");
+        // Handle error cases here
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      // Handle error cases here
+    }
+  };
 </script>
 
 <section
@@ -17,10 +63,8 @@ background-image: url({gradientbackground});
     <div class="m-auto w-5/6">
       <div class=" h-fit min-h-[60vh] w-full px-2 py-20">
         <form
-          class=" m-auto flex w-full max-w-2xl flex-col gap-3 text-base-100"
-          action="mailto:connect@tinkerblox.io"
-          method="post"
-          enctype="text/plain"
+          on:submit|preventDefault={sendEmail}
+          class="m-auto flex w-full max-w-2xl flex-col gap-3 text-base-100"
         >
           <h1 class=" text-center text-4xl md:text-left md:text-5xl">
             Let’s build… <br />
