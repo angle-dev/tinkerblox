@@ -1,9 +1,13 @@
 <script>
   import { onMount } from "svelte";
 
-  import cursorimg from "$lib/cursorimg.png";
+  export let size = 20;
+
   let x = -100;
   let y = -100;
+
+  const cx = size / 2;
+  const cy = size / 2;
 
   onMount(() => {
     const initCursor = () => {
@@ -11,36 +15,49 @@
         x = e.clientX;
         y = e.clientY;
       });
-      const hoverables = document.querySelectorAll(".hoverable, a, button");
-      hoverables.forEach((hoverable) => {
-        hoverable.addEventListener("mouseenter", () => {
-          document.body.style.cursor = "none";
-        });
-        hoverable.addEventListener("mouseleave", () => {
-          document.body.style.cursor = "auto";
-        });
-      });
     };
-
     initCursor();
   });
 </script>
 
 <div
   class="custom-cursor"
-  style="left: {x}px; top: {y}px; background-image: url('{cursorimg}');"
+  style="left: {x - cx}px; top: {y - cy}px;--size:{size}px; "
+/>
+
+<div
+  class="custom-cursor-follow"
+  style="left: {x - cx}px; top: {y - cy}px;--size:{size}px; "
 />
 
 <style>
   .custom-cursor {
-    width: 32px; /* Adjust width and height as needed */
-    height: 32px;
+    background-color: #b4e300;
+    width: 16px;
+    height: 16px;
+
     position: fixed;
-    z-index: 99999999999999999999999999999999;
+    border-radius: 50%;
     pointer-events: none;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: transform 0.2s ease-out;
+    z-index: 99999999999999999999999999999999;
+    display: block;
+
     transform: translate(-50%, -50%);
+    cursor: none;
+  }
+
+  .custom-cursor-follow {
+    background-color: transparent;
+    border: 1px solid rgba(180, 227, 0, 0.5);
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999999999999999999999999999999;
+    display: block;
+    transition: all 0.15s ease-out;
+    transform: translate(-50%, -50%);
+    cursor: none;
   }
 </style>
