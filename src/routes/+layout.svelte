@@ -15,7 +15,7 @@
 
   setTimeout(() => {
     loading = false;
-  }, 3000);
+  }, 9000);
 
   function toggleMenu() {
     BurgerMenuOpen = !BurgerMenuOpen;
@@ -165,8 +165,16 @@
   <div
     class="fixed left-0 top-0 z-[999999] flex h-screen w-screen items-center justify-center bg-base-100"
   >
-    <div
+    <!-- <div
       class="h-32 w-32 animate-spin rounded-full border-b-2 border-t-2 border-gray-900"
+    /> -->
+    <video
+      loop
+      autoplay
+      muted
+      volume
+      class=" h-full w-full object-cover"
+      src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/loading-icon-animation-vd-1690-2023-11-27-05-07-36-utc.mp4"}
     />
   </div>
 {:else}

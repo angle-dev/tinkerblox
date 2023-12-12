@@ -32,9 +32,9 @@
 
 <style>
   .custom-cursor {
-    background-color: #b4e300;
-    width: 16px;
-    height: 16px;
+    background-color: #00cf15;
+    width: 30px;
+    height: 30px;
 
     position: fixed;
     border-radius: 50%;
@@ -48,7 +48,7 @@
 
   .custom-cursor-follow {
     background-color: transparent;
-    border: 1px solid rgba(180, 227, 0, 0.5);
+    border: 3px solid #00cf15;
     width: 70px;
     height: 70px;
     position: fixed;

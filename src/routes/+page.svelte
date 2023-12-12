@@ -30,7 +30,7 @@
       muted
       volume
       class="hidden h-full w-full object-cover md:block"
-      src={HeroVid}
+      src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Home%20Page/Banner%20Video%20PC.mp4"}
     />
     <video
       loop
@@ -38,7 +38,7 @@
       muted
       volume
       class="block h-full w-full object-cover md:hidden"
-      src={HeroVidMob}
+      src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/Home%20Page/Banner%201080x1920.mp4"}
     />
   </div>
 
