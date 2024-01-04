@@ -11,11 +11,11 @@
   let openMobileMenu = "false";
   let open = "false";
 
-  let loading = true;
+  // let loading = true;
 
-  setTimeout(() => {
-    loading = false;
-  }, 9000);
+  // setTimeout(() => {
+  //   loading = false;
+  // }, 9000);
 
   function toggleMenu() {
     BurgerMenuOpen = !BurgerMenuOpen;
@@ -46,37 +46,37 @@
     }
   }
 
-  import Cursor from "../lib/components/CustomCursor.svelte";
-  import { onMount, afterUpdate } from "svelte";
-  let cursorColor = "green";
-  let cursorSize = 28;
-  let cursorSquare = false;
-  let cursorMixBlendMode = "exclusion";
-  let cursorShape = "circle";
+  // import Cursor from "../lib/components/CustomCursor.svelte";
+  // import { onMount, afterUpdate } from "svelte";
+  // let cursorColor = "green";
+  // let cursorSize = 28;
+  // let cursorSquare = false;
+  // let cursorMixBlendMode = "exclusion";
+  // let cursorShape = "circle";
 
-  if (cursorSquare) {
-    cursorShape = "square";
-  }
+  // if (cursorSquare) {
+  //   cursorShape = "square";
+  // }
 
-  onMount(() => {
-    const cursorElement = document.querySelector(".cursor-element");
-    const cursorOutput = document.querySelector(".cursor-output");
-    if (cursorElement && cursorOutput) {
-      cursorOutput.textContent =
-        // format the output
-        `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}" />`;
-    }
-  });
+  // onMount(() => {
+  //   const cursorElement = document.querySelector(".cursor-element");
+  //   const cursorOutput = document.querySelector(".cursor-output");
+  //   if (cursorElement && cursorOutput) {
+  //     cursorOutput.textContent =
+  //       // format the output
+  //       `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}" />`;
+  //   }
+  // });
 
-  afterUpdate(() => {
-    const cursorElement = document.querySelector(".cursor-element");
-    const cursorOutput = document.querySelector(".cursor-output");
-    if (cursorElement && cursorOutput) {
-      cursorOutput.textContent =
-        // format the output
-        `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}"  />`;
-    }
-  });
+  // afterUpdate(() => {
+  //   const cursorElement = document.querySelector(".cursor-element");
+  //   const cursorOutput = document.querySelector(".cursor-output");
+  //   if (cursorElement && cursorOutput) {
+  //     cursorOutput.textContent =
+  //       // format the output
+  //       `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}"  />`;
+  //   }
+  // });
 </script>
 
 {#if BurgerMenuOpen}
@@ -161,14 +161,11 @@
   </div>
 {/if}
 
-{#if loading}
-  <div
+<!-- {#if loading} -->
+<!-- <div
     class="fixed left-0 top-0 z-[999999] flex h-screen w-screen items-center justify-center bg-base-100"
-  >
-    <!-- <div
-      class="h-32 w-32 animate-spin rounded-full border-b-2 border-t-2 border-gray-900"
-    /> -->
-    <video
+  > -->
+<!-- <video
       loop
       autoplay
       muted
@@ -176,198 +173,198 @@
       class=" h-full w-full object-cover"
       src={"https://tbpublicsite.blob.core.windows.net/tinkerblox/loading-icon-animation-vd-1690-2023-11-27-05-07-36-utc.mp4"}
     />
-  </div>
-{:else}
-  <nav
-    class="fixed top-0 z-[999999] flex h-16 w-full items-center justify-between bg-base-100 px-4 py-2.5 backdrop-blur-md lg:px-16"
+  </div> -->
+<!-- {:else} -->
+<nav
+  class="fixed top-0 z-[999999] flex h-16 w-full items-center justify-between bg-base-100 px-4 py-2.5 backdrop-blur-md lg:px-16"
+>
+  <a class=" h-full" href="/"
+    ><img class=" h-full" src={Logo} alt="tinkerblox logo" /></a
   >
-    <a class=" h-full" href="/"
-      ><img class=" h-full" src={Logo} alt="tinkerblox logo" /></a
-    >
 
-    <div class="hidden md:block">
-      <ul class="flex">
-        <li>
-          <button
-            class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
-          >
-            <a href="/">HOME</a>
-          </button>
-        </li>
-        <li>
-          <button
-            on:click={() => (open = open === "superblox" ? false : "superblox")}
-            class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
-          >
-            <div class="flex gap-1">
-              SUPERBLOX <img
-                src={open === "superblox" ? Line : Arrowdown}
-                alt="arrow"
-              />
-            </div>
-          </button>
-        </li>
-        <li>
-          <button
-            on:click={() =>
-              (open = open === "buildingblox" ? false : "buildingblox")}
-            class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
-          >
-            <div class="flex gap-1">
-              BUILDINGBLOX <img
-                src={open === "buildingblox" ? Line : Arrowdown}
-                alt="arrow"
-              />
-            </div>
-          </button>
-        </li>
-        <li>
-          <button
-            on:click={() => (open = open === "meet" ? false : "meet")}
-            class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
-          >
-            <div class="flex gap-1">
-              MEET <img src={open === "meet" ? Line : Arrowdown} alt="arrow" />
-            </div>
-          </button>
-        </li>
-        <li>
-          <button
-            on:click={() => (open = false)}
-            class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
-          >
-            <a href="/connect">CONNECT</a>
-          </button>
-        </li>
-      </ul>
-    </div>
-    <div class="block md:hidden">
-      <div class="h-full w-7">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <img
-          src={BurgerMenuOpen ? BurgerMenuClose : BurgerMenu}
-          on:click={toggleMenu}
-          alt="burgermenu "
-        />
-      </div>
-    </div>
-  </nav>
-  <div>
-    {#if open === "superblox"}
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        on:mouseleave={() => (open = false)}
-        class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm"
-      >
-        <a href="/superblox/smartspaces" on:click={() => (open = false)}>
-          <div
-            class="prose h-full max-w-xs rounded-md bg-[#89C365] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class=" text-xl font-medium text-base-100">Smart Spaces</h3>
-            <p>
-              Digital + Sustainable Ecosystems. Communities. Buildings. Farms.
-            </p>
+  <div class="hidden md:block">
+    <ul class="flex">
+      <li>
+        <button
+          class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
+        >
+          <a href="/">HOME</a>
+        </button>
+      </li>
+      <li>
+        <button
+          on:click={() => (open = open === "superblox" ? false : "superblox")}
+          class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
+        >
+          <div class="flex gap-1">
+            SUPERBLOX <img
+              src={open === "superblox" ? Line : Arrowdown}
+              alt="arrow"
+            />
           </div>
-        </a>
-        <a href="/superblox/smartdevices" on:click={() => (open = false)}>
-          <div
-            class="prose h-full max-w-xs rounded-md bg-[#C66A66] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class=" text-xl font-medium text-base-100">Smart Devices</h3>
-            <p>From Devices to Device-based Experience as a Service.</p>
+        </button>
+      </li>
+      <li>
+        <button
+          on:click={() =>
+            (open = open === "buildingblox" ? false : "buildingblox")}
+          class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
+        >
+          <div class="flex gap-1">
+            BUILDINGBLOX <img
+              src={open === "buildingblox" ? Line : Arrowdown}
+              alt="arrow"
+            />
           </div>
-        </a>
-        <a href="/superblox/smartutilities" on:click={() => (open = false)}>
-          <div
-            class="prose h-full max-w-xs rounded-md bg-[#CED17A] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class=" text-xl font-medium text-base-100">Smart Utilities</h3>
-            <p>Net Zero & Beyond... O&G. Energy. Industry. Commercial.</p>
+        </button>
+      </li>
+      <li>
+        <button
+          on:click={() => (open = open === "meet" ? false : "meet")}
+          class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
+        >
+          <div class="flex gap-1">
+            MEET <img src={open === "meet" ? Line : Arrowdown} alt="arrow" />
           </div>
-        </a>
-        <a href="/superblox/smartindustry" on:click={() => (open = false)}>
-          <div
-            class="prose h-full max-w-xs rounded-md bg-[#5C5C5C] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class=" text-xl font-medium text-base-100">Smart Industry</h3>
-            <p>Industry X.0 Resilient Supply Chain</p>
-          </div>
-        </a>
-      </div>
-    {/if}
-    {#if open === "buildingblox"}
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        on:mouseleave={() => (open = false)}
-        class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm"
-      >
-        <a href="/buildingblox/sandblox" on:click={() => (open = false)}>
-          <div
-            class="prose h-full rounded-md bg-[#AB71AD] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class="text-xl font-medium text-base-100">SandBlox</h3>
-            <p>Reimagining Digital. Realizing Outcomes</p>
-          </div>
-        </a>
-        <a href="/buildingblox/edgeblox" on:click={() => (open = false)}>
-          <div
-            class="prose h-full max-w-xs rounded-md bg-[#DF875D] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class="text-xl font-medium text-base-100">EdgeBlox</h3>
-            <p>Meet the Lego Blocks of your AloT Transformation.</p>
-          </div>
-        </a>
-        <a href="/buildingblox/servblox" on:click={() => (open = false)}>
-          <div
-            class="prose h-full max-w-xs rounded-md bg-[#6EB7E6] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class=" text-xl font-medium text-base-100">ServBlox</h3>
-            <p>Generate 360° value for your business</p>
-          </div>
-        </a>
-      </div>
-    {/if}
-    {#if open === "meet"}
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div
-        on:mouseleave={() => (open = false)}
-        class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm"
-      >
-        <a href="/ourcompany" on:click={() => (open = false)}>
-          <div
-            class="prose h-full max-w-xs rounded-md bg-[#DA7874] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class="  text-xl font-medium text-base-100">Our Company</h3>
-            <p>Meet the Vision. Meet the People. Meet the Passion.</p>
-          </div>
-        </a>
-        <a href="/jobs" on:click={() => (open = false)}>
-          <div
-            class="prose h-full max-w-xs rounded-md bg-[#71BAB6] p-3 text-base-100 hover:brightness-105"
-          >
-            <h3 class=" text-xl font-medium text-base-100">Your Future Team</h3>
-            <p>
-              We're missing some key players in our team... Make your move now!
-            </p>
-          </div>
-        </a>
-      </div>
-    {/if}
+        </button>
+      </li>
+      <li>
+        <button
+          on:click={() => (open = false)}
+          class="btn btn-link btn-active font-medium text-neutral decoration-transparent"
+        >
+          <a href="/connect">CONNECT</a>
+        </button>
+      </li>
+    </ul>
   </div>
-  <main class="mt-16">
-    <slot />
-  </main>
-{/if}
+  <div class="block md:hidden">
+    <div class="h-full w-7">
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+      <img
+        src={BurgerMenuOpen ? BurgerMenuClose : BurgerMenu}
+        on:click={toggleMenu}
+        alt="burgermenu "
+      />
+    </div>
+  </div>
+</nav>
+<div>
+  {#if open === "superblox"}
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div
+      on:mouseleave={() => (open = false)}
+      class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm"
+    >
+      <a href="/superblox/smartspaces" on:click={() => (open = false)}>
+        <div
+          class="prose h-full max-w-xs rounded-md bg-[#89C365] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class=" text-xl font-medium text-base-100">Smart Spaces</h3>
+          <p>
+            Digital + Sustainable Ecosystems. Communities. Buildings. Farms.
+          </p>
+        </div>
+      </a>
+      <a href="/superblox/smartdevices" on:click={() => (open = false)}>
+        <div
+          class="prose h-full max-w-xs rounded-md bg-[#C66A66] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class=" text-xl font-medium text-base-100">Smart Devices</h3>
+          <p>From Devices to Device-based Experience as a Service.</p>
+        </div>
+      </a>
+      <a href="/superblox/smartutilities" on:click={() => (open = false)}>
+        <div
+          class="prose h-full max-w-xs rounded-md bg-[#CED17A] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class=" text-xl font-medium text-base-100">Smart Utilities</h3>
+          <p>Net Zero & Beyond... O&G. Energy. Industry. Commercial.</p>
+        </div>
+      </a>
+      <a href="/superblox/smartindustry" on:click={() => (open = false)}>
+        <div
+          class="prose h-full max-w-xs rounded-md bg-[#5C5C5C] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class=" text-xl font-medium text-base-100">Smart Industry</h3>
+          <p>Industry X.0 Resilient Supply Chain</p>
+        </div>
+      </a>
+    </div>
+  {/if}
+  {#if open === "buildingblox"}
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div
+      on:mouseleave={() => (open = false)}
+      class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm"
+    >
+      <a href="/buildingblox/sandblox" on:click={() => (open = false)}>
+        <div
+          class="prose h-full rounded-md bg-[#AB71AD] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class="text-xl font-medium text-base-100">SandBlox</h3>
+          <p>Reimagining Digital. Realizing Outcomes</p>
+        </div>
+      </a>
+      <a href="/buildingblox/edgeblox" on:click={() => (open = false)}>
+        <div
+          class="prose h-full max-w-xs rounded-md bg-[#DF875D] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class="text-xl font-medium text-base-100">EdgeBlox</h3>
+          <p>Meet the Lego Blocks of your AloT Transformation.</p>
+        </div>
+      </a>
+      <a href="/buildingblox/servblox" on:click={() => (open = false)}>
+        <div
+          class="prose h-full max-w-xs rounded-md bg-[#6EB7E6] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class=" text-xl font-medium text-base-100">ServBlox</h3>
+          <p>Generate 360° value for your business</p>
+        </div>
+      </a>
+    </div>
+  {/if}
+  {#if open === "meet"}
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div
+      on:mouseleave={() => (open = false)}
+      class="t-16 fixed z-[99999999] flex w-full justify-center gap-3 bg-base-100/70 p-3 backdrop-blur-sm"
+    >
+      <a href="/ourcompany" on:click={() => (open = false)}>
+        <div
+          class="prose h-full max-w-xs rounded-md bg-[#DA7874] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class="  text-xl font-medium text-base-100">Our Company</h3>
+          <p>Meet the Vision. Meet the People. Meet the Passion.</p>
+        </div>
+      </a>
+      <a href="/jobs" on:click={() => (open = false)}>
+        <div
+          class="prose h-full max-w-xs rounded-md bg-[#71BAB6] p-3 text-base-100 hover:brightness-105"
+        >
+          <h3 class=" text-xl font-medium text-base-100">Your Future Team</h3>
+          <p>
+            We're missing some key players in our team... Make your move now!
+          </p>
+        </div>
+      </a>
+    </div>
+  {/if}
+</div>
+<main class="mt-16">
+  <slot />
+</main>
+<!-- {/if} -->
 
-<div class="cursor-element">
+<!-- <div class="cursor-element">
   <Cursor
     color={cursorColor}
     mixBlendMode={cursorMixBlendMode}
     size={cursorSize}
     shape={cursorSquare ? "square" : "circle"}
   />
-</div>
+</div> -->
 
 <footer
   style="background-image: url(/defaultbg.png);"
