@@ -261,252 +261,255 @@
       style=" background-image: url('https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Utility%20Images/Smart%20Utility%20for%20you_Gradient.png') "
       class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20"
     >
-      <ScrollTransition>
-        <h4
-          class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
-        >
-          SMART Utilities for you
-        </h4>
+      <ScrollTransition rootMargin="15%" threshold="0.1">
+        <div id="line">
+          <h4
+            class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
+          >
+            SMART Utilities for you
+          </h4>
 
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div
-          class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
-        >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Sustainable")}
-            class="{'relative z-10 w-[494px] cursor-pointer rounded-full border border-[#00BE2A] px-3 py-2   '} {selected ===
-            'Sustainable'
-              ? 'bg-[#00BE2A] shadow-md shadow-[#00BE2A] '
-              : ''}">Future of your utility assets with TBx</span
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <div
+            class=" min-h-4 rounded-fullpx-4 m-auto mt-7 flex h-fit w-full flex-wrap items-center justify-center gap-6 overflow-hidden py-2 text-center text-sm text-white md:text-lg"
           >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Federated")}
-            class="relative z-10 w-[494px] cursor-pointer rounded-full border border-[#E76120] px-3 py-2 {selected ===
-            'Federated'
-              ? 'bg-[#E76120] shadow-md shadow-[#E76120]'
-              : ''}">Sustainability in the Utility World</span
-          >
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <span
-            on:click={() => handleClick("Efficient")}
-            class="relative z-10 w-[494px] cursor-pointer rounded-full border border-[#A1499C] px-3 py-2 {selected ===
-            'Efficient'
-              ? 'bg-[#A1499C] shadow-md shadow-[#A1499C]'
-              : ''}">Your win in the Energy Continuum</span
-          >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Sustainable")}
+              class="{'relative z-10 w-[494px] cursor-pointer rounded-full border border-[#00BE2A] px-3 py-2   '} {selected ===
+              'Sustainable'
+                ? 'bg-[#00BE2A] shadow-md shadow-[#00BE2A] '
+                : ''}">Future of your utility assets with TBx</span
+            >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Federated")}
+              class="relative z-10 w-[494px] cursor-pointer rounded-full border border-[#E76120] px-3 py-2 {selected ===
+              'Federated'
+                ? 'bg-[#E76120] shadow-md shadow-[#E76120]'
+                : ''}">Sustainability in the Utility World</span
+            >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span
+              on:click={() => handleClick("Efficient")}
+              class="relative z-10 w-[494px] cursor-pointer rounded-full border border-[#A1499C] px-3 py-2 {selected ===
+              'Efficient'
+                ? 'bg-[#A1499C] shadow-md shadow-[#A1499C]'
+                : ''}">Your win in the Energy Continuum</span
+            >
+          </div>
+
+          {#if selected === "Sustainable"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fuat1} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Ensure near-100% utility of your assets
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Realize a fully utilized & optimized asset capable of self
+                  monitoring 🡪 self healing
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fuat2} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Flatten out the peaks
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Leverage responsive (re)distribution of resources to balance
+                  the demand vs supply at every level of the network & improve
+                  asset utilization
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fuat3} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Digitalize Autonomize your assets/infrastructure with AI@Edge
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Equip your legacy assets with the power of distributed compute
+                  & digital twins for redundancy across your network
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={fuat4} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Utility-as-a-Service for EV charging infrastructure
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Build X-a-a-S into your assets and thereby your charging
+                  infrastructure to transact seamlessly at every node
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img id="line" class=" w-32" src={fuat5} alt="" />
+                <h5 class="w-80 text-center text-2xl font-semibold text-white">
+                  Secure your utility ecosystem
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  With assets gaining ‘identity’ in transactional
+                  micro-networks, secure yourself at every endpoint
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
+          {#if selected === "Federated"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={suw1} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Transparency into your utility operations
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Transparency that leads to robustness & efficiency of your
+                  assets (power lines, water & gas pipes, solar panels, etc.)
+                  and your systems (electricity, water, waste, etc.)
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={suw2} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  The new avatar of smart grids
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Mainstreaming of edge compute & DLT now enables you to build a
+                  resilient & secure smart grid
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={suw3} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Transact on the currency of sustainable actions
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Enable verified transactions against sustainability
+                  initiatives with intelligent distributed nodes across your
+                  network
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={suw4} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Circular Economy for energy assets
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  With the proliferation of energy disbursement stations as well
+                  as energy storage devices, the ability to close-loop the chain
+                  is critical
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={suw5} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  A market for sustainability rated energy
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  What if you could rate energy based on the sustainability
+                  factors considered in its generation & distribution?
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
+          {#if selected === "Efficient"}
+            <div
+              class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
+            >
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={wec1} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Optimize your grid performance with Edge AI
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Edge AI based control loops can help optimize your network
+                  operations & move ahead of inertia based grid management
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={wec2} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Building an intelligent “prosumer” ecosystem
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  As traditional energy customers become producers as well,
+                  distributed intelligence capable of transactions is crucial
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={wec3} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Energy meters as an extension of Smart Homes
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Energy meters of the future will be more than just measuring
+                  devices – they will partner with you to satisfy your energy
+                  needs at best value
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={wec4} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Energy as a Currency
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  With the proliferation of EV ecosystem, Solar panels and
+                  micro-energy generation/distribution facilities, energy can be
+                  the barter system for intelligent assets
+                </p>
+              </div>
+
+              <div class=" flex w-96 flex-col items-center gap-4 p-8">
+                <img class=" w-32" src={wec5} alt="" />
+                <h5 class=" w-80 text-center text-2xl font-semibold text-white">
+                  Supply Chain Transformation
+                </h5>
+                <p class="w-80 text-center font-normal text-white">
+                  Manage your EV supply chain to optimize your locked energy
+                  capital with transact-on-the-go Edge-AI systems
+                </p>
+              </div>
+
+              <a href="/connect">
+                <div
+                  class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
+                >
+                  Learn More...
+                </div>
+              </a>
+            </div>
+          {/if}
         </div>
-
-        {#if selected === "Sustainable"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fuat1} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Ensure near-100% utility of your assets
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Realize a fully utilized & optimized asset capable of self
-                monitoring 🡪 self healing
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fuat2} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Flatten out the peaks
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Leverage responsive (re)distribution of resources to balance the
-                demand vs supply at every level of the network & improve asset
-                utilization
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fuat3} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Digitalize Autonomize your assets/infrastructure with AI@Edge
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Equip your legacy assets with the power of distributed compute &
-                digital twins for redundancy across your network
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={fuat4} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Utility-as-a-Service for EV charging infrastructure
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Build X-a-a-S into your assets and thereby your charging
-                infrastructure to transact seamlessly at every node
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img id="line" class=" w-32" src={fuat5} alt="" />
-              <h5 class="w-80 text-center text-2xl font-semibold text-white">
-                Secure your utility ecosystem
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                With assets gaining ‘identity’ in transactional micro-networks,
-                secure yourself at every endpoint
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
-        {#if selected === "Federated"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={suw1} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Transparency into your utility operations
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Transparency that leads to robustness & efficiency of your
-                assets (power lines, water & gas pipes, solar panels, etc.) and
-                your systems (electricity, water, waste, etc.)
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={suw2} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                The new avatar of smart grids
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Mainstreaming of edge compute & DLT now enables you to build a
-                resilient & secure smart grid
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={suw3} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Transact on the currency of sustainable actions
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Enable verified transactions against sustainability initiatives
-                with intelligent distributed nodes across your network
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={suw4} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Circular Economy for energy assets
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                With the proliferation of energy disbursement stations as well
-                as energy storage devices, the ability to close-loop the chain
-                is critical
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={suw5} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                A market for sustainability rated energy
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                What if you could rate energy based on the sustainability
-                factors considered in its generation & distribution?
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
-        {#if selected === "Efficient"}
-          <div
-            class=" min-h-4 m-auto mt-7 flex h-fit w-full max-w-7xl flex-wrap items-center justify-center gap-6 overflow-hidden py-2"
-          >
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={wec1} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Optimize your grid performance with Edge AI
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Edge AI based control loops can help optimize your network
-                operations & move ahead of inertia based grid management
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={wec2} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Building an intelligent “prosumer” ecosystem
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                As traditional energy customers become producers as well,
-                distributed intelligence capable of transactions is crucial
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={wec3} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Energy meters as an extension of Smart Homes
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Energy meters of the future will be more than just measuring
-                devices – they will partner with you to satisfy your energy
-                needs at best value
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={wec4} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Energy as a Currency
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                With the proliferation of EV ecosystem, Solar panels and
-                micro-energy generation/distribution facilities, energy can be
-                the barter system for intelligent assets
-              </p>
-            </div>
-
-            <div class=" flex w-96 flex-col items-center gap-4 p-8">
-              <img class=" w-32" src={wec5} alt="" />
-              <h5 class=" w-80 text-center text-2xl font-semibold text-white">
-                Supply Chain Transformation
-              </h5>
-              <p class="w-80 text-center font-normal text-white">
-                Manage your EV supply chain to optimize your locked energy
-                capital with transact-on-the-go Edge-AI systems
-              </p>
-            </div>
-
-            <a href="/connect">
-              <div
-                class=" bold flex w-96 flex-col items-center gap-4 p-8 text-3xl text-white underline"
-              >
-                Learn More...
-              </div>
-            </a>
-          </div>
-        {/if}
       </ScrollTransition>
     </section>
 
@@ -515,7 +518,7 @@
       style="background-image: url(/defaultbg.png);"
       class="  bg-cover bg-center bg-no-repeat py-20"
     >
-      <ScrollTransition>
+      <ScrollTransition rootMargin="0%" threshold="0.1">
         <h4 class=" m-auto w-3/5 text-center text-4xl text-primary">
           Future of Utilities
         </h4>
@@ -649,7 +652,7 @@
       style="background-image: url('https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Utility%20Images/The%20TinkerBlox%20USP.png')"
       class="min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-60"
     >
-      <ScrollTransition>
+      <ScrollTransition rootMargin="9%" threshold="0.2">
         <div class="m-auto max-w-4xl">
           <div style="position: relative; text-align: center;">
             <img

@@ -259,7 +259,7 @@
       style=" background-image: url('https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Spaces%20Images/Smart%20Spaces%20for%20you_Gradient.png') "
       class="w-full bg-primary bg-cover bg-bottom bg-no-repeat py-20"
     >
-      <ScrollTransition>
+      <ScrollTransition rootMargin="15%" threshold="0.1">
         <div id="line">
           <h4
             class="m-auto mb-10 mt-12 w-full max-w-2xl p-5 text-center text-5xl text-base-100 md:p-0 md:text-6xl"
@@ -587,7 +587,7 @@
       style="background-image: url(/defaultbg.png);"
       class="  bg-cover bg-center bg-no-repeat py-20"
     >
-      <ScrollTransition>
+      <ScrollTransition rootMargin="0%" threshold="0.1">
         <h4 class=" m-auto mt-12 w-3/5 text-center text-4xl text-primary">
           Future of Spaces
         </h4>
@@ -721,7 +721,7 @@
       style="background-image: url('https://tbpublicsite.blob.core.windows.net/tinkerblox/Smart%20Spaces%20Images/Smart%20Spaces%20for%20you_Gradient.png')"
       class="min-h-16 w-full bg-primary bg-cover bg-bottom bg-no-repeat py-60"
     >
-      <ScrollTransition>
+      <ScrollTransition rootMargin="9%" threshold="0.2">
         <div class="m-auto max-w-4xl">
           <div style="position: relative; text-align: center;">
             <img
