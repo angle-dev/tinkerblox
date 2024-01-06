@@ -1,10 +1,16 @@
 <script lang="ts">
   import { inview } from "svelte-inview";
   let isInView;
+  export let threshold;
+  export let rootMargin;
 </script>
 
 <div
-  use:inview={{ unobserveOnEnter: true, threshold: 0.2, rootMargin: "-10%" }}
+  use:inview={{
+    unobserveOnEnter: true,
+    threshold: threshold || 0.2,
+    rootMargin: rootMargin || "-10%",
+  }}
   on:inview_enter={(event) => {
     const { inView } = event.detail;
     isInView = inView;
